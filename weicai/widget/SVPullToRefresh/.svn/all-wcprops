@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/m_cz001_news_ios/!svn/ver/6/news_client/trunk/news/news/widget/SVPullToRefresh
+END
+UIScrollView+SVPullToRefresh.h
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/m_cz001_news_ios/!svn/ver/6/news_client/trunk/news/news/widget/SVPullToRefresh/UIScrollView+SVPullToRefresh.h
+END
+UIScrollView+SVInfiniteScrolling.h
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/m_cz001_news_ios/!svn/ver/6/news_client/trunk/news/news/widget/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.h
+END
+UIScrollView+SVPullToRefresh.m
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/m_cz001_news_ios/!svn/ver/16/news_client/trunk/news/news/widget/SVPullToRefresh/UIScrollView+SVPullToRefresh.m
+END
+UIScrollView+SVInfiniteScrolling.m
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/m_cz001_news_ios/!svn/ver/6/news_client/trunk/news/news/widget/SVPullToRefresh/UIScrollView+SVInfiniteScrolling.m
+END
+SVPullToRefresh.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/m_cz001_news_ios/!svn/ver/6/news_client/trunk/news/news/widget/SVPullToRefresh/SVPullToRefresh.h
+END
