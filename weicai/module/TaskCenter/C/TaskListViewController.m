@@ -33,11 +33,12 @@
 #import "RMMapper.h"
 #import "SVPullToRefresh.h"
 #import "GVUserDefaults+Setting.h"
+#import "JHTickerView.h"
 
 @interface TaskListViewController ()<DMOfferWallManagerDelegate,MyOfferAPIDelegate,OfferWallDelegate>
 
 @property (nonatomic,weak)IBOutlet UITableView *listView;
-@property (nonatomic,weak)IBOutlet MarqueeLabel *scrollLabel;
+@property (nonatomic,weak)IBOutlet JHTickerView *scrollLabel;
 @property (nonatomic,strong) ScoreLabel *scoreLabel;
 
 @property (nonatomic,strong) RETableViewManager *tableViewMager;
@@ -125,9 +126,8 @@
 
 - (void)setupScrollLabel
 {
-    self.scrollLabel.scrollDuration = 15.f;
-    self.scrollLabel.fadeLength = 5.f;
-    self.scrollLabel.marqueeType = MLLeftRight;
+    self.scrollLabel.tickerSpeed = 50.;
+    self.scrollLabel.direction = JHTickerDirectionLTR;
 }
 
 - (void)setupListView
@@ -182,7 +182,6 @@
     [self initNavBarItems];
     [self setupListView];
     
-    NSString *value = [OpenUDID value];
     if ([GVUserDefaults standardUserDefaults].userID) {
         NSString *uid = [GVUserDefaults standardUserDefaults].userID;
         [self advertisingPlatformInitWithUserID:uid];
@@ -196,7 +195,8 @@
     //刷新渠道列表
     
     //定时获取需要滚动显示的消息
-    [NSTimer timerWithTimeInterval:60.f
+    [self updateScrollLabelContent];
+    [NSTimer timerWithTimeInterval:5.f
                             target:self
                           selector:@selector(updateScrollLabelContent)
                           userInfo:nil repeats:YES];
@@ -319,7 +319,8 @@
 - (void)updateScrollLabelContent
 {
     //获取最新的滚动消息内容
-    
+    self.scrollLabel.tickerStrings = @[@"sljdalfj"];
+    [self.scrollLabel start];
     //跟新滚动标签内容
 }
 

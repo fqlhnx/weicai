@@ -64,6 +64,7 @@
 		F63E9CBE19DE7B9900548AA9 /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CB919DE7B9900548AA9 /* NSString+RENumberFormat.m */; };
 		F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */; };
 		F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65D46BA19EE94900020E92C /* WPLib.framework */; };
+		F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46BE19EEB53C0020E92C /* JHTickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F663D7E919D7A19F002943D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7E819D7A19F002943D7 /* Foundation.framework */; };
 		F663D7EB19D7A19F002943D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */; };
 		F663D7ED19D7A19F002943D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EC19D7A19F002943D7 /* UIKit.framework */; };
@@ -339,6 +340,8 @@
 		F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFormattedNumberField.m; sourceTree = "<group>"; };
 		F63E9CC019DE838E00548AA9 /* ADConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADConfig.h; sourceTree = "<group>"; };
 		F65D46BA19EE94900020E92C /* WPLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WPLib.framework; sourceTree = "<group>"; };
+		F65D46BD19EEB53C0020E92C /* JHTickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTickerView.h; sourceTree = "<group>"; };
+		F65D46BE19EEB53C0020E92C /* JHTickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTickerView.m; sourceTree = "<group>"; };
 		F663D7E519D7A19F002943D7 /* weicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F663D7E819D7A19F002943D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -791,6 +794,15 @@
 			path = REFormattedNumberField;
 			sourceTree = "<group>";
 		};
+		F65D46BC19EEB53C0020E92C /* JHTickerView */ = {
+			isa = PBXGroup;
+			children = (
+				F65D46BD19EEB53C0020E92C /* JHTickerView.h */,
+				F65D46BE19EEB53C0020E92C /* JHTickerView.m */,
+			);
+			path = JHTickerView;
+			sourceTree = "<group>";
+		};
 		F663D7DC19D7A19F002943D7 = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1094,7 @@
 		F663D84219D7EE37002943D7 /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				F65D46BC19EEB53C0020E92C /* JHTickerView */,
 				F628E37519ED1B5D00F4C959 /* GVUserDefaults */,
 				F628E36D19ED02A700F4C959 /* SVPullToRefresh */,
 				F628E36019ECFF7200F4C959 /* RMMapper */,
@@ -1684,6 +1697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */,
 				F63E9C8019DE79E700548AA9 /* REBoolItem.m in Sources */,
 				F663D7F919D7A19F002943D7 /* AppDelegate.m in Sources */,
 				F63E9C7A19DE79E700548AA9 /* RETableViewLongTextCell.m in Sources */,

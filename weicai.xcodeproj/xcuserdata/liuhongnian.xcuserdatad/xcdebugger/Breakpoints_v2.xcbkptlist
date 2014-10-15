@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weicai/module/TaskCenter/C/TaskListViewController.m"
-            timestampString = "435032180.034655"
+            timestampString = "435074919.070679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-advertisingPlatformInitWithUserID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -112,22 +112,6 @@
             startingLineNumber = "296"
             endingLineNumber = "296"
             landmarkName = "-OfferWallAppUserId"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weicai/module/TaskCenter/C/TaskListViewController.m"
-            timestampString = "435066189.866743"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
