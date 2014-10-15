@@ -10,4 +10,18 @@
 
 @interface PersonalCenterAPI : BaseRequest
 
+
+//今日累计发放积分额
+- (void)getTodayIntegral;
+
+//收益明细
+- (void)integralDetail:(NSString*)userID page:(NSString*)page;
+//兑换详情
+- (void)queryExchangeDetailWithUserID:(NSString*)uID page:(NSString*)page;
+
+- (void)getNewsDescription;
+
+//获取用户ID
+- (void)getUserID:(NSString*)uuid competion:(void(^)(NSString *uID,NSError *error))competionBlock;
+
 @end

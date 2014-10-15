@@ -9,6 +9,6 @@
 #ifndef weicai_ServerConfig_h
 #define weicai_ServerConfig_h
 
-
+#define ServerURL @"http://121.40.193.213"
 
 #endif

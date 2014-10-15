@@ -15,8 +15,21 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(tapTouched)];
+        [self addGestureRecognizer:tap];
+        self.userInteractionEnabled = YES;
+        self.textAlignment = NSTextAlignmentCenter;
     }
     return self;
+}
+
+- (void)tapTouched
+{
+    if (self.didTouchedBlock) {
+        self.didTouchedBlock();
+    }
+    
 }
 
 /*

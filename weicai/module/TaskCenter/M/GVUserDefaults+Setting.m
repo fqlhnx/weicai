@@ -10,4 +10,5 @@
 
 @implementation GVUserDefaults (Setting)
 
+@dynamic userID;
 @end

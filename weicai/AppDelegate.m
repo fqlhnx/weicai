@@ -13,12 +13,33 @@
 #import "PersonalCenterViewController.h"
 #import "TaskListViewController.h"
 
+#import "BeeSystemInfo.h"
+//各大广告平台SDK头文件
+#import "DMOfferWallManager.h"
+#import "ZKcmoneZKcmtwo.h"
+#import <WPLib/AppConnect.h>
+#import "OfferWall.h"
+
+#import "YouMiConfig.h"
+#import "YouMiWall.h"
+#import "MyOfferAPI.h"
+
+
 @interface AppDelegate ()
 
 @property (nonatomic,strong)UITabBarController *tabBarCtrl;
 
 @property (nonatomic,strong)UINavigationController *taskListRootNav;
 @property (nonatomic,strong)TaskListViewController *taskListViewController;
+
+@property (nonatomic,strong)PersonalCenterViewController *personalCenterVC;
+@property (nonatomic,strong)UINavigationController *personalCenterRootNavCtrl;
+
+@property (nonatomic,strong)ExchangeCenterViewController *exchangeVC;
+@property (nonatomic,strong)UINavigationController *exchangeRootNavCtrl;
+
+@property (nonatomic,strong)HelpViewController *helpVC;
+@property (nonatomic,strong)UINavigationController *helpRootNavCtrl;
 
 @end
 
@@ -30,14 +51,36 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 
-    self.taskListViewController = [[TaskListViewController alloc] initWithNibName:@"TaskListViewController" bundle:nil];
+    //task center
+    self.taskListViewController = [[TaskListViewController alloc] initWithNibName:@"TaskListViewController"
+                                                                           bundle:nil];
     self.taskListRootNav = [[UINavigationController alloc] initWithRootViewController:self.taskListViewController];
     
+    //personal center
+    self.personalCenterVC = [[PersonalCenterViewController alloc] initWithNibName:@"PersonalCenterViewController"
+                                                                           bundle:nil];
+    self.personalCenterRootNavCtrl = [[UINavigationController alloc] initWithRootViewController:self.personalCenterVC];
+    
+    //exchange center
+    self.exchangeVC = [[ExchangeCenterViewController alloc] initWithNibName:@"ExchangeCenterViewController"
+                                                                     bundle:nil];
+    self.exchangeRootNavCtrl = [[UINavigationController alloc]initWithRootViewController:self.exchangeVC];
+    
+    //help
+    self.helpVC = [[HelpViewController alloc] initWithNibName:@"HelpViewController"
+                                                       bundle:nil];
+    self.helpRootNavCtrl = [[UINavigationController alloc] initWithRootViewController:_helpVC];
+    
     [self customUIAppearance];
-    self.window.rootViewController = self.taskListRootNav;
+    
+    self.tabBarCtrl = [[UITabBarController alloc] init];
+    self.tabBarCtrl.viewControllers = @[self.taskListRootNav,
+                                        self.personalCenterRootNavCtrl,
+                                        self.exchangeRootNavCtrl,
+                                        self.helpRootNavCtrl];
+    self.window.rootViewController = self.tabBarCtrl;
     [self.window makeKeyAndVisible];
     
-    [self advertisingPlatformInit];
     return YES;
 }
 
@@ -45,12 +88,7 @@
 {
     [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"navigation_bg.jpg"] forBarMetrics:UIBarMetricsDefault];
     
-    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor]];
-}
-
-- (void)advertisingPlatformInit
-{
-    
+    [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

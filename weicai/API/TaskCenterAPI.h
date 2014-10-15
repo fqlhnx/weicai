@@ -10,4 +10,15 @@
 
 @interface TaskCenterAPI : BaseRequest
 
+
+//获取用户所有积分
+- (void)getIntegral:(NSString*)userID
+            success:(void (^)(NSString *totalIntegral))success
+            failure:(void (^)(NSError *error))failure;
+
+//所有渠道列表
+- (void)getAllChannels:(void (^)(NSArray *channels))success failure:(void (^)(NSError*error))failure;
+
+- (void)getScrollContent:(void(^)(NSString *content,NSError *error))competion;
+
 @end

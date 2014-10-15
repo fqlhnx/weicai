@@ -255,6 +255,14 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
             
             break;
         }
+        case SVProgressHUDMaskTypeNone:{
+            //to do
+            break;
+        }
+        case SVProgressHUDMaskTypeClear:{
+            //to do
+            break;
+        }
     }
 }
 
@@ -283,7 +291,7 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
                                             context:NULL];
         } else {
             CGSize stringSize;
-            #ifdef __IPHONE_8_0
+            #ifdef __IPHONE_7_0
                 stringSize = [string sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:self.stringLabel.font.fontName size:self.stringLabel.font.pointSize]}];
             #else
                 stringSize = [string sizeWithFont:self.stringLabel.font constrainedToSize:CGSizeMake(200, 300)];
@@ -403,7 +411,7 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
 - (void)positionHUD:(NSNotification*)notification {
     
     CGFloat keyboardHeight;
-    double animationDuration;
+    double animationDuration = 0.;
     
     UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
     // no transforms applied to window in iOS 8, but only if compiled with iOS 8 sdk as base sdk, otherwise system supports old rotation logic.

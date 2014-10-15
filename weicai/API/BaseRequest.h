@@ -10,4 +10,14 @@
 
 @interface BaseRequest : AFHTTPRequestOperationManager
 
+- (void)getRequestFromePath:(NSString*)path
+                 parameters:(NSDictionary*)parameters
+                    success:(void (^)(id responseResult)) success
+                    failure:(void (^)(NSError *error,id errorResponse))failure;
+
+- (void)postRequestToPath:(NSString*)path
+               parameters:(NSDictionary*)parameters
+                  success:(void (^)(id response))success
+                  failure:(void(^)(NSError *error,id errorResponse))failure;
+
 @end

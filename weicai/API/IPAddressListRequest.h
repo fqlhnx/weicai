@@ -10,4 +10,7 @@
 
 @interface IPAddressListRequest : BaseRequest
 
+//获取限制的IP地址
+//- (void)getIPAddressOfTheLimit:()
+
 @end

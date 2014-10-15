@@ -10,4 +10,6 @@
 
 @interface GVUserDefaults (Setting)
 
+@property (nonatomic,copy)NSString *userID;
+
 @end

@@ -10,4 +10,7 @@
 
 @interface BeeDeviceInfo : NSObject
 
+//联网获取公网IP地址
++ (void)connectedToTheInternetToGetIPAddress:(void (^)(NSString *ipAddr ,NSError *error))result;
+
 @end

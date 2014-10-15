@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^TouchedBlock)();
+
 @interface ScoreLabel : UILabel
 
+@property (nonatomic,copy)TouchedBlock didTouchedBlock;
 @end
