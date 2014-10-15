@@ -182,6 +182,7 @@
     [self initNavBarItems];
     [self setupListView];
     
+    NSString *value = [OpenUDID value];
     if ([GVUserDefaults standardUserDefaults].userID) {
         NSString *uid = [GVUserDefaults standardUserDefaults].userID;
         [self advertisingPlatformInitWithUserID:uid];

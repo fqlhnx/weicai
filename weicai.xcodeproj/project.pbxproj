@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F628E35C19ECF8E000F4C959 /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F628E35B19ECF8E000F4C959 /* WPLib.framework */; };
 		F628E35F19ECFD6D00F4C959 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E35E19ECFD6D00F4C959 /* ChannelInfo.m */; };
 		F628E36919ECFF7200F4C959 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E36219ECFF7200F4C959 /* NSObject+RMArchivable.m */; };
 		F628E36A19ECFF7200F4C959 /* NSObject+RMCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E36419ECFF7200F4C959 /* NSObject+RMCopyable.m */; };
@@ -64,6 +63,7 @@
 		F63E9CBD19DE7B9900548AA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F63E9CB619DE7B9900548AA9 /* README.md */; };
 		F63E9CBE19DE7B9900548AA9 /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CB919DE7B9900548AA9 /* NSString+RENumberFormat.m */; };
 		F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */; };
+		F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65D46BA19EE94900020E92C /* WPLib.framework */; };
 		F663D7E919D7A19F002943D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7E819D7A19F002943D7 /* Foundation.framework */; };
 		F663D7EB19D7A19F002943D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */; };
 		F663D7ED19D7A19F002943D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EC19D7A19F002943D7 /* UIKit.framework */; };
@@ -227,7 +227,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F628E35B19ECF8E000F4C959 /* WPLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WPLib.framework; path = "../../../Users/liuhongnian/Downloads/积分墙准备/各大平台SDK/万普WAPS_IOS_2.0.1/WPLib.framework"; sourceTree = "<group>"; };
 		F628E35D19ECFD6D00F4C959 /* ChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfo.h; sourceTree = "<group>"; };
 		F628E35E19ECFD6D00F4C959 /* ChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelInfo.m; sourceTree = "<group>"; };
 		F628E36119ECFF7200F4C959 /* NSObject+RMArchivable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMArchivable.h"; sourceTree = "<group>"; };
@@ -339,6 +338,7 @@
 		F63E9CBA19DE7B9900548AA9 /* REFormattedNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFormattedNumberField.h; sourceTree = "<group>"; };
 		F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFormattedNumberField.m; sourceTree = "<group>"; };
 		F63E9CC019DE838E00548AA9 /* ADConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADConfig.h; sourceTree = "<group>"; };
+		F65D46BA19EE94900020E92C /* WPLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WPLib.framework; sourceTree = "<group>"; };
 		F663D7E519D7A19F002943D7 /* weicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F663D7E819D7A19F002943D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -561,8 +561,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F628E35C19ECF8E000F4C959 /* WPLib.framework in Frameworks */,
 				F6B1BFF319E907E400281631 /* libsqlite3.0.dylib in Frameworks */,
+				F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */,
 				F663D8AB19D958E8002943D7 /* CoreTelephony.framework in Frameworks */,
 				F663D88619D931A8002943D7 /* libz.dylib in Frameworks */,
 				F663D98619DA43FE002943D7 /* minizip64.a in Frameworks */,
@@ -813,7 +813,7 @@
 		F663D7E719D7A19F002943D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F628E35B19ECF8E000F4C959 /* WPLib.framework */,
+				F65D46BA19EE94900020E92C /* WPLib.framework */,
 				F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */,
 				F663D8AA19D958E8002943D7 /* CoreTelephony.framework */,
 				F663D88519D931A8002943D7 /* libz.dylib */,
@@ -1890,6 +1890,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"/Users/liuhongnian/Downloads/各大平台SDK/万普WAPS_IOS_2.0.1",
 					"/Users/liuhongnian/Downloads/积分墙准备/各大平台SDK/万普WAPS_IOS_2.0.1",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weicai/weicai-Prefix.pch";
@@ -1933,6 +1934,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 					"/Users/liuhongnian/Downloads/各大平台SDK/万普WAPS_IOS_2.0.1",
 					"/Users/liuhongnian/Downloads/积分墙准备/各大平台SDK/万普WAPS_IOS_2.0.1",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "weicai/weicai-Prefix.pch";
