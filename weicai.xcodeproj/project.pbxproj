@@ -65,6 +65,9 @@
 		F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */; };
 		F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65D46BA19EE94900020E92C /* WPLib.framework */; };
 		F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46BE19EEB53C0020E92C /* JHTickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F65D46C219EFF0EE0020E92C /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F65D46C019EFF0EE0020E92C /* icon_phone@2x.png */; };
+		F65D46C319EFF0EE0020E92C /* icon_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F65D46C119EFF0EE0020E92C /* icon_alipay@2x.png */; };
+		F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */; };
 		F663D7E919D7A19F002943D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7E819D7A19F002943D7 /* Foundation.framework */; };
 		F663D7EB19D7A19F002943D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */; };
 		F663D7ED19D7A19F002943D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EC19D7A19F002943D7 /* UIKit.framework */; };
@@ -342,6 +345,10 @@
 		F65D46BA19EE94900020E92C /* WPLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WPLib.framework; sourceTree = "<group>"; };
 		F65D46BD19EEB53C0020E92C /* JHTickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTickerView.h; sourceTree = "<group>"; };
 		F65D46BE19EEB53C0020E92C /* JHTickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTickerView.m; sourceTree = "<group>"; };
+		F65D46C019EFF0EE0020E92C /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_phone@2x.png"; path = "../../../../../../../../../Users/liuhongnian/Desktop/icon_phone@2x.png"; sourceTree = "<group>"; };
+		F65D46C119EFF0EE0020E92C /* icon_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_alipay@2x.png"; path = "../../../../../../../../../Users/liuhongnian/Desktop/icon_alipay@2x.png"; sourceTree = "<group>"; };
+		F65D46C519EFF6CE0020E92C /* NSString+BeeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BeeExtension.h"; sourceTree = "<group>"; };
+		F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BeeExtension.m"; sourceTree = "<group>"; };
 		F663D7E519D7A19F002943D7 /* weicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F663D7E819D7A19F002943D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -933,6 +940,8 @@
 		F663D83019D7EC00002943D7 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				F65D46C019EFF0EE0020E92C /* icon_phone@2x.png */,
+				F65D46C119EFF0EE0020E92C /* icon_alipay@2x.png */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -1429,6 +1438,8 @@
 				F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */,
 				F6DAA42C19E6290A00ADA84A /* BeeDeviceInfo.h */,
 				F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */,
+				F65D46C519EFF6CE0020E92C /* NSString+BeeExtension.h */,
+				F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */,
 			);
 			path = BeeSystem;
 			sourceTree = "<group>";
@@ -1594,6 +1605,7 @@
 				F663D94D19D9A795002943D7 /* _purple_left_cell.png in Resources */,
 				F663D93219D9A795002943D7 /* _green__info.png in Resources */,
 				F663D91919D9A795002943D7 /* _cell_head_new.png in Resources */,
+				F65D46C219EFF0EE0020E92C /* icon_phone@2x.png in Resources */,
 				F63E9CBD19DE7B9900548AA9 /* README.md in Resources */,
 				F663D94119D9A795002943D7 /* _orange_all_cell.png in Resources */,
 				F663D91319D9A795002943D7 /* _back.png in Resources */,
@@ -1637,6 +1649,7 @@
 				F663D92319D9A795002943D7 /* _yuanjiao.png in Resources */,
 				F663D95119D9A795002943D7 /* _red__bottom.png in Resources */,
 				F663D92719D9A795002943D7 /* _blue__info.png in Resources */,
+				F65D46C319EFF0EE0020E92C /* icon_alipay@2x.png in Resources */,
 				F663D92819D9A795002943D7 /* _blue__iphone_download.png in Resources */,
 				F663D93419D9A795002943D7 /* _green__titlebg.jpg in Resources */,
 				F663D93319D9A795002943D7 /* _green__iphone_download.png in Resources */,
@@ -1779,6 +1792,7 @@
 				F63E9CB219DE7A4300548AA9 /* REPresenceValidator.m in Sources */,
 				F63E9CBE19DE7B9900548AA9 /* NSString+RENumberFormat.m in Sources */,
 				F63E9C8919DE79E700548AA9 /* REPickerItem.m in Sources */,
+				F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
