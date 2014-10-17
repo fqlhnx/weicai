@@ -7,6 +7,8 @@
 //
 
 #import "PersonalCenterViewController.h"
+#import "IntegralDetailsViewController.h"
+#import "ExchangeDetailViewController.h"
 #import "TaskCenterAPI.h"
 #import "PersonalCenterAPI.h"
 #import "ServerConfig.h"
@@ -72,7 +74,7 @@
     [_personalCenterAPI getTodayIntegral:^(NSNumber *todayIntegral, NSError *error) {
         
         if (!error) {
-            _totalPoint.text = [NSString stringWithFormat:@"%d",todayIntegral.integerValue];
+            _totalPoint.text = [NSString stringWithFormat:@"%ld",(long)todayIntegral.integerValue];
             
         }
     }];
@@ -109,7 +111,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    __weak PersonalCenterViewController *weakSelf = self;
     //初始化列表
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
     RETableViewSection *oneSection = [RETableViewSection section];
@@ -118,9 +120,10 @@
     [oneSection addItem:[RETableViewItem itemWithTitle:@"收益明细"
                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                      selectionHandler:^(RETableViewItem *item)
-    {
-        [_personalCenterAPI integralDetail:_userID.text page:@"1"];
-        
+    {        
+        IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
+        integralDetailsVC.userid = _userID.text;
+        [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
         [item deselectRowAnimated:YES];
     }]];
     
@@ -128,7 +131,12 @@
                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                      selectionHandler:^(RETableViewItem *item)
     {
-        [_personalCenterAPI queryExchangeDetailWithUserID:@"tangwei" page:@"1"];
+//        [_personalCenterAPI queryExchangeDetailWithUserID:_userID.text page:@"1"];
+        ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
+        vc.userid = _userID.text;
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+        
+#warning test
         [item deselectRowAnimated:YES];
         
     }]];

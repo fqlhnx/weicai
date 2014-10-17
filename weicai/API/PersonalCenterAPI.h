@@ -15,9 +15,11 @@
 - (void)getTodayIntegral:(void(^)(NSNumber *todayIntegral,NSError *error))competion;
 
 //收益明细
-- (void)integralDetail:(NSString*)userID page:(NSString*)page;
+- (void)integralDetail:(NSString*)userID
+                  page:(NSString*)page
+               success:(void(^)(NSArray* results))success failed:(void (^)(NSError* error))failed;
 //兑换详情
-- (void)queryExchangeDetailWithUserID:(NSString*)uID page:(NSString*)page;
+- (void)queryExchangeDetailWithUserID:(NSString*)uID page:(NSString*)page success:(void(^)(NSArray *results))success failed:(void(^)(NSError *error))failed;
 
 - (void)getNewsDescription;
 

@@ -7,6 +7,9 @@
 //
 
 #import "PersonalCenterAPI.h"
+#import "RMMapper.h"
+#import "TaskInfo.h"
+#import "Exchange.h"
 
 NSString *const kTodayIntegralURL = @"Integral/public/index.php/api/getTodayIntegral";
 NSString *const kintegralDetailURL = @"Integral/public/index.php/api/getIntegralDetail";
@@ -30,32 +33,56 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
     }];
 }
 
-- (void)queryExchangeDetailWithUserID:(NSString *)uID page:(NSString *)page
+- (void)queryExchangeDetailWithUserID:(NSString *)uID
+                                 page:(NSString *)page
+                              success:(void (^)(NSArray *))success
+                               failed:(void (^)(NSError *))failed
 {
     NSDictionary *dic = @{@"page": page,
                           @"username":uID};
     [super getRequestFromePath:kqueryIntegralDetailURL
                     parameters:dic success:^(id responseResult) {
                         
-                        //
+                        NSArray *response = responseResult[@"message"];
+                        NSMutableArray *results = [NSMutableArray array];
+                        
+                        for (NSDictionary *obj in response) {
+                            Exchange *exchangeObj = [RMMapper objectWithClass:[Exchange class] fromDictionary:obj];
+                            [results addObject:exchangeObj];
+                        }
+                        success(results);
                         
                     } failure:^(NSError *error, id errorResponse) {
                         
+                        failed(error);
                     }];
 }
 
-- (void)integralDetail:(NSString *)userID page:(NSString *)page
+- (void)integralDetail:(NSString *)userID
+                  page:(NSString *)page
+               success:(void (^)(NSArray *))success
+                failed:(void (^)(NSError *))failed
 {
-//    ?page=1&username=tangwei
+
     NSDictionary *dic = @{@"page": page,
                           @"username":userID};
     [super getRequestFromePath:kintegralDetailURL
                     parameters:dic
                        success:^(id responseResult) {
-                           
+            
+                           NSArray *results = responseResult[@"message"];
+                           if ([results isKindOfClass:[NSArray class]]) {
+                               
+                               NSMutableArray *arr = [NSMutableArray array];
+                               for (NSDictionary *taskDic in results) {
+                                   TaskInfo *taskObj = [RMMapper objectWithClass:[TaskInfo class] fromDictionary:taskDic];
+                                   [arr addObject:taskObj];
+                               }
+                               success(arr);
+                           }
                            
                        } failure:^(NSError *error, id errorResponse) {
-                           
+                           failed(error);
                        }];
     
 }

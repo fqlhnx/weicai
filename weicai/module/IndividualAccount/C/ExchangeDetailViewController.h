@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasePhoneViewController.h"
+@interface ExchangeDetailViewController : BasePhoneViewController
 
-@interface ExchangeDetailViewController : UIViewController
+@property (nonatomic,copy)NSString *userid;
 
 @end

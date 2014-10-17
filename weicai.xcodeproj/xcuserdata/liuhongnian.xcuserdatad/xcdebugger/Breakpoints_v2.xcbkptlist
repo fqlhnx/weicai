@@ -9,52 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weicai/API/PersonalCenterAPI.m"
-            timestampString = "434960626.734515"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-queryExchangeDetailWithUserID:page:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__56-[PersonalCenterAPI queryExchangeDetailWithUserID:page:]_block_invoke"
-                  moduleName = "weicai"
-                  urlString = "file:///Users/liuhongnian/Desktop/weicai/weicai/API/PersonalCenterAPI.m"
-                  timestampString = "435207335.138376"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "38">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__56-[PersonalCenterAPI queryExchangeDetailWithUserID:page:]_block_invoke_2"
-                  moduleName = "weicai"
-                  urlString = "file:///Users/liuhongnian/Desktop/weicai/weicai/API/PersonalCenterAPI.m"
-                  timestampString = "435207335.138626"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "weicai/thirdParts/BeeSystem/BeeDeviceInfo.m"
             timestampString = "434515904.45281"
             startingColumnNumber = "9223372036854775807"
@@ -72,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weicai/API/PersonalCenterAPI.m"
-            timestampString = "434960752.512809"
+            timestampString = "435224249.399939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-getUserID:competion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -88,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weicai/API/PersonalCenterAPI.m"
-            timestampString = "434960780.074363"
+            timestampString = "435224249.399939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-getUserID:competion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -103,76 +57,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weicai/API/PersonalCenterAPI.m"
-            timestampString = "435029023.794147"
+            filePath = "weicai/module/IndividualAccount/C/ExchangeDetailViewController.m"
+            timestampString = "435224322.708822"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "-getUserID:competion:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-configListViewWithExchangeRecords:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weicai/module/TaskCenter/C/TaskListViewController.m"
-            timestampString = "435074919.070679"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-advertisingPlatformInitWithUserID:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weicai/API/PersonalCenterAPI.m"
-            timestampString = "435207414.663241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-integralDetail:page:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[PersonalCenterAPI integralDetail:page:]_block_invoke"
-                  moduleName = "weicai"
-                  urlString = "file:///Users/liuhongnian/Desktop/weicai/weicai/API/PersonalCenterAPI.m"
-                  timestampString = "435207414.673671"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "38">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__41-[PersonalCenterAPI integralDetail:page:]_block_invoke_2"
-                  moduleName = "weicai"
-                  urlString = "file:///Users/liuhongnian/Desktop/weicai/weicai/API/PersonalCenterAPI.m"
-                  timestampString = "435207414.673952"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,11 +8,17 @@
 
 #import "ExchangeCenterViewController.h"
 #import "ExchangeCenterAPI.h"
+#import "TaskCenterAPI.h"
 #import "ServerConfig.h"
 
 #import "RETableViewManager.h"
 #import "MarqueeLabel.h"
 #import "NSString+BeeExtension.h"
+#import "SVProgressHUD.h"
+#import "BeeDeviceInfo.h"
+#import "GVUserDefaults+Setting.h"
+
+static NSString *ipAddress;
 
 @interface ExchangeCenterViewController ()
 
@@ -25,6 +31,7 @@
 @property(nonatomic,strong) RETableViewManager *tableViewManger;
 
 @property(nonatomic,strong)ExchangeCenterAPI *exchangeAPI;
+@property(nonatomic,strong)TaskCenterAPI *taskCenterAPI;
 
 @end
 
@@ -38,6 +45,7 @@
         self.title = @"兑换中心";
         
         _exchangeAPI = [[ExchangeCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+        _taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
     }
     return self;
 }
@@ -66,7 +74,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //刷新用户积分数额
-
+    [self refreshUserIntegral];
     //查看系统前50名兑换信息
     
     self.tableViewManger = [[RETableViewManager alloc] initWithTableView:self.listView];
@@ -84,6 +92,12 @@
                                                 fromIP:@"10.1.89.3"
                                               integral:100
                                                 amount:100];
+    
+    //获取ip地址
+    [BeeDeviceInfo connectedToTheInternetToGetIPAddress:^(NSString *ipAddr, NSError *error) {
+        ipAddress = ipAddr;
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,9 +112,17 @@
 {
     NSString *aliPayAccount = _aliPayAccountField.text;
     //是否为空
+    if ([aliPayAccount isEmpty]) {
+        [SVProgressHUD showErrorWithStatus:@"支付宝账户名不能为空"];
+        return;
+    }
     
     //不为空的话，查询积分看是否满足兑换条件
-    
+    [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
+                                                target:aliPay
+                                                fromIP:ipAddress
+                                              integral:1
+                                                amount:1];
     //条件满足调用积分兑换API
     
 }
@@ -124,4 +146,17 @@
 }
 
 #pragma mark prive methods
+
+- (void)refreshUserIntegral
+{
+    NSString *userID = [GVUserDefaults standardUserDefaults].userID;
+    [_taskCenterAPI getIntegral:userID success:^(NSString *totalIntegral) {
+        
+        _userIntegral.text = totalIntegral;
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+
 @end

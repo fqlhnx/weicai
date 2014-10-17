@@ -63,6 +63,12 @@
 		F63E9CBD19DE7B9900548AA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F63E9CB619DE7B9900548AA9 /* README.md */; };
 		F63E9CBE19DE7B9900548AA9 /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CB919DE7B9900548AA9 /* NSString+RENumberFormat.m */; };
 		F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */; };
+		F658BDF319F0DE2C00229373 /* IntegralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F658BDF119F0DE2C00229373 /* IntegralDetailsViewController.m */; };
+		F658BDF419F0DE2C00229373 /* IntegralDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F658BDF219F0DE2C00229373 /* IntegralDetailsViewController.xib */; };
+		F658BDF719F0DEC900229373 /* TaskInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F658BDF619F0DEC900229373 /* TaskInfo.m */; };
+		F658BDFA19F0F42700229373 /* Exchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F658BDF919F0F42700229373 /* Exchange.m */; };
+		F658BDFE19F0F4D600229373 /* ExchangeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F658BDFC19F0F4D600229373 /* ExchangeDetailViewController.m */; };
+		F658BDFF19F0F4D600229373 /* ExchangeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F658BDFD19F0F4D600229373 /* ExchangeDetailViewController.xib */; };
 		F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65D46BA19EE94900020E92C /* WPLib.framework */; };
 		F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46BE19EEB53C0020E92C /* JHTickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */; };
@@ -343,6 +349,16 @@
 		F63E9CBA19DE7B9900548AA9 /* REFormattedNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFormattedNumberField.h; sourceTree = "<group>"; };
 		F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFormattedNumberField.m; sourceTree = "<group>"; };
 		F63E9CC019DE838E00548AA9 /* ADConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADConfig.h; sourceTree = "<group>"; };
+		F658BDF019F0DE2C00229373 /* IntegralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegralDetailsViewController.h; sourceTree = "<group>"; };
+		F658BDF119F0DE2C00229373 /* IntegralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegralDetailsViewController.m; sourceTree = "<group>"; };
+		F658BDF219F0DE2C00229373 /* IntegralDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntegralDetailsViewController.xib; sourceTree = "<group>"; };
+		F658BDF519F0DEC900229373 /* TaskInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfo.h; sourceTree = SOURCE_ROOT; };
+		F658BDF619F0DEC900229373 /* TaskInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfo.m; sourceTree = SOURCE_ROOT; };
+		F658BDF819F0F42700229373 /* Exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exchange.h; sourceTree = SOURCE_ROOT; };
+		F658BDF919F0F42700229373 /* Exchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exchange.m; sourceTree = SOURCE_ROOT; };
+		F658BDFB19F0F4D600229373 /* ExchangeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeDetailViewController.h; sourceTree = "<group>"; };
+		F658BDFC19F0F4D600229373 /* ExchangeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeDetailViewController.m; sourceTree = "<group>"; };
+		F658BDFD19F0F4D600229373 /* ExchangeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeDetailViewController.xib; sourceTree = "<group>"; };
 		F65D46BA19EE94900020E92C /* WPLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WPLib.framework; sourceTree = "<group>"; };
 		F65D46BD19EEB53C0020E92C /* JHTickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTickerView.h; sourceTree = "<group>"; };
 		F65D46BE19EEB53C0020E92C /* JHTickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTickerView.m; sourceTree = "<group>"; };
@@ -1015,6 +1031,12 @@
 				F698A1A519F0BB9200EF30BA /* PersonalCenterViewController.h */,
 				F698A1A619F0BB9200EF30BA /* PersonalCenterViewController.m */,
 				F698A1A719F0BB9200EF30BA /* PersonalCenterViewController.xib */,
+				F658BDF019F0DE2C00229373 /* IntegralDetailsViewController.h */,
+				F658BDF119F0DE2C00229373 /* IntegralDetailsViewController.m */,
+				F658BDF219F0DE2C00229373 /* IntegralDetailsViewController.xib */,
+				F658BDFB19F0F4D600229373 /* ExchangeDetailViewController.h */,
+				F658BDFC19F0F4D600229373 /* ExchangeDetailViewController.m */,
+				F658BDFD19F0F4D600229373 /* ExchangeDetailViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1022,6 +1044,10 @@
 		F663D83919D7EC00002943D7 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				F658BDF519F0DEC900229373 /* TaskInfo.h */,
+				F658BDF619F0DEC900229373 /* TaskInfo.m */,
+				F658BDF819F0F42700229373 /* Exchange.h */,
+				F658BDF919F0F42700229373 /* Exchange.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1623,6 +1649,7 @@
 				F663D93B19D9A795002943D7 /* _orange__bottom.png in Resources */,
 				F698A19E19F0B8CE00EF30BA /* TaskListViewController.xib in Resources */,
 				F663D93A19D9A795002943D7 /* _green_right_view.png in Resources */,
+				F658BDFF19F0F4D600229373 /* ExchangeDetailViewController.xib in Resources */,
 				F663D88119D930B2002943D7 /* DomobOfferWallBundle.bundle in Resources */,
 				F663D7F319D7A19F002943D7 /* InfoPlist.strings in Resources */,
 				F663D94719D9A795002943D7 /* _purple__download.png in Resources */,
@@ -1669,6 +1696,7 @@
 				F663D92119D9A795002943D7 /* _title_1.jpg in Resources */,
 				F63E9C9419DE79E700548AA9 /* RETableViewManager.bundle in Resources */,
 				F698A19819F0B72200EF30BA /* icon_phone@2x.png in Resources */,
+				F658BDF419F0DE2C00229373 /* IntegralDetailsViewController.xib in Resources */,
 				F663D94819D9A795002943D7 /* _purple__info.png in Resources */,
 				F663D97919DA43B2002943D7 /* MiiLogo@2x.png in Resources */,
 				F663D95819D9A795002943D7 /* _red_all_cell11.png in Resources */,
@@ -1733,6 +1761,7 @@
 				F63E9C9019DE79E700548AA9 /* REPlaceholderTextView.m in Sources */,
 				F63E9C7719DE79E700548AA9 /* RETableViewFloatCell.m in Sources */,
 				F6DAA3D819E10FCC00ADA84A /* ScoreLabel.m in Sources */,
+				F658BDF719F0DEC900229373 /* TaskInfo.m in Sources */,
 				F6DAA41A19E5221900ADA84A /* AFHTTPRequestOperationManager.m in Sources */,
 				F63E9C7519DE79E700548AA9 /* RETableViewCreditCardCell.m in Sources */,
 				F6DAA42119E5221900ADA84A /* AFURLSessionManager.m in Sources */,
@@ -1765,6 +1794,7 @@
 				F628E36B19ECFF7200F4C959 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				F628E37319ED02A700F4C959 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				F63E9CB119DE7A4300548AA9 /* RELengthValidator.m in Sources */,
+				F658BDFA19F0F42700229373 /* Exchange.m in Sources */,
 				F63E9C8A19DE79E700548AA9 /* RERadioItem.m in Sources */,
 				F63E9C7D19DE79E700548AA9 /* RETableViewPickerCell.m in Sources */,
 				F63E9CAD19DE7A4300548AA9 /* NSError+REValidation.m in Sources */,
@@ -1783,10 +1813,12 @@
 				F6F9AD8A19E77A6B001AAF95 /* OpenUDID.m in Sources */,
 				F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */,
 				F6DAA41E19E5221900ADA84A /* AFURLConnectionOperation.m in Sources */,
+				F658BDFE19F0F4D600229373 /* ExchangeDetailViewController.m in Sources */,
 				F6DAA3DF19E1558700ADA84A /* SVProgressHUD.m in Sources */,
 				F698A1A819F0BB9200EF30BA /* PersonalCenterViewController.m in Sources */,
 				F63E9C8D19DE79E700548AA9 /* NSString+RETableViewManagerAdditions.m in Sources */,
 				F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */,
+				F658BDF319F0DE2C00229373 /* IntegralDetailsViewController.m in Sources */,
 				F63E9C8719DE79E700548AA9 /* REMultipleChoiceItem.m in Sources */,
 				F63E9C9719DE79E700548AA9 /* RETableViewSection.m in Sources */,
 				F6DAA41F19E5221900ADA84A /* AFURLRequestSerialization.m in Sources */,

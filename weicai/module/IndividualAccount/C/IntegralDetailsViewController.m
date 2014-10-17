@@ -7,8 +7,23 @@
 //
 
 #import "IntegralDetailsViewController.h"
+#import "TaskInfo.h"
+#import "PersonalCenterAPI.h"
+#import "ServerConfig.h"
+#import "TaskInfo.h"
+
+#import "SVPullToRefresh.h"
+#import "RETableViewManager.h"
 
 @interface IntegralDetailsViewController ()
+
+@property (nonatomic,weak) IBOutlet UITableView *listView;
+@property (nonatomic,strong)RETableViewManager *tableViewMager;
+
+@property (nonatomic,strong)PersonalCenterAPI *personCenterAPI;
+
+@property (nonatomic,strong)NSMutableArray *taskContents;
+
 
 @end
 
@@ -19,6 +34,9 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"任务详情";
+        
+        _taskContents = [NSMutableArray array];
     }
     return self;
 }
@@ -27,6 +45,31 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.personCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+    
+    self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView];
+    
+    __weak IntegralDetailsViewController *weakSelf = self;
+    [self.listView addPullToRefreshWithActionHandler:^{
+    
+        NSAssert(_userid, @"user id null");
+        [weakSelf.personCenterAPI integralDetail:_userid page:@"1" success:^(NSArray *results) {
+            
+            if (results.count > 0) {
+                [_taskContents removeAllObjects];
+                [_taskContents addObjectsFromArray:results];
+                [weakSelf configListViewWithTasks:_taskContents];
+                
+                [weakSelf.listView.pullToRefreshView stopAnimating];
+            }
+        } failed:^(NSError *error) {
+            
+        }];
+        
+    }];
+    
+    //开始刷新
+    [self.listView triggerPullToRefresh];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +78,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark prive
+
+- (void)configListViewWithTasks:(NSArray *)tasks
+{
+    [self.tableViewMager removeAllSections];
+    
+    RETableViewSection *section = [RETableViewSection section];
+    [self.tableViewMager addSection:section];
+    
+    //循环配置cell
+    for (TaskInfo *taskObj in tasks) {
+        
+        RETableViewItem * item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@ %@积分",taskObj.ad,taskObj.point]];
+        [section addItem:item];
+    }
+    
+    [self.listView reloadData];
+    
+}
 @end

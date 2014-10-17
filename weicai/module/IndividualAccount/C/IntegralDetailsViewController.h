@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BasePhoneViewController.h"
 
-@interface IntegralDetailsViewController : UIViewController
+@interface IntegralDetailsViewController :BasePhoneViewController
+
+@property (nonatomic,strong) NSString *userid;
 
 @end
