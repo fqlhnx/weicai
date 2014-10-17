@@ -11,6 +11,7 @@
 #import "TaskCenterAPI.h"
 #import "ServerConfig.h"
 
+#import "SVPullToRefresh.h"
 #import "RETableViewManager.h"
 #import "MarqueeLabel.h"
 #import "NSString+BeeExtension.h"
@@ -76,7 +77,10 @@ static NSString *ipAddress;
     //刷新用户积分数额
     [self refreshUserIntegral];
     //查看系统前50名兑换信息
-    
+    [self.listView addPullToRefreshWithActionHandler:^{
+        
+        [_exchangeAPI getTheLatestExchangeRecords];
+    }];
     self.tableViewManger = [[RETableViewManager alloc] initWithTableView:self.listView];
     RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"最新兑换记录"];
     [self.tableViewManger addSection:section];

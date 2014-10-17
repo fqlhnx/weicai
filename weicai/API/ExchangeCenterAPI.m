@@ -9,6 +9,7 @@
 #import "ExchangeCenterAPI.h"
 
 NSString *const kExchangeRequestURL = @"Integral/public/index.php/api/exchange";
+NSString *const kLastExchangeListURL = @"Integral/public/index.php/api/getExchangeList";
 
 @implementation ExchangeCenterAPI
 
@@ -28,6 +29,17 @@ NSString *const kExchangeRequestURL = @"Integral/public/index.php/api/exchange";
                     parameters:dic
                        success:^(id responseResult) {
                            
+        
+    } failure:^(NSError *error, id errorResponse) {
+        
+    }];
+}
+
+- (void)getTheLatestExchangeRecords
+{
+//    ?state=tangwei
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"tangwei",@"state", nil];
+    [super getRequestFromePath:kLastExchangeListURL parameters:dic success:^(id responseResult) {
         
     } failure:^(NSError *error, id errorResponse) {
         

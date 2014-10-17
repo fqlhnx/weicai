@@ -30,4 +30,7 @@ typedef  NS_ENUM(NSUInteger, exchangeType){
                                     integral:(NSInteger)number
                                       amount:(NSUInteger)amount;
 
+//http://www.integral.com/index.php/api/getExchangeList?state=tangwei
+- (void)getTheLatestExchangeRecords;
+
 @end
