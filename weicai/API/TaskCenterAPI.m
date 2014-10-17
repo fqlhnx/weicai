@@ -7,6 +7,8 @@
 //
 
 #import "TaskCenterAPI.h"
+#import "RMMapper.h"
+#import "ScrollContentInfo.h"
 
 NSString *const kgetChannelsURLPath = @"Integral/public/index.php/api/getChannels";
 NSString *const kUserIntegralURLPath = @"Integral/public/index.php/api/getUserIntegralSum";
@@ -21,7 +23,12 @@ NSString *const kgetScrollContentURL = @"Integral/public/index.php/api/getScroll
     NSDictionary *dic = @{@"member_id": userID};
     [super getRequestFromePath:kUserIntegralURLPath
                     parameters:dic success:^(id responseResult) {
-                        success(responseResult[@"message"]);
+                        NSString *score = responseResult[@"message"];
+                        if ([score isEqual:[NSNull null]]) {
+                            success(@"0");
+                        }else{
+                            success(score);
+                        }
         
     } failure:^(NSError *error, id errorResponse) {
         failure(error);
@@ -49,15 +56,22 @@ NSString *const kgetScrollContentURL = @"Integral/public/index.php/api/getScroll
     }];
 }
 
-- (void)getScrollContent:(void (^)(NSString *, NSError *))competion
+- (void)getScrollContent:(void(^)(NSArray *contentsArr,NSError *error))competion
 {
-//    [super getRequestFromePath:kgetScrollContentURL
-//                    parameters:nil
-//                       success:^(id responseResult) {
-//                           competion()
-//                       } failure:^(NSError *error, id errorResponse) {
-//                           <#code#>
-//                       }];
+    [super getRequestFromePath:kgetScrollContentURL
+                    parameters:nil
+                       success:^(id responseResult) {
+                        
+                           NSMutableArray *strings = [NSMutableArray array];
+                           for (NSDictionary *object in responseResult) {
+                               ScrollContentInfo *content = [RMMapper objectWithClass:[ScrollContentInfo class] fromDictionary:object];
+                               
+                               [strings addObject:content.scroll_content];
+                           }
+                           competion(strings,nil);
+                       } failure:^(NSError *error, id errorResponse) {
+                           
+                       }];
 }
 
 @end

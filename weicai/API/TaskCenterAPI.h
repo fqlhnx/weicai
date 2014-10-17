@@ -19,6 +19,6 @@
 //所有渠道列表
 - (void)getAllChannels:(void (^)(NSArray *channels))success failure:(void (^)(NSError*error))failure;
 
-- (void)getScrollContent:(void(^)(NSString *content,NSError *error))competion;
+- (void)getScrollContent:(void(^)(NSArray *contentsArr,NSError *error))competion;
 
 @end

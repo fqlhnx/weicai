@@ -19,6 +19,16 @@
 //"sub_name" = ss;
 //"total_integral" = 10001;
 
+typedef enum : NSUInteger {
+    ChuKongPlatform = 11,
+    WanPuPlatform = 10,
+    DianRuPlatform = 12,
+    AnWoPlatform = 9,
+    YouMiPlatform = 8,
+    MiDiPlatform = 7,
+    DuoMengPlatform = 6,
+} PlatformName;
+
 
 @interface ChannelInfo : NSObject
 

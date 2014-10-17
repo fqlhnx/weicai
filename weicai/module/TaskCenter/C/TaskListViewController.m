@@ -35,7 +35,7 @@
 #import "GVUserDefaults+Setting.h"
 #import "JHTickerView.h"
 
-@interface TaskListViewController ()<DMOfferWallManagerDelegate,MyOfferAPIDelegate,OfferWallDelegate>
+@interface TaskListViewController ()<DMOfferWallManagerDelegate,MyOfferAPIDelegate,OfferWallDelegate,RETableViewManagerDelegate>
 
 @property (nonatomic,weak)IBOutlet UITableView *listView;
 @property (nonatomic,weak)IBOutlet JHTickerView *scrollLabel;
@@ -107,32 +107,44 @@
     [ChanceAd setUserInfo:userID];
     //安沃
     ZKcmoneOWSetKeywords(@[userID]);
+    
 }
+
 
 - (void)initNavBarItems
 {
-    self.scoreLabel = [[ScoreLabel alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
-    self.scoreLabel.didTouchedBlock = ^()
-    {
-        NSLog(@"label touched");
-        //刷新积分
+    NSString *userID = [GVUserDefaults standardUserDefaults].userID;
+    
+    [_taskCenterRequest getIntegral:userID success:^(NSString *totalIntegral) {
         
+        self.scoreLabel = [[ScoreLabel alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
+        self.scoreLabel.didTouchedBlock = ^()
+        {
+            NSLog(@"label touched");
+            //刷新积分
+        };
+        self.scoreLabel.text = [NSString stringWithFormat:@"%@积分",totalIntegral];
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.scoreLabel ];
+        self.navigationItem.rightBarButtonItem = rightItem;
+
         
-    };
-    self.scoreLabel.text = @"";
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.scoreLabel ];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    } failure:^(NSError *error) {
+        
+    }];
+    
 }
 
 - (void)setupScrollLabel
 {
-    self.scrollLabel.tickerSpeed = 50.;
+    self.scrollLabel.tickerSpeed = 30.;
     self.scrollLabel.direction = JHTickerDirectionLTR;
+    [self.scrollLabel start];
 }
 
 - (void)setupListView
 {
-    
+    self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView delegate:nil];
+
     __weak TaskListViewController *weakSelf = self;
     
     [self.listView addPullToRefreshWithActionHandler:^{
@@ -145,7 +157,12 @@
                 RMMapper *channelObj = [RMMapper objectWithClass:[ChannelInfo class] fromDictionary:channel];
                 [channelArray addObject:channelObj];
             }
-            weakSelf.allChannels = channelArray;
+            weakSelf.allChannels = [channelArray copy];
+            
+            [weakSelf configListView];
+            
+            [weakSelf.listView.pullToRefreshView stopAnimating];
+
             
         } failure:^(NSError *error) {
             
@@ -164,6 +181,8 @@
         
         [GVUserDefaults standardUserDefaults].userID = uID;
         [weakSelf advertisingPlatformInitWithUserID:uID];
+        
+        [self initNavBarItems];
     }];
 }
 
@@ -179,103 +198,35 @@
     [super viewDidLoad];
     
     [self setupScrollLabel];
-    [self initNavBarItems];
     [self setupListView];
     
     if ([GVUserDefaults standardUserDefaults].userID) {
+        
         NSString *uid = [GVUserDefaults standardUserDefaults].userID;
         [self advertisingPlatformInitWithUserID:uid];
+        [self initNavBarItems];
+        
+        [self getuserID];
     }else{
         [self getuserID];
     }
+    
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     
     //刷新渠道列表
-    
+    [self.listView triggerPullToRefresh];
     //定时获取需要滚动显示的消息
     [self updateScrollLabelContent];
-    [NSTimer timerWithTimeInterval:5.f
-                            target:self
-                          selector:@selector(updateScrollLabelContent)
-                          userInfo:nil repeats:YES];
-    
-    
-    //配置tableview
-    self.tableViewMager = [[RETableViewManager alloc]initWithTableView:self.listView];
-    RETableViewSection *section = [RETableViewSection section];
-    [self.tableViewMager addSection:section];
-    
-    __weak TaskListViewController *weakSelf = self;
-    //多盟
-    [section addItem:[RETableViewItem itemWithTitle:@"多盟积分墙"
-                                     accessoryType: UITableViewCellAccessoryDisclosureIndicator
-                                  selectionHandler:^(RETableViewItem *item)
-    {
-        //弹出积分墙
-        [_duoMengOfferWall presentOfferWallWithViewController:self type:eDMOfferWallTypeList];
 
-    }]];
+    [NSTimer scheduledTimerWithTimeInterval:60.f
+                                     target:self
+                                   selector:@selector(updateScrollLabelContent)
+                                   userInfo:nil
+                                    repeats:YES];
     
-    //安沃积分
-    [section addItem:[RETableViewItem itemWithTitle:@"安沃积分墙"
-                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                   selectionHandler:^(RETableViewItem *item)
-    {
-        ZKcmoneOWPresentZKcmtwo(anwoPID, weakSelf);
-        
-    }]];
     
-    //you mi
-    [section addItem:[RETableViewItem itemWithTitle:@"有米积分墙"
-                                     accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                  selectionHandler:^(RETableViewItem *item) {
-                                      
-                                      
-                                      [YouMiWall showOffers:YES
-                                               didShowBlock:^{
-                                          
-                                                   
-                                      } didDismissBlock:^{
-                                          
-                                      }];
-                                  }]];
-    
-    //dian ru
-    [section addItem:[RETableViewItem itemWithTitle:@"点入积分墙"
-                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                   selectionHandler:^(RETableViewItem *item) {
-                                       
-                                       [OfferWall showOfferWall:weakSelf];
-                                       
-                                   }]];
-    
-    // midi
-    
-    [section addItem:[RETableViewItem itemWithTitle:@"米迪"
-                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                   selectionHandler:^(RETableViewItem *item)
-    {
-//        //open wall
-        [MyOfferAPI showAppOffers:weakSelf withDelegate:self];
-    }]];
-    
-    //万普
-    [section addItem:[RETableViewItem itemWithTitle:@"万普积分广告"
-                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                   selectionHandler:^(RETableViewItem *item) {
-                                       
-                                       [AppConnect showList:weakSelf];
-                                   }]];
-    
-    //触控
-    [section addItem:[RETableViewItem itemWithTitle:@"触控积分墙"
-                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                   selectionHandler:^(RETableViewItem *item) {
-                                       
-                                       [[CSAppZone sharedAppZone]showAppZoneWithScale:0.9];
-                                   }]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -316,12 +267,120 @@
 
 #pragma mark prive method
 
+- (void)configListView
+{
+    RETableViewSection *section = [RETableViewSection section];
+    
+    for (ChannelInfo *channel in self.allChannels)
+    {
+        NSString *isDisplay = channel.is_display;
+        NSString *channelName = channel.channel_name;
+        NSString *subName = channel.sub_name;
+        
+        __weak TaskListViewController *weakSelf = self;
+        
+        if ([isDisplay isEqualToString:@"1"])
+        {
+            NSInteger channelID = channel.id.integerValue;
+            switch (channelID) {
+                case ChuKongPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName
+                                                             accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                                                                 [[CSAppZone sharedAppZone]showAppZoneWithScale:0.9];
+                                                             }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    break;
+                }
+                case WanPuPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        [AppConnect showList:weakSelf];
+                    }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    break;
+                }
+                case DianRuPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        [OfferWall showOfferWall:weakSelf];
+                    }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    break;
+                }
+                case AnWoPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        ZKcmoneOWPresentZKcmtwo(anwoPID, weakSelf);
+                    }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+
+                    break;
+                }
+                case YouMiPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        [YouMiWall showOffers:YES didShowBlock:^{
+                            
+                        } didDismissBlock:^{
+                            
+                        }];
+                    }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    break;
+                }
+                case MiDiPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        [MyOfferAPI showAppOffers:weakSelf withDelegate:self];
+                    }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    break;
+                }
+                case DuoMengPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        [_duoMengOfferWall presentOfferWallWithViewController:weakSelf type:eDMOfferWallTypeList];
+                    }];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    break;
+                }
+                default:
+                {
+                    NSLog(@"未知的渠道");
+                    break;
+                }
+            }
+        }else{
+            break;
+        }
+            
+    }
+    
+    [self.tableViewMager removeAllSections];
+    [self.tableViewMager addSection:section];
+
+    [self.listView reloadData];
+}
+
 - (void)updateScrollLabelContent
 {
     //获取最新的滚动消息内容
-    self.scrollLabel.tickerStrings = @[@"sljdalfj"];
-    [self.scrollLabel start];
+    [self.taskCenterRequest getScrollContent:^(NSArray *contents, NSError *error) {
+        self.scrollLabel.tickerStrings = contents;
+        
+    }];
     //跟新滚动标签内容
+    [self.scrollLabel resume];
+    
+
 }
 
 @end

@@ -80,8 +80,6 @@
 		F663D80E19D7A19F002943D7 /* weicaiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D80D19D7A19F002943D7 /* weicaiTests.m */; };
 		F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D84419D7EE86002943D7 /* BasePhoneViewController.m */; };
 		F663D84719D7EE86002943D7 /* BasePhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F663D84519D7EE86002943D7 /* BasePhoneViewController.xib */; };
-		F663D84C19D7EF56002943D7 /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D84A19D7EF56002943D7 /* TaskListViewController.m */; };
-		F663D84D19D7EF56002943D7 /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F663D84B19D7EF56002943D7 /* TaskListViewController.xib */; };
 		F663D85119D7EFB5002943D7 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D84F19D7EFB5002943D7 /* PersonalCenterViewController.m */; };
 		F663D85219D7EFB5002943D7 /* PersonalCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F663D85019D7EFB5002943D7 /* PersonalCenterViewController.xib */; };
 		F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D85419D7EFC5002943D7 /* HelpViewController.m */; };
@@ -195,6 +193,10 @@
 		F695DD0919EE4E6800E82EAE /* IPAddressListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */; };
 		F698A19719F0B72200EF30BA /* icon_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F698A19519F0B72200EF30BA /* icon_alipay@2x.png */; };
 		F698A19819F0B72200EF30BA /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F698A19619F0B72200EF30BA /* icon_phone@2x.png */; };
+		F698A19D19F0B8CE00EF30BA /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A19B19F0B8CE00EF30BA /* TaskListViewController.m */; };
+		F698A19E19F0B8CE00EF30BA /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F698A19C19F0B8CE00EF30BA /* TaskListViewController.xib */; };
+		F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A1A019F0B9D000EF30BA /* TaskCenterAPI.m */; };
+		F698A1A419F0BA3B00EF30BA /* ScrollContentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A1A319F0BA3B00EF30BA /* ScrollContentInfo.m */; };
 		F6B1BFF319E907E400281631 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */; };
 		F6B1BFF519E9089D00281631 /* libChanceAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B1BFF419E9089D00281631 /* libChanceAd.a */; };
 		F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3D419E1056400ADA84A /* MarqueeLabel.m */; };
@@ -202,7 +204,6 @@
 		F6DAA3DE19E1558700ADA84A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F6DAA3DB19E1558700ADA84A /* SVProgressHUD.bundle */; };
 		F6DAA3DF19E1558700ADA84A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3DD19E1558700ADA84A /* SVProgressHUD.m */; };
 		F6DAA3FF19E5180700ADA84A /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3FE19E5180700ADA84A /* BaseRequest.m */; };
-		F6DAA40219E51B8800ADA84A /* TaskCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA40119E51B8800ADA84A /* TaskCenterAPI.m */; };
 		F6DAA41919E5221900ADA84A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA40519E5221900ADA84A /* AFHTTPRequestOperation.m */; };
 		F6DAA41A19E5221900ADA84A /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA40719E5221900ADA84A /* AFHTTPRequestOperationManager.m */; };
 		F6DAA41B19E5221900ADA84A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA40919E5221900ADA84A /* AFHTTPSessionManager.m */; };
@@ -366,9 +367,6 @@
 		F663D84319D7EE86002943D7 /* BasePhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePhoneViewController.h; sourceTree = "<group>"; };
 		F663D84419D7EE86002943D7 /* BasePhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePhoneViewController.m; sourceTree = "<group>"; };
 		F663D84519D7EE86002943D7 /* BasePhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasePhoneViewController.xib; sourceTree = "<group>"; };
-		F663D84919D7EF56002943D7 /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
-		F663D84A19D7EF56002943D7 /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
-		F663D84B19D7EF56002943D7 /* TaskListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListViewController.xib; sourceTree = "<group>"; };
 		F663D84E19D7EFB5002943D7 /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
 		F663D84F19D7EFB5002943D7 /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
 		F663D85019D7EFB5002943D7 /* PersonalCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterViewController.xib; sourceTree = "<group>"; };
@@ -511,6 +509,13 @@
 		F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressListRequest.m; sourceTree = "<group>"; };
 		F698A19519F0B72200EF30BA /* icon_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_alipay@2x.png"; sourceTree = "<group>"; };
 		F698A19619F0B72200EF30BA /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
+		F698A19A19F0B8CE00EF30BA /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
+		F698A19B19F0B8CE00EF30BA /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
+		F698A19C19F0B8CE00EF30BA /* TaskListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListViewController.xib; sourceTree = "<group>"; };
+		F698A19F19F0B9D000EF30BA /* TaskCenterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCenterAPI.h; sourceTree = "<group>"; };
+		F698A1A019F0B9D000EF30BA /* TaskCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCenterAPI.m; sourceTree = "<group>"; };
+		F698A1A219F0BA3B00EF30BA /* ScrollContentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollContentInfo.h; sourceTree = "<group>"; };
+		F698A1A319F0BA3B00EF30BA /* ScrollContentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollContentInfo.m; sourceTree = "<group>"; };
 		F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F6B1BFF419E9089D00281631 /* libChanceAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChanceAd.a; sourceTree = "<group>"; };
 		F6DAA3D319E1056400ADA84A /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
@@ -523,8 +528,6 @@
 		F6DAA3DD19E1558700ADA84A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		F6DAA3FD19E5180700ADA84A /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
 		F6DAA3FE19E5180700ADA84A /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
-		F6DAA40019E51B8800ADA84A /* TaskCenterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskCenterAPI.h; sourceTree = "<group>"; };
-		F6DAA40119E51B8800ADA84A /* TaskCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCenterAPI.m; sourceTree = "<group>"; };
 		F6DAA40419E5221900ADA84A /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		F6DAA40519E5221900ADA84A /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		F6DAA40619E5221900ADA84A /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -1040,22 +1043,12 @@
 		F663D83C19D7EC00002943D7 /* TaskCenter */ = {
 			isa = PBXGroup;
 			children = (
-				F663D83D19D7EC00002943D7 /* C */,
+				F698A19919F0B8CE00EF30BA /* C */,
 				F663D83E19D7EC00002943D7 /* M */,
 				F663D83F19D7EC00002943D7 /* res */,
 				F663D84019D7EC00002943D7 /* V */,
 			);
 			path = TaskCenter;
-			sourceTree = "<group>";
-		};
-		F663D83D19D7EC00002943D7 /* C */ = {
-			isa = PBXGroup;
-			children = (
-				F663D84919D7EF56002943D7 /* TaskListViewController.h */,
-				F663D84A19D7EF56002943D7 /* TaskListViewController.m */,
-				F663D84B19D7EF56002943D7 /* TaskListViewController.xib */,
-			);
-			path = C;
 			sourceTree = "<group>";
 		};
 		F663D83E19D7EC00002943D7 /* M */ = {
@@ -1065,6 +1058,8 @@
 				F628E35E19ECFD6D00F4C959 /* ChannelInfo.m */,
 				F628E37919ED1BCC00F4C959 /* GVUserDefaults+Setting.h */,
 				F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */,
+				F698A1A219F0BA3B00EF30BA /* ScrollContentInfo.h */,
+				F698A1A319F0BA3B00EF30BA /* ScrollContentInfo.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1118,8 +1113,8 @@
 			children = (
 				F6DAA3FD19E5180700ADA84A /* BaseRequest.h */,
 				F6DAA3FE19E5180700ADA84A /* BaseRequest.m */,
-				F6DAA40019E51B8800ADA84A /* TaskCenterAPI.h */,
-				F6DAA40119E51B8800ADA84A /* TaskCenterAPI.m */,
+				F698A19F19F0B9D000EF30BA /* TaskCenterAPI.h */,
+				F698A1A019F0B9D000EF30BA /* TaskCenterAPI.m */,
 				F6DAA42319E52AB400ADA84A /* PersonalCenterAPI.h */,
 				F6DAA42419E52AB400ADA84A /* PersonalCenterAPI.m */,
 				F6DAA42F19E633D300ADA84A /* ExchangeCenterAPI.h */,
@@ -1444,6 +1439,16 @@
 			path = BeeSystem;
 			sourceTree = "<group>";
 		};
+		F698A19919F0B8CE00EF30BA /* C */ = {
+			isa = PBXGroup;
+			children = (
+				F698A19A19F0B8CE00EF30BA /* TaskListViewController.h */,
+				F698A19B19F0B8CE00EF30BA /* TaskListViewController.m */,
+				F698A19C19F0B8CE00EF30BA /* TaskListViewController.xib */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
 		F6DAA3D219E1055000ADA84A /* MarqueeLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1615,10 +1620,10 @@
 				F663D93D19D9A795002943D7 /* _orange__info.png in Resources */,
 				F663D92619D9A795002943D7 /* _blue__download.png in Resources */,
 				F663D93B19D9A795002943D7 /* _orange__bottom.png in Resources */,
+				F698A19E19F0B8CE00EF30BA /* TaskListViewController.xib in Resources */,
 				F663D93A19D9A795002943D7 /* _green_right_view.png in Resources */,
 				F663D88119D930B2002943D7 /* DomobOfferWallBundle.bundle in Resources */,
 				F663D7F319D7A19F002943D7 /* InfoPlist.strings in Resources */,
-				F663D84D19D7EF56002943D7 /* TaskListViewController.xib in Resources */,
 				F663D94719D9A795002943D7 /* _purple__download.png in Resources */,
 				F663D92B19D9A795002943D7 /* _blue_all_cell.png in Resources */,
 				F663D95319D9A795002943D7 /* _red__info.png in Resources */,
@@ -1732,16 +1737,15 @@
 				F6DAA41A19E5221900ADA84A /* AFHTTPRequestOperationManager.m in Sources */,
 				F63E9C7519DE79E700548AA9 /* RETableViewCreditCardCell.m in Sources */,
 				F6DAA42119E5221900ADA84A /* AFURLSessionManager.m in Sources */,
-				F6DAA40219E51B8800ADA84A /* TaskCenterAPI.m in Sources */,
 				F63E9C7B19DE79E700548AA9 /* RETableViewNumberCell.m in Sources */,
 				F63E9C8219DE79E700548AA9 /* REDateTimeItem.m in Sources */,
+				F698A19D19F0B8CE00EF30BA /* TaskListViewController.m in Sources */,
 				F63E9C7F19DE79E700548AA9 /* RETableViewTextCell.m in Sources */,
 				F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */,
 				F695DD0919EE4E6800E82EAE /* IPAddressListRequest.m in Sources */,
 				F63E9C9119DE79E700548AA9 /* RETableViewCell.m in Sources */,
 				F63E9C8819DE79E700548AA9 /* RENumberItem.m in Sources */,
 				F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */,
-				F663D84C19D7EF56002943D7 /* TaskListViewController.m in Sources */,
 				F63E9C8B19DE79E700548AA9 /* RESegmentedItem.m in Sources */,
 				F63E9C8E19DE79E700548AA9 /* REActionBar.m in Sources */,
 				F63E9CAF19DE7A4300548AA9 /* REValidator.m in Sources */,
@@ -1750,6 +1754,7 @@
 				F6DAA41B19E5221900ADA84A /* AFHTTPSessionManager.m in Sources */,
 				F628E36919ECFF7200F4C959 /* NSObject+RMArchivable.m in Sources */,
 				F63E9CB319DE7A4300548AA9 /* REURLValidator.m in Sources */,
+				F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */,
 				F663D85B19D7EFEE002943D7 /* ExchangeCenterViewController.m in Sources */,
 				F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */,
 				F663D85119D7EFB5002943D7 /* PersonalCenterViewController.m in Sources */,
@@ -1766,6 +1771,7 @@
 				F63E9C7D19DE79E700548AA9 /* RETableViewPickerCell.m in Sources */,
 				F63E9CAD19DE7A4300548AA9 /* NSError+REValidation.m in Sources */,
 				F6DAA42219E5221900ADA84A /* UIImageView+AFNetworking.m in Sources */,
+				F698A1A419F0BA3B00EF30BA /* ScrollContentInfo.m in Sources */,
 				F6DAA41D19E5221900ADA84A /* AFSecurityPolicy.m in Sources */,
 				F63E9C7619DE79E700548AA9 /* RETableViewDateTimeCell.m in Sources */,
 				F6DAA42019E5221900ADA84A /* AFURLResponseSerialization.m in Sources */,
