@@ -65,8 +65,6 @@
 		F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */; };
 		F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65D46BA19EE94900020E92C /* WPLib.framework */; };
 		F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46BE19EEB53C0020E92C /* JHTickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F65D46C219EFF0EE0020E92C /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F65D46C019EFF0EE0020E92C /* icon_phone@2x.png */; };
-		F65D46C319EFF0EE0020E92C /* icon_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F65D46C119EFF0EE0020E92C /* icon_alipay@2x.png */; };
 		F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */; };
 		F663D7E919D7A19F002943D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7E819D7A19F002943D7 /* Foundation.framework */; };
 		F663D7EB19D7A19F002943D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */; };
@@ -195,6 +193,8 @@
 		F663D98819DA43FE002943D7 /* libzkcmone2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D98419DA43FD002943D7 /* libzkcmone2.3.a */; };
 		F663D9C619DA5287002943D7 /* BeeSystemInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */; };
 		F695DD0919EE4E6800E82EAE /* IPAddressListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */; };
+		F698A19719F0B72200EF30BA /* icon_alipay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F698A19519F0B72200EF30BA /* icon_alipay@2x.png */; };
+		F698A19819F0B72200EF30BA /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F698A19619F0B72200EF30BA /* icon_phone@2x.png */; };
 		F6B1BFF319E907E400281631 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */; };
 		F6B1BFF519E9089D00281631 /* libChanceAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B1BFF419E9089D00281631 /* libChanceAd.a */; };
 		F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3D419E1056400ADA84A /* MarqueeLabel.m */; };
@@ -345,8 +345,6 @@
 		F65D46BA19EE94900020E92C /* WPLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WPLib.framework; sourceTree = "<group>"; };
 		F65D46BD19EEB53C0020E92C /* JHTickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHTickerView.h; sourceTree = "<group>"; };
 		F65D46BE19EEB53C0020E92C /* JHTickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTickerView.m; sourceTree = "<group>"; };
-		F65D46C019EFF0EE0020E92C /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_phone@2x.png"; path = "../../../../../../../../../Users/liuhongnian/Desktop/icon_phone@2x.png"; sourceTree = "<group>"; };
-		F65D46C119EFF0EE0020E92C /* icon_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_alipay@2x.png"; path = "../../../../../../../../../Users/liuhongnian/Desktop/icon_alipay@2x.png"; sourceTree = "<group>"; };
 		F65D46C519EFF6CE0020E92C /* NSString+BeeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BeeExtension.h"; sourceTree = "<group>"; };
 		F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BeeExtension.m"; sourceTree = "<group>"; };
 		F663D7E519D7A19F002943D7 /* weicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -511,6 +509,8 @@
 		F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BeeSystemInfo.mm; sourceTree = "<group>"; };
 		F695DD0719EE4E6800E82EAE /* IPAddressListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddressListRequest.h; sourceTree = "<group>"; };
 		F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressListRequest.m; sourceTree = "<group>"; };
+		F698A19519F0B72200EF30BA /* icon_alipay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_alipay@2x.png"; sourceTree = "<group>"; };
+		F698A19619F0B72200EF30BA /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
 		F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F6B1BFF419E9089D00281631 /* libChanceAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChanceAd.a; sourceTree = "<group>"; };
 		F6DAA3D319E1056400ADA84A /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
@@ -915,6 +915,8 @@
 				F663D82E19D7EC00002943D7 /* C */,
 				F663D82F19D7EC00002943D7 /* M */,
 				F663D83019D7EC00002943D7 /* res */,
+				F698A19519F0B72200EF30BA /* icon_alipay@2x.png */,
+				F698A19619F0B72200EF30BA /* icon_phone@2x.png */,
 				F663D83119D7EC00002943D7 /* V */,
 			);
 			path = ExchangeCenter;
@@ -940,8 +942,6 @@
 		F663D83019D7EC00002943D7 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				F65D46C019EFF0EE0020E92C /* icon_phone@2x.png */,
-				F65D46C119EFF0EE0020E92C /* icon_alipay@2x.png */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -1605,7 +1605,6 @@
 				F663D94D19D9A795002943D7 /* _purple_left_cell.png in Resources */,
 				F663D93219D9A795002943D7 /* _green__info.png in Resources */,
 				F663D91919D9A795002943D7 /* _cell_head_new.png in Resources */,
-				F65D46C219EFF0EE0020E92C /* icon_phone@2x.png in Resources */,
 				F63E9CBD19DE7B9900548AA9 /* README.md in Resources */,
 				F663D94119D9A795002943D7 /* _orange_all_cell.png in Resources */,
 				F663D91319D9A795002943D7 /* _back.png in Resources */,
@@ -1639,6 +1638,7 @@
 				F663D94B19D9A795002943D7 /* _purple__triangle.png in Resources */,
 				F663D98719DA43FE002943D7 /* wall_template.zip in Resources */,
 				F663D93919D9A795002943D7 /* _green_right_cell.png in Resources */,
+				F698A19719F0B72200EF30BA /* icon_alipay@2x.png in Resources */,
 				F663D91719D9A795002943D7 /* _cell_.jpg in Resources */,
 				F663D95419D9A795002943D7 /* _red__iphone_download.png in Resources */,
 				F663D92519D9A795002943D7 /* _blue__bottom.png in Resources */,
@@ -1649,7 +1649,6 @@
 				F663D92319D9A795002943D7 /* _yuanjiao.png in Resources */,
 				F663D95119D9A795002943D7 /* _red__bottom.png in Resources */,
 				F663D92719D9A795002943D7 /* _blue__info.png in Resources */,
-				F65D46C319EFF0EE0020E92C /* icon_alipay@2x.png in Resources */,
 				F663D92819D9A795002943D7 /* _blue__iphone_download.png in Resources */,
 				F663D93419D9A795002943D7 /* _green__titlebg.jpg in Resources */,
 				F663D93319D9A795002943D7 /* _green__iphone_download.png in Resources */,
@@ -1663,6 +1662,7 @@
 				F663D95619D9A795002943D7 /* _red__triangle.png in Resources */,
 				F663D92119D9A795002943D7 /* _title_1.jpg in Resources */,
 				F63E9C9419DE79E700548AA9 /* RETableViewManager.bundle in Resources */,
+				F698A19819F0B72200EF30BA /* icon_phone@2x.png in Resources */,
 				F663D94819D9A795002943D7 /* _purple__info.png in Resources */,
 				F663D97919DA43B2002943D7 /* MiiLogo@2x.png in Resources */,
 				F663D95819D9A795002943D7 /* _red_all_cell11.png in Resources */,
