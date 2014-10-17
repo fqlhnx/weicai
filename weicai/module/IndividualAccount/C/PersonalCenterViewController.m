@@ -7,6 +7,7 @@
 //
 
 #import "PersonalCenterViewController.h"
+#import "TaskCenterAPI.h"
 #import "PersonalCenterAPI.h"
 #import "ServerConfig.h"
 
@@ -30,6 +31,7 @@
 @property (nonatomic,strong)NSTimer *totalPointTimer;
 
 @property (nonatomic,strong)PersonalCenterAPI *personalCenterAPI;
+@property(nonatomic,strong)TaskCenterAPI *taskCenterAPI;
 
 
 @end
@@ -43,6 +45,8 @@
         // Custom initialization
         self.title = @"个人中心";
         _personalCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+        self.taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+
     }
     return self;
 }
@@ -54,32 +58,37 @@
     NSLog(@"%s",__FUNCTION__);
     
     //调用查询用户剩余积分API
-    
-    //成功刷新显示
-    //失败给出提醒
+    [_taskCenterAPI getIntegral:_userID.text success:^(NSString *totalIntegral) {
+        //成功刷新显示
+        _balanceLabel.text = totalIntegral;
+    } failure:^(NSError *error) {
+        //失败给出提醒
+    }];
 }
 
 - (void)refreshTotalPoints
 {
-    NSLog(@"%s",__FUNCTION__);
     
-    //调用查询系统累计发放API
-//    [_personalCenterAPI getTodayIntegral];
-    //成功 显示总发放
-    
-    //失败 提醒
+    [_personalCenterAPI getTodayIntegral:^(NSNumber *todayIntegral, NSError *error) {
+        
+        if (!error) {
+            _totalPoint.text = [NSString stringWithFormat:@"%d",todayIntegral.integerValue];
+            
+        }
+    }];
+
 }
 
 - (void)startTimers
 {
-    self.balanceTimer = [NSTimer scheduledTimerWithTimeInterval:1
+    self.balanceTimer = [NSTimer scheduledTimerWithTimeInterval:30.f
                                                          target:self
                                                        selector:@selector(refreshBalance)
                                                        userInfo:nil
                                                         repeats:YES];
 
     
-    self.totalPointTimer = [NSTimer scheduledTimerWithTimeInterval:1.f
+    self.totalPointTimer = [NSTimer scheduledTimerWithTimeInterval:30.f
                                                             target:self
                                                           selector:@selector(refreshTotalPoints)
                                                           userInfo:nil
@@ -110,8 +119,8 @@
                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                      selectionHandler:^(RETableViewItem *item)
     {
-#warning test
-        [_personalCenterAPI integralDetail:@"tangwei" page:@"1"];
+        [_personalCenterAPI integralDetail:_userID.text page:@"1"];
+        
         [item deselectRowAnimated:YES];
     }]];
     
@@ -119,7 +128,6 @@
                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                      selectionHandler:^(RETableViewItem *item)
     {
-#warning test
         [_personalCenterAPI queryExchangeDetailWithUserID:@"tangwei" page:@"1"];
         [item deselectRowAnimated:YES];
         
@@ -137,9 +145,14 @@
                             if (!error) {
                                 //刷新用户ID
                                 _userID.text = uID;
+                                //刷新用户剩余积分
+                                [self refreshBalance];
                             }
                             
     }];
+    
+    //获取累计方法积分数
+    [self refreshTotalPoints];
 }
 
 - (void)viewDidAppear:(BOOL)animated

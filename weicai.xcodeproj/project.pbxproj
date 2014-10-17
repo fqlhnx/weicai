@@ -80,8 +80,6 @@
 		F663D80E19D7A19F002943D7 /* weicaiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D80D19D7A19F002943D7 /* weicaiTests.m */; };
 		F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D84419D7EE86002943D7 /* BasePhoneViewController.m */; };
 		F663D84719D7EE86002943D7 /* BasePhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F663D84519D7EE86002943D7 /* BasePhoneViewController.xib */; };
-		F663D85119D7EFB5002943D7 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D84F19D7EFB5002943D7 /* PersonalCenterViewController.m */; };
-		F663D85219D7EFB5002943D7 /* PersonalCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F663D85019D7EFB5002943D7 /* PersonalCenterViewController.xib */; };
 		F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D85419D7EFC5002943D7 /* HelpViewController.m */; };
 		F663D85719D7EFC5002943D7 /* HelpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F663D85519D7EFC5002943D7 /* HelpViewController.xib */; };
 		F663D85B19D7EFEE002943D7 /* ExchangeCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F663D85919D7EFEE002943D7 /* ExchangeCenterViewController.m */; };
@@ -197,6 +195,9 @@
 		F698A19E19F0B8CE00EF30BA /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F698A19C19F0B8CE00EF30BA /* TaskListViewController.xib */; };
 		F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A1A019F0B9D000EF30BA /* TaskCenterAPI.m */; };
 		F698A1A419F0BA3B00EF30BA /* ScrollContentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A1A319F0BA3B00EF30BA /* ScrollContentInfo.m */; };
+		F698A1A819F0BB9200EF30BA /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A1A619F0BB9200EF30BA /* PersonalCenterViewController.m */; };
+		F698A1A919F0BB9200EF30BA /* PersonalCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F698A1A719F0BB9200EF30BA /* PersonalCenterViewController.xib */; };
+		F698A1AC19F0BC2400EF30BA /* PersonalCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F698A1AB19F0BC2400EF30BA /* PersonalCenterAPI.m */; };
 		F6B1BFF319E907E400281631 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */; };
 		F6B1BFF519E9089D00281631 /* libChanceAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B1BFF419E9089D00281631 /* libChanceAd.a */; };
 		F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3D419E1056400ADA84A /* MarqueeLabel.m */; };
@@ -214,7 +215,6 @@
 		F6DAA42019E5221900ADA84A /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA41419E5221900ADA84A /* AFURLResponseSerialization.m */; };
 		F6DAA42119E5221900ADA84A /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA41619E5221900ADA84A /* AFURLSessionManager.m */; };
 		F6DAA42219E5221900ADA84A /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA41819E5221900ADA84A /* UIImageView+AFNetworking.m */; };
-		F6DAA42519E52AB400ADA84A /* PersonalCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA42419E52AB400ADA84A /* PersonalCenterAPI.m */; };
 		F6DAA42E19E6290A00ADA84A /* BeeDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */; };
 		F6DAA43119E633D300ADA84A /* ExchangeCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA43019E633D300ADA84A /* ExchangeCenterAPI.m */; };
 		F6F9AD8A19E77A6B001AAF95 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9AD8919E77A6B001AAF95 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -367,9 +367,6 @@
 		F663D84319D7EE86002943D7 /* BasePhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePhoneViewController.h; sourceTree = "<group>"; };
 		F663D84419D7EE86002943D7 /* BasePhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePhoneViewController.m; sourceTree = "<group>"; };
 		F663D84519D7EE86002943D7 /* BasePhoneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasePhoneViewController.xib; sourceTree = "<group>"; };
-		F663D84E19D7EFB5002943D7 /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
-		F663D84F19D7EFB5002943D7 /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
-		F663D85019D7EFB5002943D7 /* PersonalCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterViewController.xib; sourceTree = "<group>"; };
 		F663D85319D7EFC5002943D7 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		F663D85419D7EFC5002943D7 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		F663D85519D7EFC5002943D7 /* HelpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpViewController.xib; sourceTree = "<group>"; };
@@ -516,6 +513,11 @@
 		F698A1A019F0B9D000EF30BA /* TaskCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskCenterAPI.m; sourceTree = "<group>"; };
 		F698A1A219F0BA3B00EF30BA /* ScrollContentInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollContentInfo.h; sourceTree = "<group>"; };
 		F698A1A319F0BA3B00EF30BA /* ScrollContentInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollContentInfo.m; sourceTree = "<group>"; };
+		F698A1A519F0BB9200EF30BA /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
+		F698A1A619F0BB9200EF30BA /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
+		F698A1A719F0BB9200EF30BA /* PersonalCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalCenterViewController.xib; sourceTree = "<group>"; };
+		F698A1AA19F0BC2400EF30BA /* PersonalCenterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterAPI.h; sourceTree = "<group>"; };
+		F698A1AB19F0BC2400EF30BA /* PersonalCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterAPI.m; sourceTree = "<group>"; };
 		F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		F6B1BFF419E9089D00281631 /* libChanceAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libChanceAd.a; sourceTree = "<group>"; };
 		F6DAA3D319E1056400ADA84A /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
@@ -549,8 +551,6 @@
 		F6DAA41619E5221900ADA84A /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		F6DAA41719E5221900ADA84A /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		F6DAA41819E5221900ADA84A /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		F6DAA42319E52AB400ADA84A /* PersonalCenterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterAPI.h; sourceTree = "<group>"; };
-		F6DAA42419E52AB400ADA84A /* PersonalCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterAPI.m; sourceTree = "<group>"; };
 		F6DAA42619E52E3300ADA84A /* ServerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerConfig.h; sourceTree = "<group>"; };
 		F6DAA42C19E6290A00ADA84A /* BeeDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeDeviceInfo.h; sourceTree = "<group>"; };
 		F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeDeviceInfo.m; sourceTree = "<group>"; };
@@ -1012,9 +1012,9 @@
 		F663D83819D7EC00002943D7 /* C */ = {
 			isa = PBXGroup;
 			children = (
-				F663D84E19D7EFB5002943D7 /* PersonalCenterViewController.h */,
-				F663D84F19D7EFB5002943D7 /* PersonalCenterViewController.m */,
-				F663D85019D7EFB5002943D7 /* PersonalCenterViewController.xib */,
+				F698A1A519F0BB9200EF30BA /* PersonalCenterViewController.h */,
+				F698A1A619F0BB9200EF30BA /* PersonalCenterViewController.m */,
+				F698A1A719F0BB9200EF30BA /* PersonalCenterViewController.xib */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1115,8 +1115,8 @@
 				F6DAA3FE19E5180700ADA84A /* BaseRequest.m */,
 				F698A19F19F0B9D000EF30BA /* TaskCenterAPI.h */,
 				F698A1A019F0B9D000EF30BA /* TaskCenterAPI.m */,
-				F6DAA42319E52AB400ADA84A /* PersonalCenterAPI.h */,
-				F6DAA42419E52AB400ADA84A /* PersonalCenterAPI.m */,
+				F698A1AA19F0BC2400EF30BA /* PersonalCenterAPI.h */,
+				F698A1AB19F0BC2400EF30BA /* PersonalCenterAPI.m */,
 				F6DAA42F19E633D300ADA84A /* ExchangeCenterAPI.h */,
 				F6DAA43019E633D300ADA84A /* ExchangeCenterAPI.m */,
 				F695DD0719EE4E6800E82EAE /* IPAddressListRequest.h */,
@@ -1606,6 +1606,7 @@
 				F663D91419D9A795002943D7 /* _back_btn.png in Resources */,
 				F663D92219D9A795002943D7 /* _titlebg.jpg in Resources */,
 				F663D93519D9A795002943D7 /* _green__triangle.png in Resources */,
+				F698A1A919F0BB9200EF30BA /* PersonalCenterViewController.xib in Resources */,
 				F663D91519D9A795002943D7 /* _background.png in Resources */,
 				F663D94D19D9A795002943D7 /* _purple_left_cell.png in Resources */,
 				F663D93219D9A795002943D7 /* _green__info.png in Resources */,
@@ -1683,7 +1684,6 @@
 				F663D7FB19D7A19F002943D7 /* Images.xcassets in Resources */,
 				F663D95719D9A795002943D7 /* _red_all_cell.png in Resources */,
 				F663D91E19D9A795002943D7 /* _point.png in Resources */,
-				F663D85219D7EFB5002943D7 /* PersonalCenterViewController.xib in Resources */,
 				F663D91619D9A795002943D7 /* _cell.jpg in Resources */,
 				F6F9ADA219E7B46A001AAF95 /* ChanceAdRes.bundle in Resources */,
 				F663D94619D9A795002943D7 /* _purple__bottom.png in Resources */,
@@ -1723,7 +1723,6 @@
 				F6DAA42E19E6290A00ADA84A /* BeeDeviceInfo.m in Sources */,
 				F63E9C7819DE79E700548AA9 /* RETableViewInlineDatePickerCell.m in Sources */,
 				F6DAA43119E633D300ADA84A /* ExchangeCenterAPI.m in Sources */,
-				F6DAA42519E52AB400ADA84A /* PersonalCenterAPI.m in Sources */,
 				F628E37419ED02A700F4C959 /* UIScrollView+SVPullToRefresh.m in Sources */,
 				F6DAA41C19E5221900ADA84A /* AFNetworkReachabilityManager.m in Sources */,
 				F628E36A19ECFF7200F4C959 /* NSObject+RMCopyable.m in Sources */,
@@ -1757,7 +1756,6 @@
 				F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */,
 				F663D85B19D7EFEE002943D7 /* ExchangeCenterViewController.m in Sources */,
 				F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */,
-				F663D85119D7EFB5002943D7 /* PersonalCenterViewController.m in Sources */,
 				F628E35F19ECFD6D00F4C959 /* ChannelInfo.m in Sources */,
 				F63E9C8F19DE79E700548AA9 /* RECommonFunctions.m in Sources */,
 				F63E9CB019DE7A4300548AA9 /* REEmailValidator.m in Sources */,
@@ -1778,6 +1776,7 @@
 				F63E9C7919DE79E700548AA9 /* RETableViewInlinePickerCell.m in Sources */,
 				F63E9C9319DE79E700548AA9 /* RETableViewItem.m in Sources */,
 				F628E37819ED1B5D00F4C959 /* GVUserDefaults.m in Sources */,
+				F698A1AC19F0BC2400EF30BA /* PersonalCenterAPI.m in Sources */,
 				F63E9C8C19DE79E700548AA9 /* RETextItem.m in Sources */,
 				F63E9C8319DE79E700548AA9 /* REFloatItem.m in Sources */,
 				F63E9CAE19DE7A4300548AA9 /* REValidation.m in Sources */,
@@ -1785,6 +1784,7 @@
 				F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */,
 				F6DAA41E19E5221900ADA84A /* AFURLConnectionOperation.m in Sources */,
 				F6DAA3DF19E1558700ADA84A /* SVProgressHUD.m in Sources */,
+				F698A1A819F0BB9200EF30BA /* PersonalCenterViewController.m in Sources */,
 				F63E9C8D19DE79E700548AA9 /* NSString+RETableViewManagerAdditions.m in Sources */,
 				F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */,
 				F63E9C8719DE79E700548AA9 /* REMultipleChoiceItem.m in Sources */,

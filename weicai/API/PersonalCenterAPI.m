@@ -16,14 +16,14 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
 
 @implementation PersonalCenterAPI
 
-- (void)getTodayIntegral
+- (void)getTodayIntegral:(void (^)(NSNumber *, NSError *))competion
 {
     [super getRequestFromePath:kTodayIntegralURL
                     parameters:nil
                        success:^(id responseResult)
     {
-                            
-        
+        NSNumber *todayIntegral = responseResult[@"message"];
+        competion(todayIntegral,nil);
     } failure:^(NSError *error, id errorResponse)
     {
         

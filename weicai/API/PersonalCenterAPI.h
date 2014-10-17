@@ -12,7 +12,7 @@
 
 
 //今日累计发放积分额
-- (void)getTodayIntegral;
+- (void)getTodayIntegral:(void(^)(NSNumber *todayIntegral,NSError *error))competion;
 
 //收益明细
 - (void)integralDetail:(NSString*)userID page:(NSString*)page;
