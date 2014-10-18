@@ -25,22 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weicai/API/PersonalCenterAPI.m"
-            timestampString = "435224249.399939"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "-getUserID:competion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "weicai/module/IndividualAccount/C/ExchangeDetailViewController.m"
             timestampString = "435224322.708822"
             startingColumnNumber = "9223372036854775807"
@@ -49,52 +33,6 @@
             endingLineNumber = "80"
             landmarkName = "-configListViewWithExchangeRecords:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "weicai/API/ExchangeCenterAPI.m"
-            timestampString = "435228746.689946"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-getTheLatestExchangeRecords"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[ExchangeCenterAPI getTheLatestExchangeRecords]_block_invoke"
-                  moduleName = "weicai"
-                  urlString = "file:///Volumes/WorkSpace/iOS/workspace/weicai/weicai/API/ExchangeCenterAPI.m"
-                  timestampString = "435229355.719893"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "54">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[ExchangeCenterAPI getTheLatestExchangeRecords]_block_invoke_2"
-                  moduleName = "weicai"
-                  urlString = "file:///Volumes/WorkSpace/iOS/workspace/weicai/weicai/API/ExchangeCenterAPI.m"
-                  timestampString = "435229355.720188"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -63,6 +63,7 @@
 		F63E9CBD19DE7B9900548AA9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F63E9CB619DE7B9900548AA9 /* README.md */; };
 		F63E9CBE19DE7B9900548AA9 /* NSString+RENumberFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CB919DE7B9900548AA9 /* NSString+RENumberFormat.m */; };
 		F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */; };
+		F643BB1119F2A6AC00908734 /* ExchangeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F643BB1019F2A6AC00908734 /* ExchangeInfo.m */; };
 		F658BDF319F0DE2C00229373 /* IntegralDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F658BDF119F0DE2C00229373 /* IntegralDetailsViewController.m */; };
 		F658BDF419F0DE2C00229373 /* IntegralDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F658BDF219F0DE2C00229373 /* IntegralDetailsViewController.xib */; };
 		F658BDFE19F0F4D600229373 /* ExchangeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F658BDFC19F0F4D600229373 /* ExchangeDetailViewController.m */; };
@@ -349,6 +350,8 @@
 		F63E9CBA19DE7B9900548AA9 /* REFormattedNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFormattedNumberField.h; sourceTree = "<group>"; };
 		F63E9CBB19DE7B9900548AA9 /* REFormattedNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFormattedNumberField.m; sourceTree = "<group>"; };
 		F63E9CC019DE838E00548AA9 /* ADConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADConfig.h; sourceTree = "<group>"; };
+		F643BB0F19F2A6AC00908734 /* ExchangeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeInfo.h; sourceTree = "<group>"; };
+		F643BB1019F2A6AC00908734 /* ExchangeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeInfo.m; sourceTree = "<group>"; };
 		F658BDF019F0DE2C00229373 /* IntegralDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegralDetailsViewController.h; sourceTree = "<group>"; };
 		F658BDF119F0DE2C00229373 /* IntegralDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegralDetailsViewController.m; sourceTree = "<group>"; };
 		F658BDF219F0DE2C00229373 /* IntegralDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntegralDetailsViewController.xib; sourceTree = "<group>"; };
@@ -820,6 +823,29 @@
 			path = REFormattedNumberField;
 			sourceTree = "<group>";
 		};
+		F643BB0C19F2A62200908734 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				F643BB0F19F2A6AC00908734 /* ExchangeInfo.h */,
+				F643BB1019F2A6AC00908734 /* ExchangeInfo.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		F643BB0D19F2A62200908734 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		F643BB0E19F2A62200908734 /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		F65D46BC19EEB53C0020E92C /* JHTickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,12 +957,12 @@
 		F663D82D19D7EC00002943D7 /* ExchangeCenter */ = {
 			isa = PBXGroup;
 			children = (
+				F643BB0C19F2A62200908734 /* M */,
+				F643BB0D19F2A62200908734 /* Res */,
+				F643BB0E19F2A62200908734 /* V */,
 				F663D82E19D7EC00002943D7 /* C */,
-				F663D82F19D7EC00002943D7 /* M */,
-				F663D83019D7EC00002943D7 /* res */,
 				F698A19519F0B72200EF30BA /* icon_alipay@2x.png */,
 				F698A19619F0B72200EF30BA /* icon_phone@2x.png */,
-				F663D83119D7EC00002943D7 /* V */,
 			);
 			path = ExchangeCenter;
 			sourceTree = "<group>";
@@ -949,27 +975,6 @@
 				F663D85A19D7EFEE002943D7 /* ExchangeCenterViewController.xib */,
 			);
 			path = C;
-			sourceTree = "<group>";
-		};
-		F663D82F19D7EC00002943D7 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		F663D83019D7EC00002943D7 /* res */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = res;
-			sourceTree = "<group>";
-		};
-		F663D83119D7EC00002943D7 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		F663D83219D7EC00002943D7 /* HelpCenter */ = {
@@ -1805,6 +1810,7 @@
 				F6DAA42019E5221900ADA84A /* AFURLResponseSerialization.m in Sources */,
 				F63E9C7919DE79E700548AA9 /* RETableViewInlinePickerCell.m in Sources */,
 				F63E9C9319DE79E700548AA9 /* RETableViewItem.m in Sources */,
+				F643BB1119F2A6AC00908734 /* ExchangeInfo.m in Sources */,
 				F628E37819ED1B5D00F4C959 /* GVUserDefaults.m in Sources */,
 				F698A1AC19F0BC2400EF30BA /* PersonalCenterAPI.m in Sources */,
 				F63E9C8C19DE79E700548AA9 /* RETextItem.m in Sources */,
@@ -1984,7 +1990,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "504307BB-85AE-4E60-ACA3-A49B25D30594";
+				PROVISIONING_PROFILE = "21a2bd62-fbb4-4d4e-9309-8d4e1f3609c0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1994,7 +2000,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yaocheng Wang (PLF99J54Q2)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -2028,7 +2034,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "504307BB-85AE-4E60-ACA3-A49B25D30594";
+				PROVISIONING_PROFILE = "21a2bd62-fbb4-4d4e-9309-8d4e1f3609c0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -28,9 +28,13 @@ typedef  NS_ENUM(NSUInteger, exchangeType){
                                       target:(exchangeType)type
                                       fromIP:(NSString*)ipaddr
                                     integral:(NSInteger)number
-                                      amount:(NSUInteger)amount;
+                                      amount:(NSUInteger)amount
+                              prepaidAccount:(NSString*)preAccount
+                                     success:(void(^)())success
+                                     failure:(void(^)(NSError *error))failure ;
 
 //http://www.integral.com/index.php/api/getExchangeList?state=tangwei
-- (void)getTheLatestExchangeRecords;
+- (void)getTheLatestExchangeRecords:(void (^)(NSArray *records))success
+                            failure:(void(^)(NSError *error))failure;
 
 @end

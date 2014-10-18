@@ -178,9 +178,10 @@
     [_personalCenterAPI getUserID:[OpenUDID value]
                         competion:^(NSString *uID, NSError *error)
     {
-        
-        [GVUserDefaults standardUserDefaults].userID = uID;
-        [weakSelf advertisingPlatformInitWithUserID:uID];
+        if (!error) {
+            [GVUserDefaults standardUserDefaults].userID = uID;
+            [weakSelf advertisingPlatformInitWithUserID:uID];
+        }
         
         [self initNavBarItems];
     }];
@@ -206,7 +207,6 @@
         [self advertisingPlatformInitWithUserID:uid];
         [self initNavBarItems];
         
-        [self getuserID];
     }else{
         [self getuserID];
     }
