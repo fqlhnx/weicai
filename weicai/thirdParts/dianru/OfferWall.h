@@ -1,6 +1,6 @@
 //
 
-//  版本2.4
+//  版本2.6
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
