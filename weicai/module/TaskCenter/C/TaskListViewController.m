@@ -281,7 +281,9 @@
         
         if ([isDisplay isEqualToString:@"1"])
         {
-            NSInteger channelID = channel.id.integerValue;
+
+            PlatformName channelID = channel.id.integerValue;
+            
             switch (channelID) {
                 case ChuKongPlatform:
                 {
