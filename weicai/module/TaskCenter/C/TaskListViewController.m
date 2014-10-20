@@ -220,7 +220,7 @@
     //定时获取需要滚动显示的消息
     [self updateScrollLabelContent];
 
-    [NSTimer scheduledTimerWithTimeInterval:60.f
+    [NSTimer scheduledTimerWithTimeInterval:30.f
                                      target:self
                                    selector:@selector(updateScrollLabelContent)
                                    userInfo:nil

@@ -64,10 +64,23 @@ NSString *const kgetScrollContentURL = @"Integral/public/index.php/api/getScroll
                         
                            NSMutableArray *strings = [NSMutableArray array];
                            for (NSDictionary *object in responseResult) {
-                               ScrollContentInfo *content = [RMMapper objectWithClass:[ScrollContentInfo class] fromDictionary:object];
                                
-                               [strings addObject:content.scroll_content];
+                               //普通滚动消息
+                               if (object[@"scroll_content"]) {
+                                   
+                                   ScrollContentInfo *content = [RMMapper objectWithClass:[ScrollContentInfo class] fromDictionary:object];
+                                   [strings addObject:content.scroll_content];
+                                   
+                               }else if (object[@"exchange_target"]){
+                                   //兑换滚动消息
+                                   ScrollContentInfo *content = [RMMapper objectWithClass:[ScrollContentInfo class] fromDictionary:object];
+                                   NSString *addContent = [NSString stringWithFormat:@"%@申请%@",content.telmember_id,content.exchange_target];
+                                   [strings addObject:addContent];
+                                   
+                               }
+                               
                            }
+                           
                            competion(strings,nil);
                        } failure:^(NSError *error, id errorResponse) {
                            

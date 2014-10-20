@@ -102,8 +102,6 @@
 		F663D88619D931A8002943D7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D88519D931A8002943D7 /* libz.dylib */; };
 		F663D88819D936A8002943D7 /* navigation_bg@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F663D88719D936A8002943D7 /* navigation_bg@2x.jpg */; };
 		F663D89719D93ED5002943D7 /* libYouMi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D89619D93ED5002943D7 /* libYouMi.a */; };
-		F663D89919D94069002943D7 /* icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D89819D94069002943D7 /* icon-120.png */; };
-		F663D89B19D940EA002943D7 /* icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D89A19D940EA002943D7 /* icon-Small.png */; };
 		F663D8AB19D958E8002943D7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D8AA19D958E8002943D7 /* CoreTelephony.framework */; };
 		F663D8C119D9A77C002943D7 /* libDianRuAdWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D8C019D9A77C002943D7 /* libDianRuAdWall.a */; };
 		F663D91319D9A795002943D7 /* _back.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D8C419D9A795002943D7 /* _back.png */; };
@@ -413,8 +411,6 @@
 		F663D89419D93ED5002943D7 /* YouMiWallSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpot.h; sourceTree = "<group>"; };
 		F663D89519D93ED5002943D7 /* YouMiWallSpotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouMiWallSpotView.h; sourceTree = "<group>"; };
 		F663D89619D93ED5002943D7 /* libYouMi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouMi.a; sourceTree = "<group>"; };
-		F663D89819D94069002943D7 /* icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120.png"; sourceTree = "<group>"; };
-		F663D89A19D940EA002943D7 /* icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-Small.png"; sourceTree = "<group>"; };
 		F663D8AA19D958E8002943D7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F663D8C019D9A77C002943D7 /* libDianRuAdWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDianRuAdWall.a; sourceTree = "<group>"; };
 		F663D8C219D9A789002943D7 /* OfferWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferWall.h; sourceTree = "<group>"; };
@@ -1073,8 +1069,6 @@
 		F663D83F19D7EC00002943D7 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				F663D89A19D940EA002943D7 /* icon-Small.png */,
-				F663D89819D94069002943D7 /* icon-120.png */,
 				F663D88719D936A8002943D7 /* navigation_bg@2x.jpg */,
 			);
 			path = res;
@@ -1661,7 +1655,6 @@
 				F663D92B19D9A795002943D7 /* _blue_all_cell.png in Resources */,
 				F663D95319D9A795002943D7 /* _red__info.png in Resources */,
 				F663D92419D9A795002943D7 /* _yuanjiao_horizontal.png in Resources */,
-				F663D89B19D940EA002943D7 /* icon-Small.png in Resources */,
 				F663D92A19D9A795002943D7 /* _blue__triangle.png in Resources */,
 				F663D94F19D9A795002943D7 /* _purple_right_cell.png in Resources */,
 				F663D93E19D9A795002943D7 /* _orange__iphone_download.png in Resources */,
@@ -1683,7 +1676,6 @@
 				F663D85C19D7EFEE002943D7 /* ExchangeCenterViewController.xib in Resources */,
 				F663D97A19DA43B2002943D7 /* MiiReturnButtonDw.png in Resources */,
 				F663D94319D9A795002943D7 /* _orange_left_view.png in Resources */,
-				F663D89919D94069002943D7 /* icon-120.png in Resources */,
 				F663D92319D9A795002943D7 /* _yuanjiao.png in Resources */,
 				F663D95119D9A795002943D7 /* _red__bottom.png in Resources */,
 				F663D92719D9A795002943D7 /* _blue__info.png in Resources */,
@@ -1990,7 +1982,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21a2bd62-fbb4-4d4e-9309-8d4e1f3609c0";
+				PROVISIONING_PROFILE = "dd23ca8c-e9fe-4371-b54b-22fb19734815";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2034,7 +2026,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "21a2bd62-fbb4-4d4e-9309-8d4e1f3609c0";
+				PROVISIONING_PROFILE = "dd23ca8c-e9fe-4371-b54b-22fb19734815";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
