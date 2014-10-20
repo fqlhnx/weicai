@@ -9,10 +9,9 @@
 #import "AppDelegate.h"
 
 #import "ExchangeCenterViewController.h"
-#import "HelpViewController.h"
 #import "PersonalCenterViewController.h"
 #import "TaskListViewController.h"
-
+#import "HelpCenterViewController.h"
 #import "BeeSystemInfo.h"
 //各大广告平台SDK头文件
 #import "DMOfferWallManager.h"
@@ -38,7 +37,7 @@
 @property (nonatomic,strong)ExchangeCenterViewController *exchangeVC;
 @property (nonatomic,strong)UINavigationController *exchangeRootNavCtrl;
 
-@property (nonatomic,strong)HelpViewController *helpVC;
+@property (nonatomic,strong)HelpCenterViewController *helpVC;
 @property (nonatomic,strong)UINavigationController *helpRootNavCtrl;
 
 @end
@@ -67,8 +66,7 @@
     self.exchangeRootNavCtrl = [[UINavigationController alloc]initWithRootViewController:self.exchangeVC];
     
     //help
-    self.helpVC = [[HelpViewController alloc] initWithNibName:@"HelpViewController"
-                                                       bundle:nil];
+    self.helpVC = [[HelpCenterViewController alloc]init];
     self.helpRootNavCtrl = [[UINavigationController alloc] initWithRootViewController:_helpVC];
     
     [self customUIAppearance];
