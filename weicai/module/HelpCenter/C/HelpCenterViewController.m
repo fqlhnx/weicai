@@ -8,6 +8,23 @@
 
 #import "HelpCenterViewController.h"
 
+NSString *const kHelpWebURL = @"http://121.40.193.213/Integral/public/index.php/api/help";
+
 @implementation HelpCenterViewController
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.title = @"帮助中心";
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.url = [NSURL URLWithString:kHelpWebURL];
+}
 
 @end

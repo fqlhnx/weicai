@@ -11,6 +11,8 @@
 #import "TaskInfo.h"
 #import "Exchange.h"
 
+#import "SVProgressHUD.h"
+
 NSString *const kTodayIntegralURL = @"Integral/public/index.php/api/getTodayIntegral";
 NSString *const kintegralDetailURL = @"Integral/public/index.php/api/getIntegralDetail";
 NSString *const kqueryIntegralDetailURL = @"Integral/public/index.php/api/getExchange";
@@ -116,6 +118,10 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
                        success:^(id responseResult)
     {
         NSString *userID = responseResult[@"UserId"];
+#warning test
+        if (![userID hasPrefix:@"U"]) {
+            [SVProgressHUD showWithStatus:@"user id 不合法"];
+        }
         competionBlock (userID,nil);
     } failure:^(NSError *error, id errorResponse) {
         

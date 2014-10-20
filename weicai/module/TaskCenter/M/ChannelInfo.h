@@ -20,13 +20,13 @@
 //"total_integral" = 10001;
 
 typedef enum : NSUInteger {
-    ChuKongPlatform = 11,
-    WanPuPlatform = 10,
-    DianRuPlatform = 12,
-    AnWoPlatform = 9,
-    YouMiPlatform = 8,
-    MiDiPlatform = 7,
-    DuoMengPlatform = 6,
+    ChuKongPlatform = 6,
+    WanPuPlatform = 5,
+    DianRuPlatform = 7,
+    AnWoPlatform = 4,
+    YouMiPlatform = 3,
+    MiDiPlatform = 2,
+    DuoMengPlatform = 1,
 } PlatformName;
 
 

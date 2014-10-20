@@ -35,6 +35,8 @@ static NSString *ipAddress;
 @property(nonatomic,strong)ExchangeCenterAPI *exchangeAPI;
 @property(nonatomic,strong)TaskCenterAPI *taskCenterAPI;
 
+@property (nonatomic,strong)NSTimer *timer;
+
 @end
 
 @implementation ExchangeCenterViewController
@@ -56,6 +58,11 @@ static NSString *ipAddress;
 {
     [super viewDidAppear:animated];
     //定时器开启 （定时更新用户积分，和最新兑换消息）
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:30.f
+                                     target:self
+                                   selector:@selector(refreshUserIntegral)
+                                   userInfo:nil repeats:YES];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated

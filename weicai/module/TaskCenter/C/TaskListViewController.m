@@ -76,6 +76,9 @@
     BOOL isZero = [userID isEqualToString:@"0"];
     NSAssert(!isZero, @"用户ID 是 0");
     
+    BOOL isLegal = [userID hasPrefix:@"U"];
+    NSAssert(isLegal, @"不合法");
+    
     //初始化多盟积分墙
     self.duoMengOfferWall = [[DMOfferWallManager alloc]initWithPublisherID:duoMengPID
                                                                  andUserID:userID];
@@ -246,6 +249,8 @@
 {
     NSString *userID = [GVUserDefaults standardUserDefaults].userID;
     NSAssert(userID, @"user id is null");
+    BOOL isLegal = [userID hasPrefix:@"U"];
+    NSAssert(isLegal, @"用户名不合法");
     return userID;
 }
 
