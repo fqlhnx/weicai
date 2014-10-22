@@ -11,8 +11,9 @@
 #import "ExchangeCenterViewController.h"
 #import "PersonalCenterViewController.h"
 #import "TaskListViewController.h"
-#import "HelpCenterViewController.h"
 #import "BeeSystemInfo.h"
+#import "HelpCenterWebViewController.h"
+
 //各大广告平台SDK头文件
 #import "DMOfferWallManager.h"
 #import "ZKcmoneZKcmtwo.h"
@@ -37,7 +38,7 @@
 @property (nonatomic,strong)ExchangeCenterViewController *exchangeVC;
 @property (nonatomic,strong)UINavigationController *exchangeRootNavCtrl;
 
-@property (nonatomic,strong)HelpCenterViewController *helpVC;
+@property (nonatomic,strong)HelpCenterWebViewController *helpVC;
 @property (nonatomic,strong)UINavigationController *helpRootNavCtrl;
 
 @end
@@ -49,6 +50,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    [self customUIAppearance];
 
     //task center
     self.taskListViewController = [[TaskListViewController alloc] initWithNibName:@"TaskListViewController"
@@ -66,7 +69,7 @@
     self.exchangeRootNavCtrl = [[UINavigationController alloc]initWithRootViewController:self.exchangeVC];
     
     //help
-    self.helpVC = [[HelpCenterViewController alloc]init];
+    self.helpVC = [[HelpCenterWebViewController alloc]init];
     self.helpRootNavCtrl = [[UINavigationController alloc] initWithRootViewController:_helpVC];
     
     [self customUIAppearance];
@@ -76,7 +79,9 @@
                                         self.personalCenterRootNavCtrl,
                                         self.exchangeRootNavCtrl,
                                         self.helpRootNavCtrl];
+    
     self.window.rootViewController = self.tabBarCtrl;
+    
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -84,9 +89,10 @@
 
 - (void)customUIAppearance
 {
-    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"navigation_bg.jpg"] forBarMetrics:UIBarMetricsDefault];
-    
+    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"navBar"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
+    
+    [[UITabBar appearance]setBackgroundImage:[UIImage imageNamed:@"tabBar"]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

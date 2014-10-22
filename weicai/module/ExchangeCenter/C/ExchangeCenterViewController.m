@@ -25,6 +25,7 @@ static NSString *ipAddress;
 @interface ExchangeCenterViewController ()
 
 @property(nonatomic,weak)IBOutlet UITextField *aliPayAccountField;
+@property (nonatomic,weak)IBOutlet UIImageView *aliPayFieldBG;
 @property(nonatomic,weak)IBOutlet UITextField *phoneNumField;
 
 @property(nonatomic,weak)IBOutlet UITableView *listView;
@@ -46,7 +47,8 @@ static NSString *ipAddress;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"兑换中心";
+        self.tabBarItem.image = [[UIImage imageNamed:@"item3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item3Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
         _exchangeAPI = [[ExchangeCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         _taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
@@ -81,6 +83,8 @@ static NSString *ipAddress;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.aliPayFieldBG.image = [[UIImage imageNamed:@"textFieldBG"] stretchableImageWithLeftCapWidth:20 topCapHeight:10];
     // Do any additional setup after loading the view from its nib.
     //获取ip地址
     [BeeDeviceInfo connectedToTheInternetToGetIPAddress:^(NSString *ipAddr, NSError *error) {

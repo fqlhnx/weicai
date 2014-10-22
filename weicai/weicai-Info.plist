@@ -11,7 +11,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>cn.51weicai.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<true/>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

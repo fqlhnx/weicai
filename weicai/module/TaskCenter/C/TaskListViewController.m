@@ -60,7 +60,9 @@
     if (self) {
         // Custom initialization
         
-        self.title = @"任务中心";
+        self.tabBarItem.image = [[UIImage imageNamed:@"tabbarItem1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+        self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabBarItem1_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
         _taskCenterRequest = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         
@@ -270,6 +272,7 @@
     
 }
 
+
 #pragma mark prive method
 
 - (void)configListView
@@ -296,8 +299,11 @@
                                                              accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
                                                                  [[CSAppZone sharedAppZone]showAppZoneWithScale:0.9];
                                                              }];
-                    item.detailLabelText = subName;
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
                     [section addItem:item];
+                    item.detailLabelText = subName;
+                    
                     break;
                 }
                 case WanPuPlatform:
@@ -305,6 +311,8 @@
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
                         [AppConnect showList:weakSelf];
                     }];
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
                     item.detailLabelText = subName;
                     [section addItem:item];
                     break;
@@ -314,6 +322,9 @@
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
                         [OfferWall showOfferWall:weakSelf];
                     }];
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
+
                     item.detailLabelText = subName;
                     [section addItem:item];
                     break;
@@ -323,6 +334,9 @@
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
                         ZKcmoneOWPresentZKcmtwo(anwoPID, weakSelf);
                     }];
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
+
                     item.detailLabelText = subName;
                     [section addItem:item];
 
@@ -337,6 +351,9 @@
                             
                         }];
                     }];
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
+
                     item.detailLabelText = subName;
                     [section addItem:item];
                     break;
@@ -346,6 +363,10 @@
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
                         [MyOfferAPI showAppOffers:weakSelf withDelegate:self];
                     }];
+                    
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
+
                     item.detailLabelText = subName;
                     [section addItem:item];
                     break;
@@ -355,6 +376,10 @@
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
                         [_duoMengOfferWall presentOfferWallWithViewController:weakSelf type:eDMOfferWallTypeList];
                     }];
+                    
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.style = UITableViewCellStyleSubtitle;
+
                     item.detailLabelText = subName;
                     [section addItem:item];
                     break;
