@@ -27,6 +27,7 @@ static NSString *ipAddress;
 @property(nonatomic,weak)IBOutlet UITextField *aliPayAccountField;
 @property (nonatomic,weak)IBOutlet UIImageView *aliPayFieldBG;
 @property(nonatomic,weak)IBOutlet UITextField *phoneNumField;
+@property (nonatomic,weak)IBOutlet UIImageView *phoneFieldBG;
 
 @property(nonatomic,weak)IBOutlet UITableView *listView;
 
@@ -85,6 +86,8 @@ static NSString *ipAddress;
     [super viewDidLoad];
     
     self.aliPayFieldBG.image = [[UIImage imageNamed:@"textFieldBG"] stretchableImageWithLeftCapWidth:20 topCapHeight:10];
+    self.phoneFieldBG.image = [[UIImage imageNamed:@"textFieldBG"]stretchableImageWithLeftCapWidth:20 topCapHeight:10];
+    
     // Do any additional setup after loading the view from its nib.
     //获取ip地址
     [BeeDeviceInfo connectedToTheInternetToGetIPAddress:^(NSString *ipAddr, NSError *error) {

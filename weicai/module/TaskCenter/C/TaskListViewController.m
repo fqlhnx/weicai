@@ -261,7 +261,6 @@
  */
 -(void)didReceiveSpendScoreResult:(BOOL)isSuccess
 {
-    
 }
 
 /*
