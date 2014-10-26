@@ -73,6 +73,7 @@
 		F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65D46BA19EE94900020E92C /* WPLib.framework */; };
 		F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46BE19EEB53C0020E92C /* JHTickerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */; };
+		F661EE3B19FA74F80032FC3B /* libJJSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F661EE3A19FA74F80032FC3B /* libJJSDK.a */; };
 		F663D7E919D7A19F002943D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7E819D7A19F002943D7 /* Foundation.framework */; };
 		F663D7EB19D7A19F002943D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */; };
 		F663D7ED19D7A19F002943D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D7EC19D7A19F002943D7 /* UIKit.framework */; };
@@ -381,6 +382,9 @@
 		F65D46BE19EEB53C0020E92C /* JHTickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHTickerView.m; sourceTree = "<group>"; };
 		F65D46C519EFF6CE0020E92C /* NSString+BeeExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BeeExtension.h"; sourceTree = "<group>"; };
 		F65D46C619EFF6CE0020E92C /* NSString+BeeExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BeeExtension.m"; sourceTree = "<group>"; };
+		F661EE3819FA74F80032FC3B /* JJDiamondConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJDiamondConstants.h; sourceTree = "<group>"; };
+		F661EE3919FA74F80032FC3B /* JJSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJSDK.h; sourceTree = "<group>"; };
+		F661EE3A19FA74F80032FC3B /* libJJSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJJSDK.a; sourceTree = "<group>"; };
 		F663D7E519D7A19F002943D7 /* weicai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weicai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F663D7E819D7A19F002943D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F663D7EA19D7A19F002943D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -646,6 +650,7 @@
 				F663D86F19D80FDE002943D7 /* SystemConfiguration.framework in Frameworks */,
 				F663D86D19D80FD6002943D7 /* StoreKit.framework in Frameworks */,
 				F663D86B19D80FCD002943D7 /* AdSupport.framework in Frameworks */,
+				F661EE3B19FA74F80032FC3B /* libJJSDK.a in Frameworks */,
 				F663D8C119D9A77C002943D7 /* libDianRuAdWall.a in Frameworks */,
 				F663D88219D930B2002943D7 /* libDMOfferWallSDK.a in Frameworks */,
 				F663D89719D93ED5002943D7 /* libYouMi.a in Frameworks */,
@@ -901,6 +906,24 @@
 				F65D46BE19EEB53C0020E92C /* JHTickerView.m */,
 			);
 			path = JHTickerView;
+			sourceTree = "<group>";
+		};
+		F661EE3619FA74EA0032FC3B /* dianJoy */ = {
+			isa = PBXGroup;
+			children = (
+				F661EE3719FA74F80032FC3B /* libs */,
+			);
+			path = dianJoy;
+			sourceTree = "<group>";
+		};
+		F661EE3719FA74F80032FC3B /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				F661EE3819FA74F80032FC3B /* JJDiamondConstants.h */,
+				F661EE3919FA74F80032FC3B /* JJSDK.h */,
+				F661EE3A19FA74F80032FC3B /* libJJSDK.a */,
+			);
+			path = libs;
 			sourceTree = "<group>";
 		};
 		F663D7DC19D7A19F002943D7 = {
@@ -1182,6 +1205,7 @@
 		F663D87419D92E8F002943D7 /* thirdParts */ = {
 			isa = PBXGroup;
 			children = (
+				F661EE3619FA74EA0032FC3B /* dianJoy */,
 				F6F9AD8419E779CF001AAF95 /* OpenUDID */,
 				F6DAA40319E5221900ADA84A /* AFNetworking */,
 				F63E9C2A19DE79E700548AA9 /* RETableViewManager */,
@@ -2077,10 +2101,11 @@
 					"$(PROJECT_DIR)/weicai/thirdParts/zkcmoneSDK/zkcmone",
 					"$(PROJECT_DIR)/weicai/thirdParts/chukongSDK/libChanceAd_Std",
 					"$(PROJECT_DIR)/weicai/thirdParts/chukongSDK/libChanceAd_NoAppZone",
+					"$(PROJECT_DIR)/weicai/thirdParts/dianJoy/libs",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dd23ca8c-e9fe-4371-b54b-22fb19734815";
+				PROVISIONING_PROFILE = "21a2bd62-fbb4-4d4e-9309-8d4e1f3609c0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2121,10 +2146,11 @@
 					"$(PROJECT_DIR)/weicai/thirdParts/zkcmoneSDK/zkcmone",
 					"$(PROJECT_DIR)/weicai/thirdParts/chukongSDK/libChanceAd_Std",
 					"$(PROJECT_DIR)/weicai/thirdParts/chukongSDK/libChanceAd_NoAppZone",
+					"$(PROJECT_DIR)/weicai/thirdParts/dianJoy/libs",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dd23ca8c-e9fe-4371-b54b-22fb19734815";
+				PROVISIONING_PROFILE = "21a2bd62-fbb4-4d4e-9309-8d4e1f3609c0";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
