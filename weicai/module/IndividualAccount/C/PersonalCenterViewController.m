@@ -68,6 +68,7 @@
         _balanceLabel.text = totalIntegral;
     } failure:^(NSError *error) {
         //失败给出提醒
+
     }];
 }
 
