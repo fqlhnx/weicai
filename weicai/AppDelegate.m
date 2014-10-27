@@ -91,6 +91,8 @@
     return YES;
 }
 
+#pragma mark prive
+
 - (void)customUIAppearance
 {
     [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"navBar"] forBarMetrics:UIBarMetricsDefault];

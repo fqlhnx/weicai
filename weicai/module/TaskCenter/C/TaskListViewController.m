@@ -27,6 +27,7 @@
 
 #import "CSAppZone.h"
 #import "ChanceAd.h"
+#import "JJSDK.h"
 
 #import "RETableViewManager.h"
 #import "MarqueeLabel.h"
@@ -35,7 +36,10 @@
 #import "GVUserDefaults+Setting.h"
 #import "JHTickerView.h"
 
-@interface TaskListViewController ()<DMOfferWallManagerDelegate,MyOfferAPIDelegate,OfferWallDelegate,RETableViewManagerDelegate>
+@interface TaskListViewController ()<DMOfferWallManagerDelegate,
+MyOfferAPIDelegate,
+OfferWallDelegate,
+RETableViewManagerDelegate>
 
 @property (nonatomic,weak)IBOutlet UITableView *listView;
 @property (nonatomic,weak)IBOutlet JHTickerView *scrollLabel;
@@ -112,6 +116,9 @@
     [ChanceAd setUserInfo:userID];
     //安沃
     ZKcmoneOWSetKeywords(@[userID]);
+    
+    //点乐
+    [JJSDK requestJJSession:@"2652099a792fbc3d59f887113a3bb3d2" withUserID:userID];
     
 }
 
@@ -394,6 +401,13 @@
         }
             
     }
+    
+    //临时添加
+    __weak TaskListViewController *weakSelf = self;
+    RETableViewItem *item = [RETableViewItem itemWithTitle:@"点乐" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+        [JJSDK showJJDiamondWithViewController:weakSelf];
+    }];
+    [section addItem:item];
     
     [self.tableViewMager removeAllSections];
     [self.tableViewMager addSection:section];
