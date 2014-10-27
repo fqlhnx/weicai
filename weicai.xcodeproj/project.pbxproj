@@ -193,6 +193,7 @@
 		F663D98719DA43FE002943D7 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = F663D98219DA43FD002943D7 /* wall_template.zip */; };
 		F663D98819DA43FE002943D7 /* libzkcmone2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D98419DA43FD002943D7 /* libzkcmone2.3.a */; };
 		F663D9C619DA5287002943D7 /* BeeSystemInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */; };
+		F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67C98CC19FE00E000C26988 /* IPAddressController.m */; };
 		F695DD0919EE4E6800E82EAE /* IPAddressListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */; };
 		F6981A9719F4E9C6008A403F /* TOActivityChrome.m in Sources */ = {isa = PBXBuildFile; fileRef = F6981A9019F4E9C6008A403F /* TOActivityChrome.m */; };
 		F6981A9819F4E9C6008A403F /* TOActivitySafari.m in Sources */ = {isa = PBXBuildFile; fileRef = F6981A9219F4E9C6008A403F /* TOActivitySafari.m */; };
@@ -533,6 +534,8 @@
 		F663D98519DA43FD002943D7 /* ZKcmoneZKcmtwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKcmoneZKcmtwo.h; sourceTree = "<group>"; };
 		F663D9C419DA5287002943D7 /* BeeSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeSystemInfo.h; sourceTree = "<group>"; };
 		F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BeeSystemInfo.mm; sourceTree = "<group>"; };
+		F67C98CB19FE00E000C26988 /* IPAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddressController.h; sourceTree = "<group>"; };
+		F67C98CC19FE00E000C26988 /* IPAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressController.m; sourceTree = "<group>"; };
 		F695DD0719EE4E6800E82EAE /* IPAddressListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddressListRequest.h; sourceTree = "<group>"; };
 		F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressListRequest.m; sourceTree = "<group>"; };
 		F6981A8F19F4E9C6008A403F /* TOActivityChrome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActivityChrome.h; sourceTree = "<group>"; };
@@ -1143,6 +1146,8 @@
 				F6DAA42619E52E3300ADA84A /* ServerConfig.h */,
 				F6DAA3D619E10FCC00ADA84A /* ScoreLabel.h */,
 				F6DAA3D719E10FCC00ADA84A /* ScoreLabel.m */,
+				F67C98CB19FE00E000C26988 /* IPAddressController.h */,
+				F67C98CC19FE00E000C26988 /* IPAddressController.m */,
 				F614A7BC19F74221004DEB96 /* Res */,
 			);
 			path = common;
@@ -1860,6 +1865,7 @@
 				F63E9C8219DE79E700548AA9 /* REDateTimeItem.m in Sources */,
 				F698A19D19F0B8CE00EF30BA /* TaskListViewController.m in Sources */,
 				F6981A9A19F4E9C6008A403F /* UIImage+TOWebViewControllerIcons.m in Sources */,
+				F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */,
 				F63E9C7F19DE79E700548AA9 /* RETableViewTextCell.m in Sources */,
 				F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */,
 				F6981A9919F4E9C6008A403F /* TOWebViewController.m in Sources */,

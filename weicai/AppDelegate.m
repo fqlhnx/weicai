@@ -12,7 +12,9 @@
 #import "PersonalCenterViewController.h"
 #import "TaskListViewController.h"
 #import "BeeSystemInfo.h"
+#import "BeeDeviceInfo.h"
 #import "HelpCenterWebViewController.h"
+#import "IPAddressController.h"
 
 //各大广告平台SDK头文件
 #import "DMOfferWallManager.h"
@@ -83,6 +85,8 @@
     self.window.rootViewController = self.tabBarCtrl;
     
     [self.window makeKeyAndVisible];
+    
+    [IPAddressController sharedInstance];
     
     return YES;
 }

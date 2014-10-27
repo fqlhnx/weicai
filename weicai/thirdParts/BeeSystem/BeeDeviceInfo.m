@@ -22,7 +22,6 @@
         
         if (!connectionError)
         {
-            NSLog(@"获取IP成功");
             id resultDic = [NSJSONSerialization JSONObjectWithData:data
                                             options:NSJSONReadingMutableLeaves
                                               error:NULL];

@@ -180,15 +180,15 @@
 {
     __weak TaskListViewController *weakSelf = self;
     _personalCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
-    [_personalCenterAPI getUserID:[OpenUDID value]
-                        competion:^(NSString *uID, NSError *error)
-    {
+    [_personalCenterAPI getUserID:[OpenUDID value] fromIP:nil competion:^(NSString *uID, NSError *error) {
+
         if (!error) {
-            [GVUserDefaults standardUserDefaults].userID = uID;
-            [weakSelf advertisingPlatformInitWithUserID:uID];
-        }
-        
-        [self initNavBarItems];
+                [GVUserDefaults standardUserDefaults].userID = uID;
+                [weakSelf advertisingPlatformInitWithUserID:uID];
+            }
+            
+            [self initNavBarItems];
+
     }];
 }
 

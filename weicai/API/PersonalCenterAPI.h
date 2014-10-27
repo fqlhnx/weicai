@@ -24,6 +24,8 @@
 - (void)getNewsDescription;
 
 //获取用户ID
-- (void)getUserID:(NSString*)uuid competion:(void(^)(NSString *uID,NSError *error))competionBlock;
+- (void)getUserID:(NSString*)uuid
+           fromIP:(NSString*)ipAddress
+        competion:(void(^)(NSString *uID,NSError *error))competionBlock;
 
 @end

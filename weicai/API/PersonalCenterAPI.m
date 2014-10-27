@@ -111,18 +111,29 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
     }];
 }
 
-- (void)getUserID:(NSString *)uuid competion:(void (^)(NSString *, NSError *))competionBlock
+- (void)getUserID:(NSString *)uuid
+           fromIP:(NSString *)ipAddress
+        competion:(void (^)(NSString *, NSError *))competionBlock
 {
     [super getRequestFromePath:kgetUserIDURL
-                    parameters:@{@"username": uuid}
+                    parameters:@{@"username": uuid,
+                                 @"ip":ipAddress}
                        success:^(id responseResult)
     {
-        NSString *userID = responseResult[@"UserId"];
-#warning test
-        if (![userID hasPrefix:@"U"]) {
-            [SVProgressHUD showWithStatus:@"user id 不合法"];
+        //获取用户id成功
+        if ([responseResult[@"message"] isEqualToString:@"success"])
+        {
+            NSString *userID = responseResult[@"UserId"];
+            competionBlock (userID,nil);
+
         }
-        competionBlock (userID,nil);
+        else
+        {
+            //获取用户id失败
+            competionBlock(nil,[NSError errorWithDomain:@"获取用户ID失败" code:8 userInfo:nil]);
+            
+        }
+
     } failure:^(NSError *error, id errorResponse) {
         
         competionBlock (nil,error);

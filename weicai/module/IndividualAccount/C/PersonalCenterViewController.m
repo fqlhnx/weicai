@@ -12,6 +12,7 @@
 #import "TaskCenterAPI.h"
 #import "PersonalCenterAPI.h"
 #import "ServerConfig.h"
+#import "IPAddressController.h"
 
 #import "BeeDeviceInfo.h"
 #import "MarqueeLabel.h"
@@ -112,7 +113,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
     __weak PersonalCenterViewController *weakSelf = self;
     //初始化列表
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
@@ -133,23 +134,27 @@
                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                      selectionHandler:^(RETableViewItem *item)
     {
-//        [_personalCenterAPI queryExchangeDetailWithUserID:_userID.text page:@"1"];
         ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
         vc.userid = _userID.text;
         [weakSelf.navigationController pushViewController:vc animated:YES];
         
-#warning test
         [item deselectRowAnimated:YES];
         
     }]];
     
+    
+    
+    //获取描述信息
     [_personalCenterAPI getNewsDescription];
+    
     //初始化定时器服务
     [self startTimers];
     
     //获取用户ID
     NSString *uuid = [OpenUDID value];
+    NSString *ip = [IPAddressController sharedInstance].currentIP;
     [_personalCenterAPI getUserID:uuid
+                           fromIP:ip
                         competion:^(NSString *uID, NSError *error) {
         
                             if (!error) {
@@ -158,7 +163,7 @@
                                 //刷新用户剩余积分
                                 [self refreshBalance];
                             }
-                            
+
     }];
     
     //获取累计方法积分数
