@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString *const DidGetCurrentIPAddress = @"DidGetIPAddress";
+
 @interface IPAddressController : NSObject
 
 @property (nonatomic,readonly)NSString *currentIP;

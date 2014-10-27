@@ -14,6 +14,7 @@
 #import "OpenUDID.h"
 #import "ServerConfig.h"
 #import "ChannelInfo.h"
+#import "IPAddressController.h"
 
 //各大广告平台SDK头文件
 #import "DMOfferWallManager.h"
@@ -183,11 +184,12 @@ RETableViewManagerDelegate>
     }];
 }
 
-- (void)getuserID
+- (void)getuserIDWithIPAddress:(NSString*)address
 {
     __weak TaskListViewController *weakSelf = self;
     _personalCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
-    [_personalCenterAPI getUserID:[OpenUDID value] fromIP:nil competion:^(NSString *uID, NSError *error) {
+    NSString *ip = address;
+    [_personalCenterAPI getUserID:[OpenUDID value] fromIP:ip competion:^(NSString *uID, NSError *error) {
 
         if (!error) {
                 [GVUserDefaults standardUserDefaults].userID = uID;
@@ -210,18 +212,13 @@ RETableViewManagerDelegate>
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didGetIP:)
+                                                name:DidGetCurrentIPAddress
+                                              object:nil];
+    
     [self setupScrollLabel];
     [self setupListView];
     
-    if ([GVUserDefaults standardUserDefaults].userID) {
-        
-        NSString *uid = [GVUserDefaults standardUserDefaults].userID;
-        [self advertisingPlatformInitWithUserID:uid];
-        [self initNavBarItems];
-        
-    }else{
-        [self getuserID];
-    }
     
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -280,6 +277,23 @@ RETableViewManagerDelegate>
 
 
 #pragma mark prive method
+
+- (void)didGetIP:(NSNotification*)notification
+{
+    if ([GVUserDefaults standardUserDefaults].userID) {
+        
+        NSString *uid = [GVUserDefaults standardUserDefaults].userID;
+        [self advertisingPlatformInitWithUserID:uid];
+        [self initNavBarItems];
+        
+    }
+    else
+    {
+        NSString *ipadd = notification.object;
+        [self getuserIDWithIPAddress:ipadd];
+    }
+
+}
 
 - (void)configListView
 {
@@ -407,6 +421,8 @@ RETableViewManagerDelegate>
     RETableViewItem *item = [RETableViewItem itemWithTitle:@"点乐" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
         [JJSDK showJJDiamondWithViewController:weakSelf];
     }];
+    item.style = UITableViewCellStyleSubtitle;
+    item.image = [UIImage imageNamed:@"taskCellIcon"];
     [section addItem:item];
     
     [self.tableViewMager removeAllSections];

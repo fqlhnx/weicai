@@ -43,6 +43,8 @@
         
         if (!error) {
             self.currentIP = ipAddr;
+            [[NSNotificationCenter defaultCenter]postNotificationName:DidGetCurrentIPAddress
+                                                               object:self.currentIP];
         }else{
             [self getCurrentIp];
         }

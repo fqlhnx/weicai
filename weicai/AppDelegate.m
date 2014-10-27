@@ -49,6 +49,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //ip 地址
+    [IPAddressController sharedInstance];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -85,8 +88,6 @@
     self.window.rootViewController = self.tabBarCtrl;
     
     [self.window makeKeyAndVisible];
-    
-    [IPAddressController sharedInstance];
     
     return YES;
 }

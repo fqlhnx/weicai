@@ -13,6 +13,7 @@
 + (void)connectedToTheInternetToGetIPAddress:(void (^)(NSString *, NSError *))result
 {
     NSURL *url = [NSURL URLWithString:@"http://ip-api.com/json"];
+//    NSURL *url = [NSURL URLWithString:@"http://fw.qq.com/ipaddress"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request
