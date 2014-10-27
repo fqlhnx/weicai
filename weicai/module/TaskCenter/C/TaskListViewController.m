@@ -119,7 +119,7 @@ RETableViewManagerDelegate>
     ZKcmoneOWSetKeywords(@[userID]);
     
     //点乐
-    [JJSDK requestJJSession:@"2652099a792fbc3d59f887113a3bb3d2" withUserID:userID];
+    [JJSDK requestJJSession:dianJoyAppID withUserID:userID];
     
 }
 

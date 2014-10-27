@@ -23,4 +23,5 @@
 //触控PID
 #define ChuKongPID @"823447987-32C1CB-BF37-703E-3E9CA1089"
 
+#define dianJoyAppID @"2d0baccd4449a89b6d2adf430974f9d9"
 #endif
