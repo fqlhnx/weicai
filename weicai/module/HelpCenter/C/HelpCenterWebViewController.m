@@ -19,6 +19,8 @@
         
         self.tabBarItem.image = [[UIImage imageNamed:@"item4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item4Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        self.title = @"帮助中心";
     }
     return self;
 }

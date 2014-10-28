@@ -22,6 +22,7 @@
 @interface PersonalCenterViewController ()
 
 @property (nonatomic,weak)IBOutlet UILabel *userID;
+@property (nonatomic,strong)NSString *myUserID;
 @property (nonatomic,weak)IBOutlet UILabel *balanceLabel;
 @property (nonatomic,weak)IBOutlet UILabel *totalPoint;
 
@@ -49,8 +50,15 @@
         self.tabBarItem.image = [[UIImage imageNamed:@"item2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item2Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
+        self.title = @"个人中心";
         _personalCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         self.taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+
+        //
+        [[NSNotificationCenter defaultCenter]addObserver:self
+                                                selector:@selector(didGetIPAddress:)
+                                                    name:DidGetCurrentIPAddress
+                                                  object:nil];
 
     }
     return self;
@@ -63,7 +71,7 @@
     NSLog(@"%s",__FUNCTION__);
     
     //调用查询用户剩余积分API
-    [_taskCenterAPI getIntegral:_userID.text success:^(NSString *totalIntegral) {
+    [_taskCenterAPI getIntegral:_myUserID success:^(NSString *totalIntegral) {
         //成功刷新显示
         _balanceLabel.text = totalIntegral;
     } failure:^(NSError *error) {
@@ -143,32 +151,20 @@
         
     }]];
     
-    
-    
     //获取描述信息
     [_personalCenterAPI getNewsDescription];
     
     //初始化定时器服务
     [self startTimers];
     
-    //获取用户ID
-    NSString *uuid = [OpenUDID value];
-    NSString *ip = [IPAddressController sharedInstance].currentIP;
-    [_personalCenterAPI getUserID:uuid
-                           fromIP:ip
-                        competion:^(NSString *uID, NSError *error) {
-        
-                            if (!error) {
-                                //刷新用户ID
-                                _userID.text = uID;
-                                //刷新用户剩余积分
-                                [self refreshBalance];
-                            }
-
-    }];
-    
     //获取累计方法积分数
     [self refreshTotalPoints];
+    
+    _userID.text = _myUserID;
+    
+    if (!_userID) {
+        [self refreshBalance];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -188,6 +184,30 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark prive
+
+- (void)didGetIPAddress:(NSNotification*)notification
+{
+    NSString *ip = notification.object;
+    
+    //获取用户ID
+    NSString *uuid = [OpenUDID value];
+    [_personalCenterAPI getUserID:uuid
+                           fromIP:ip
+                        competion:^(NSString *uID, NSError *error) {
+                            
+                            if (!error) {
+                                //刷新用户ID
+                                _myUserID = uID;
+                                _userID.text = uID;
+                                //刷新用户剩余积分
+                                [self refreshBalance];
+                            }
+                            
+                        }];
+
 }
 
 @end
