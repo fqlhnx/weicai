@@ -68,7 +68,7 @@ RETableViewManagerDelegate>
         self.tabBarItem.image = [[UIImage imageNamed:@"tabbarItem1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
         self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabBarItem1_select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
+        self.title = @"任务中心";
         _taskCenterRequest = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         
     }
@@ -404,6 +404,18 @@ RETableViewManagerDelegate>
                     [section addItem:item];
                     break;
                 }
+                case DianJoyPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        [JJSDK showJJDiamondWithViewController:weakSelf];
+                    }];
+                    item.style = UITableViewCellStyleSubtitle;
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.detailLabelText = subName;
+                    [section addItem:item];
+                    
+                    break;
+                }
                 default:
                 {
                     NSLog(@"未知的渠道");
@@ -415,16 +427,7 @@ RETableViewManagerDelegate>
         }
             
     }
-    
-    //临时添加
-    __weak TaskListViewController *weakSelf = self;
-    RETableViewItem *item = [RETableViewItem itemWithTitle:@"点乐" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
-        [JJSDK showJJDiamondWithViewController:weakSelf];
-    }];
-    item.style = UITableViewCellStyleSubtitle;
-    item.image = [UIImage imageNamed:@"taskCellIcon"];
-    [section addItem:item];
-    
+        
     [self.tableViewMager removeAllSections];
     [self.tableViewMager addSection:section];
 

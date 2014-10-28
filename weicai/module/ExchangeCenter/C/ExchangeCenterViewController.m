@@ -51,6 +51,7 @@ static NSString *ipAddress;
         self.tabBarItem.image = [[UIImage imageNamed:@"item3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item3Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
+        self.title = @"兑换中心";
         _exchangeAPI = [[ExchangeCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         _taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
     }

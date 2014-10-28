@@ -56,14 +56,17 @@
         [weakSelf.personCenterAPI integralDetail:_userid page:@"1" success:^(NSArray *results) {
             
             if (results.count > 0) {
+                
                 [_taskContents removeAllObjects];
                 [_taskContents addObjectsFromArray:results];
                 [weakSelf configListViewWithTasks:_taskContents];
                 
-                [weakSelf.listView.pullToRefreshView stopAnimating];
             }
+            [weakSelf.listView.pullToRefreshView stopAnimating];
+
         } failed:^(NSError *error) {
             
+            [weakSelf.listView.pullToRefreshView stopAnimating];
         }];
         
     }];

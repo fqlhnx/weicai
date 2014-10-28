@@ -49,6 +49,7 @@
         self.tabBarItem.image = [[UIImage imageNamed:@"item2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item2Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         
+        self.title = @"个人中心";
         _personalCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         self.taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
 
