@@ -19,7 +19,7 @@
                                                                               action:@selector(tapTouched)];
         [self addGestureRecognizer:tap];
         self.userInteractionEnabled = YES;
-        self.textAlignment = NSTextAlignmentCenter;
+        self.textAlignment = NSTextAlignmentRight;
     }
     return self;
 }

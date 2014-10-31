@@ -130,17 +130,16 @@ RETableViewManagerDelegate>
     
     [_taskCenterRequest getIntegral:userID success:^(NSString *totalIntegral) {
         
-        self.scoreLabel = [[ScoreLabel alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
+        self.scoreLabel = [[ScoreLabel alloc]initWithFrame:CGRectMake(0, 0, 100, 40)];
         self.scoreLabel.didTouchedBlock = ^()
         {
             NSLog(@"label touched");
             //刷新积分
         };
-        self.scoreLabel.text = [NSString stringWithFormat:@"%@积分",totalIntegral];
+        self.scoreLabel.text = [NSString stringWithFormat:@"%@分钱",totalIntegral];
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.scoreLabel ];
         self.navigationItem.rightBarButtonItem = rightItem;
 
-        
     } failure:^(NSError *error) {
         
     }];
@@ -192,12 +191,15 @@ RETableViewManagerDelegate>
     [_personalCenterAPI getUserID:[OpenUDID value] fromIP:ip competion:^(NSString *uID, NSError *error) {
 
         if (!error) {
-                [GVUserDefaults standardUserDefaults].userID = uID;
-                [weakSelf advertisingPlatformInitWithUserID:uID];
-            }
+            
+            [GVUserDefaults standardUserDefaults].userID = uID;
+            
+            [weakSelf advertisingPlatformInitWithUserID:uID];
             
             [self initNavBarItems];
 
+            }
+        
     }];
 }
 

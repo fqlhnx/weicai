@@ -79,6 +79,7 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
                                for (NSDictionary *taskDic in results) {
                                    TaskInfo *taskObj = [RMMapper objectWithClass:[TaskInfo class] fromDictionary:taskDic];
                                    [arr addObject:taskObj];
+                                   
                                }
                                success(arr);
                            }

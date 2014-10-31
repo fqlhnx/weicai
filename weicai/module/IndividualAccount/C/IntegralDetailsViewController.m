@@ -34,7 +34,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.title = @"任务详情";
+        self.title = @"收益明细";
         
         _taskContents = [NSMutableArray array];
     }
@@ -93,7 +93,15 @@
     //循环配置cell
     for (TaskInfo *taskObj in tasks) {
         
-        RETableViewItem * item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@ %@积分",taskObj.ad,taskObj.point]];
+        NSString *timeStr = nil;
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:taskObj.created.integerValue];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        timeStr = [dateFormatter stringFromDate:date];
+        
+        RETableViewItem * item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@ %@积分  %@",taskObj.ad,taskObj.point,timeStr]];
+        item.cellHeight = 30.f;
         [section addItem:item];
     }
     
