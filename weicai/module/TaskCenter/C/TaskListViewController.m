@@ -126,6 +126,12 @@ RETableViewManagerDelegate>
 
 - (void)initNavBarItems
 {
+    [NSTimer scheduledTimerWithTimeInterval:30.f
+                                     target:self
+                                   selector:@selector(refreshUserIntegral)
+                                   userInfo:nil
+                                    repeats:YES];
+    
     NSString *userID = [GVUserDefaults standardUserDefaults].userID;
     
     [_taskCenterRequest getIntegral:userID success:^(NSString *totalIntegral) {
@@ -279,6 +285,18 @@ RETableViewManagerDelegate>
 
 
 #pragma mark prive method
+
+- (void)refreshUserIntegral
+{
+    
+    [_taskCenterRequest getIntegral:[GVUserDefaults standardUserDefaults].userID success:^(NSString *totalIntegral) {
+        
+        _scoreLabel.text = [NSString stringWithFormat:@"%@分钱",totalIntegral];
+        
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 - (void)didGetIP:(NSNotification*)notification
 {

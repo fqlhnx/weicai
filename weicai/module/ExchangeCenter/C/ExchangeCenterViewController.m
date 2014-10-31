@@ -114,6 +114,10 @@ static NSString *ipAddress;
     
     [self.listView triggerPullToRefresh];
     
+    //点击其他空白处收回键盘
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -146,6 +150,8 @@ static NSString *ipAddress;
                                         }];
     //条件满足调用积分兑换API
     
+    [_aliPayAccountField resignFirstResponder];
+    
 }
 
 //手机充值申请
@@ -167,6 +173,8 @@ static NSString *ipAddress;
                                         } failure:^(NSError *error) {
                                             
                                         }];
+    
+    [_phoneNumField resignFirstResponder];
 
 }
 
@@ -183,7 +191,24 @@ static NSString *ipAddress;
         //刷新界面
         for (ExchangeInfo *exchangeInfo in records)
         {
-            RETableViewItem *item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@在平台%@兑换，耗费%@积分",exchangeInfo.telmember_id,exchangeInfo.exchange_target,exchangeInfo.integral]];
+            
+            NSString *target = nil;
+            //1 代表支付宝提现
+            if ([exchangeInfo.exchange_target isEqualToString:@"1"]) {
+                target = @"申请支付宝提现";
+            }else{
+                target = @"申请手机充值";
+            }
+            
+            NSString *exchangeTime = nil;
+            NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
+            [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+            exchangeTime = [dateFormatter stringFromDate:date];
+
+            RETableViewItem *item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@%@ %@",exchangeInfo.telmember_id,target,exchangeTime]];
+            item.cellHeight = 20.f;
             [section addItem:item];
         }
         [self.listView.pullToRefreshView stopAnimating];
@@ -207,6 +232,12 @@ static NSString *ipAddress;
     } failure:^(NSError *error) {
         
     }];
+}
+
+- (void)hideKeyboard
+{
+    [_phoneNumField resignFirstResponder];
+    [_aliPayAccountField resignFirstResponder];
 }
 
 
