@@ -29,6 +29,8 @@
 #import "CSAppZone.h"
 #import "ChanceAd.h"
 #import "JJSDK.h"
+//guo meng
+#import "GuoMobWallViewController.h"
 
 #import "RETableViewManager.h"
 #import "MarqueeLabel.h"
@@ -40,7 +42,8 @@
 @interface TaskListViewController ()<DMOfferWallManagerDelegate,
 MyOfferAPIDelegate,
 OfferWallDelegate,
-RETableViewManagerDelegate>
+RETableViewManagerDelegate,
+GuoMobWallDelegate>
 
 @property (nonatomic,weak)IBOutlet UITableView *listView;
 @property (nonatomic,weak)IBOutlet JHTickerView *scrollLabel;
@@ -52,6 +55,8 @@ RETableViewManagerDelegate>
 
 @property (nonatomic,strong)TaskCenterAPI *taskCenterRequest;
 @property (nonatomic,strong)PersonalCenterAPI *personalCenterAPI;
+
+@property (nonatomic,strong)GuoMobWallViewController *guoMengWallVC;
 
 @property (nonatomic,strong)NSArray *allChannels;
 
@@ -120,6 +125,11 @@ RETableViewManagerDelegate>
     
     //点乐
     [JJSDK requestJJSession:dianJoyAppID withUserID:userID];
+    
+    //guomeng
+    self.guoMengWallVC = [[GuoMobWallViewController alloc] initWithId:@"k2pihlw4as74912"];
+    self.guoMengWallVC.delegate = self;
+    self.guoMengWallVC.OtherID = userID;
     
 }
 
@@ -319,6 +329,14 @@ RETableViewManagerDelegate>
 {
     RETableViewSection *section = [RETableViewSection section];
     
+#warning lingshi guomeng
+    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+        
+        [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
+    }];
+    [section addItem:item];
+
+    
     for (ChannelInfo *channel in self.allChannels)
     {
         NSString *isDisplay = channel.is_display;
@@ -447,7 +465,7 @@ RETableViewManagerDelegate>
         }
             
     }
-        
+    
     [self.tableViewMager removeAllSections];
     [self.tableViewMager addSection:section];
 
