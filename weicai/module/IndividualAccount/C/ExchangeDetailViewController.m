@@ -80,7 +80,21 @@
     RETableViewSection *section = [RETableViewSection section];
     for (Exchange *exchangeInfo in exchange_records)
     {
-        RETableViewItem *item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"在%@平台兑换，用了%@积分",exchangeInfo.exchange_target,exchangeInfo.integral]];
+        NSString *exchangeTime = nil;
+        NSString *target = nil;
+        if ([exchangeInfo.exchange_target isEqualToString:@"1"]) {
+            target = @"支付宝提现";
+        }else{
+            target = @"手机充值";
+        }
+        
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+        exchangeTime = [dateFormatter stringFromDate:date];
+
+        RETableViewItem *item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@，消耗%@积分 %@",target,exchangeInfo.integral,exchangeTime]];
         [section addItem:item];
     }
     

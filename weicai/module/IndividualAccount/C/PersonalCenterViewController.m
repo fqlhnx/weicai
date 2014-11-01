@@ -18,6 +18,7 @@
 #import "MarqueeLabel.h"
 #import "RETableViewManager.h"
 #import "OpenUDID.h"
+#import "GVUserDefaults+Setting.h"
 
 @interface PersonalCenterViewController ()
 
@@ -76,7 +77,6 @@
         _balanceLabel.text = totalIntegral;
     } failure:^(NSError *error) {
         //失败给出提醒
-
     }];
 }
 
@@ -161,7 +161,6 @@
     [self refreshTotalPoints];
     
     _userID.text = _myUserID;
-    
     if (_myUserID) {
         [self refreshBalance];
     }
@@ -199,11 +198,15 @@
                         competion:^(NSString *uID, NSError *error) {
                             
                             if (!error) {
-                                //刷新用户ID
                                 _myUserID = uID;
+                                //刷新显示ID
                                 _userID.text = uID;
                                 //刷新用户剩余积分
                                 [self refreshBalance];
+                                
+                                //更新UID
+                                [GVUserDefaults standardUserDefaults].userID = uID;
+                                
                             }
                             
                         }];
