@@ -162,7 +162,7 @@
     
     _userID.text = _myUserID;
     
-    if (!_userID) {
+    if (_myUserID) {
         [self refreshBalance];
     }
 }
