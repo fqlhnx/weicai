@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60270BD1A064D3500DF8D87 /* RecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F60270BB1A064D3500DF8D87 /* RecordListCell.m */; };
+		F60270BE1A064D3500DF8D87 /* RecordListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60270BC1A064D3500DF8D87 /* RecordListCell.xib */; };
+		F60270C11A064E3A00DF8D87 /* RecordListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F60270C01A064E3A00DF8D87 /* RecordListItem.m */; };
 		F614A7BF19F7426C004DEB96 /* navBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F614A7BD19F7426C004DEB96 /* navBar@2x.png */; };
 		F614A7C019F7426C004DEB96 /* tabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F614A7BE19F7426C004DEB96 /* tabBar@2x.png */; };
 		F628E35F19ECFD6D00F4C959 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E35E19ECFD6D00F4C959 /* ChannelInfo.m */; };
@@ -260,6 +263,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F60270BA1A064D3500DF8D87 /* RecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordListCell.h; sourceTree = SOURCE_ROOT; };
+		F60270BB1A064D3500DF8D87 /* RecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordListCell.m; sourceTree = SOURCE_ROOT; };
+		F60270BC1A064D3500DF8D87 /* RecordListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordListCell.xib; sourceTree = SOURCE_ROOT; };
+		F60270BF1A064E3A00DF8D87 /* RecordListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordListItem.h; sourceTree = "<group>"; };
+		F60270C01A064E3A00DF8D87 /* RecordListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordListItem.m; sourceTree = "<group>"; };
 		F614A7BD19F7426C004DEB96 /* navBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBar@2x.png"; sourceTree = "<group>"; };
 		F614A7BE19F7426C004DEB96 /* tabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar@2x.png"; sourceTree = "<group>"; };
 		F628E35D19ECFD6D00F4C959 /* ChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfo.h; sourceTree = "<group>"; };
@@ -1634,6 +1642,8 @@
 				F6F3CFCB19F10C650040E1BF /* Exchange.m */,
 				F6F3CFC719F10C5C0040E1BF /* TaskInfo.h */,
 				F6F3CFC819F10C5C0040E1BF /* TaskInfo.m */,
+				F60270BF1A064E3A00DF8D87 /* RecordListItem.h */,
+				F60270C01A064E3A00DF8D87 /* RecordListItem.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1648,6 +1658,9 @@
 		F6F3CFCE19F10C9A0040E1BF /* V */ = {
 			isa = PBXGroup;
 			children = (
+				F60270BA1A064D3500DF8D87 /* RecordListCell.h */,
+				F60270BB1A064D3500DF8D87 /* RecordListCell.m */,
+				F60270BC1A064D3500DF8D87 /* RecordListCell.xib */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1725,6 +1738,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = www.51weicai.cn;
 				TargetAttributes = {
+					F663D7E419D7A19F002943D7 = {
+						DevelopmentTeam = 6C2R3R9CB5;
+					};
 					F663D7FF19D7A19F002943D7 = {
 						TestTargetID = F663D7E419D7A19F002943D7;
 					};
@@ -1813,6 +1829,7 @@
 				F663D97A19DA43B2002943D7 /* MiiReturnButtonDw.png in Resources */,
 				F663D94319D9A795002943D7 /* _orange_left_view.png in Resources */,
 				F663D92319D9A795002943D7 /* _yuanjiao.png in Resources */,
+				F60270BE1A064D3500DF8D87 /* RecordListCell.xib in Resources */,
 				F663D95119D9A795002943D7 /* _red__bottom.png in Resources */,
 				F663D92719D9A795002943D7 /* _blue__info.png in Resources */,
 				F663D92819D9A795002943D7 /* _blue__iphone_download.png in Resources */,
@@ -1885,6 +1902,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F3CFCC19F10C650040E1BF /* Exchange.m in Sources */,
+				F60270C11A064E3A00DF8D87 /* RecordListItem.m in Sources */,
 				F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */,
 				F63E9C8019DE79E700548AA9 /* REBoolItem.m in Sources */,
 				F663D7F919D7A19F002943D7 /* AppDelegate.m in Sources */,
@@ -1922,6 +1940,7 @@
 				F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */,
 				F63E9C8B19DE79E700548AA9 /* RESegmentedItem.m in Sources */,
 				F63E9C8E19DE79E700548AA9 /* REActionBar.m in Sources */,
+				F60270BD1A064D3500DF8D87 /* RecordListCell.m in Sources */,
 				F63E9CAF19DE7A4300548AA9 /* REValidator.m in Sources */,
 				F63E9C9619DE79E700548AA9 /* RETableViewOptionsController.m in Sources */,
 				F628E36C19ECFF7200F4C959 /* RMMapper.m in Sources */,
@@ -2097,8 +2116,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yaocheng Wang (PLF99J54Q2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yaocheng Wang (PLF99J54Q2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -2134,7 +2153,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "27904242-77e4-457e-8e9a-1e1dfbcba8df";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2144,7 +2163,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -2180,7 +2200,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "27904242-77e4-457e-8e9a-1e1dfbcba8df";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -12,6 +12,9 @@
 #import "ServerConfig.h"
 #import "TaskInfo.h"
 
+#import "RecordListItem.h"
+#import "RecordListCell.h"
+
 #import "SVPullToRefresh.h"
 #import "RETableViewManager.h"
 
@@ -48,6 +51,8 @@
     self.personCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
     
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView];
+    [self.tableViewMager registerClass:NSStringFromClass([RecordListItem class])
+            forCellWithReuseIdentifier:NSStringFromClass([RecordListCell class])];
     
     __weak IntegralDetailsViewController *weakSelf = self;
     [self.listView addPullToRefreshWithActionHandler:^{
@@ -96,11 +101,12 @@
         NSString *timeStr = nil;
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:taskObj.created.integerValue];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
         timeStr = [dateFormatter stringFromDate:date];
         
-        RETableViewItem * item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@ %@积分  %@",taskObj.ad,taskObj.point,timeStr]];
+        RecordListItem * item = [RecordListItem itemWithTitle:[NSString stringWithFormat:@" %@ %@ %@积分  %@",[TaskInfo channelNameByID:taskObj.identify
+],taskObj.ad,taskObj.point,timeStr]];
         item.cellHeight = 30.f;
         [section addItem:item];
     }

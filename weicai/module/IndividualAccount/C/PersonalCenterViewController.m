@@ -204,8 +204,10 @@
                                 //刷新用户剩余积分
                                 [self refreshBalance];
                                 
-                                //更新UID
+                                //本地保存UID
                                 [GVUserDefaults standardUserDefaults].userID = uID;
+                                //内存保存UID
+                                
                                 
                             }
                             

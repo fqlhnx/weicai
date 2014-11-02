@@ -44,4 +44,5 @@ typedef enum : NSUInteger {
 @property (nonatomic,copy)NSString *sub_name;
 @property (nonatomic,copy)NSString *total_integral;
 
+
 @end

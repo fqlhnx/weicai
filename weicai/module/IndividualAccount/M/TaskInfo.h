@@ -24,6 +24,22 @@
 //    "identify": "5",
 //    "storagetime": "1413479206"
 //}
+
+//ad = "\U9014\U725b\U65c5\U6e38";
+//adid = 1004027;
+//"channel_id" = 0;
+//created = 1414754532;
+//device = "3EF002F7-9F42-4102-A85C-F061EDCC3483";
+//id = 1696;
+//identify = 1;
+//"is_deleted" = 0;
+//"order_id" = 175010747;
+//point = 140;
+//price = "1.40";
+//pubid = "96ZJ2c6AzeE/rwTBKU";
+//storagetime = 1414754553;
+//"telmember_id" = U00000869;
+
 @interface TaskInfo : NSObject
 
 @property (nonatomic,copy)NSString *id;
@@ -40,5 +56,7 @@
 @property (nonatomic,copy)NSString *point;
 @property (nonatomic,copy)NSString *identify;
 @property (nonatomic,copy)NSString *storagetime;
+
++ (NSString*)channelNameByID:(NSString*)channelID;
 
 @end

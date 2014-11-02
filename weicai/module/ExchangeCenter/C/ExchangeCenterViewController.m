@@ -12,6 +12,11 @@
 #import "ServerConfig.h"
 #import "ExchangeInfo.h"
 
+#import "IPAddressController.h"
+
+#import "RecordListItem.h"
+#import "RecordListCell.h"
+
 #import "SVPullToRefresh.h"
 #import "RETableViewManager.h"
 #import "MarqueeLabel.h"
@@ -54,6 +59,8 @@ static NSString *ipAddress;
         self.title = @"兑换中心";
         _exchangeAPI = [[ExchangeCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
         _taskCenterAPI = [[TaskCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+        
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didGetIP:) name:DidGetCurrentIPAddress object:nil];
     }
     return self;
 }
@@ -78,7 +85,6 @@ static NSString *ipAddress;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     
 }
 
@@ -109,6 +115,8 @@ static NSString *ipAddress;
     }];
     
     self.tableViewManger = [[RETableViewManager alloc] initWithTableView:self.listView];
+    [self.tableViewManger registerClass:NSStringFromClass([RecordListItem class])
+             forCellWithReuseIdentifier:NSStringFromClass([RecordListCell class])];
     RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"最新兑换记录"];
     [self.tableViewManger addSection:section];
     
@@ -138,17 +146,23 @@ static NSString *ipAddress;
     }
     
     //不为空的话，查询积分看是否满足兑换条件
-    [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
-                                                target:aliPay
-                                                fromIP:ipAddress
-                                              integral:1
-                                                amount:2
-                                        prepaidAccount:aliPayAccount success:^{
-                                            //to do
-                                        } failure:^(NSError *error) {
-                                            //tudo
-                                        }];
-    //条件满足调用积分兑换API
+    if (_userIntegral.text.integerValue >= 100)
+    {
+        [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
+                                                    target:aliPay
+                                                    fromIP:ipAddress
+                                                  integral:1
+                                                    amount:2
+                                            prepaidAccount:aliPayAccount success:^{
+                                                //to do
+                                            } failure:^(NSError *error) {
+                                                //tudo
+                                            }];
+
+    }else
+    {
+        [SVProgressHUD showErrorWithStatus:@"您的积分小于100"];
+    }
     
     [_aliPayAccountField resignFirstResponder];
     
@@ -163,7 +177,10 @@ static NSString *ipAddress;
         [SVProgressHUD showErrorWithStatus:@"手机号不能为空"];
         return;
     }
-    //不为空的话，查询积分看是否满足兑换条件
+    
+    //判断手机号格式是否正确
+    
+    //查询积分看是否满足兑换条件
     [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
                                                 target:phoneNumber
                                                 fromIP:ipAddress integral:1
@@ -207,8 +224,8 @@ static NSString *ipAddress;
             [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
             exchangeTime = [dateFormatter stringFromDate:date];
 
-            RETableViewItem *item = [RETableViewItem itemWithTitle:[NSString stringWithFormat:@"%@%@ %@",exchangeInfo.telmember_id,target,exchangeTime]];
-            item.cellHeight = 20.f;
+            RecordListItem *item = [RecordListItem itemWithTitle:[NSString stringWithFormat:@"%@%@ %@",exchangeInfo.telmember_id,target,exchangeTime]];
+            item.cellHeight = 26.f;
             [section addItem:item];
         }
         [self.listView.pullToRefreshView stopAnimating];
@@ -240,5 +257,8 @@ static NSString *ipAddress;
     [_aliPayAccountField resignFirstResponder];
 }
 
-
+- (void)didGetIP:(NSNotification*)notification
+{
+    ipAddress = notification.object;
+}
 @end
