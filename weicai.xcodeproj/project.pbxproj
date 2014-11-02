@@ -21,6 +21,13 @@
 		F628E37419ED02A700F4C959 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37219ED02A700F4C959 /* UIScrollView+SVPullToRefresh.m */; };
 		F628E37819ED1B5D00F4C959 /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37719ED1B5D00F4C959 /* GVUserDefaults.m */; };
 		F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */; };
+		F638E4971A06646800E5A911 /* NSData+BeeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */; };
+		F638E4981A06646800E5A911 /* NSString+LBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48C1A06646800E5A911 /* NSString+LBExtension.m */; };
+		F638E4991A06646800E5A911 /* LB_DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48E1A06646800E5A911 /* LB_DeviceInfo.m */; };
+		F638E49A1A06646800E5A911 /* LB_Foundation.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4901A06646800E5A911 /* LB_Foundation.m */; };
+		F638E49B1A06646800E5A911 /* LB_Sandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4921A06646800E5A911 /* LB_Sandbox.m */; };
+		F638E49C1A06646800E5A911 /* LB_Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4941A06646800E5A911 /* LB_Singleton.m */; };
+		F638E49D1A06646800E5A911 /* LB_SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4961A06646800E5A911 /* LB_SystemInfo.m */; };
 		F63E9C7419DE79E700548AA9 /* RETableViewBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C2D19DE79E700548AA9 /* RETableViewBoolCell.m */; };
 		F63E9C7519DE79E700548AA9 /* RETableViewCreditCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C2F19DE79E700548AA9 /* RETableViewCreditCardCell.m */; };
 		F63E9C7619DE79E700548AA9 /* RETableViewDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C3119DE79E700548AA9 /* RETableViewDateTimeCell.m */; };
@@ -289,6 +296,20 @@
 		F628E37719ED1B5D00F4C959 /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDefaults.m; sourceTree = "<group>"; };
 		F628E37919ED1BCC00F4C959 /* GVUserDefaults+Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+Setting.h"; sourceTree = "<group>"; };
 		F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+Setting.m"; sourceTree = "<group>"; };
+		F638E4891A06646800E5A911 /* NSData+BeeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BeeCategory.h"; sourceTree = "<group>"; };
+		F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BeeCategory.m"; sourceTree = "<group>"; };
+		F638E48B1A06646800E5A911 /* NSString+LBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LBExtension.h"; sourceTree = "<group>"; };
+		F638E48C1A06646800E5A911 /* NSString+LBExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LBExtension.m"; sourceTree = "<group>"; };
+		F638E48D1A06646800E5A911 /* LB_DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_DeviceInfo.h; sourceTree = "<group>"; };
+		F638E48E1A06646800E5A911 /* LB_DeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_DeviceInfo.m; sourceTree = "<group>"; };
+		F638E48F1A06646800E5A911 /* LB_Foundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_Foundation.h; sourceTree = "<group>"; };
+		F638E4901A06646800E5A911 /* LB_Foundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_Foundation.m; sourceTree = "<group>"; };
+		F638E4911A06646800E5A911 /* LB_Sandbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_Sandbox.h; sourceTree = "<group>"; };
+		F638E4921A06646800E5A911 /* LB_Sandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_Sandbox.m; sourceTree = "<group>"; };
+		F638E4931A06646800E5A911 /* LB_Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_Singleton.h; sourceTree = "<group>"; };
+		F638E4941A06646800E5A911 /* LB_Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_Singleton.m; sourceTree = "<group>"; };
+		F638E4951A06646800E5A911 /* LB_SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_SystemInfo.h; sourceTree = "<group>"; };
+		F638E4961A06646800E5A911 /* LB_SystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_SystemInfo.m; sourceTree = "<group>"; };
 		F63E9C2C19DE79E700548AA9 /* RETableViewBoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewBoolCell.h; sourceTree = "<group>"; };
 		F63E9C2D19DE79E700548AA9 /* RETableViewBoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewBoolCell.m; sourceTree = "<group>"; };
 		F63E9C2E19DE79E700548AA9 /* RETableViewCreditCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCreditCardCell.h; sourceTree = "<group>"; };
@@ -747,6 +768,35 @@
 				F628E37719ED1B5D00F4C959 /* GVUserDefaults.m */,
 			);
 			path = GVUserDefaults;
+			sourceTree = "<group>";
+		};
+		F638E4871A06646800E5A911 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F638E4881A06646800E5A911 /* Category */,
+				F638E48D1A06646800E5A911 /* LB_DeviceInfo.h */,
+				F638E48E1A06646800E5A911 /* LB_DeviceInfo.m */,
+				F638E48F1A06646800E5A911 /* LB_Foundation.h */,
+				F638E4901A06646800E5A911 /* LB_Foundation.m */,
+				F638E4911A06646800E5A911 /* LB_Sandbox.h */,
+				F638E4921A06646800E5A911 /* LB_Sandbox.m */,
+				F638E4931A06646800E5A911 /* LB_Singleton.h */,
+				F638E4941A06646800E5A911 /* LB_Singleton.m */,
+				F638E4951A06646800E5A911 /* LB_SystemInfo.h */,
+				F638E4961A06646800E5A911 /* LB_SystemInfo.m */,
+			);
+			path = foundation;
+			sourceTree = "<group>";
+		};
+		F638E4881A06646800E5A911 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F638E4891A06646800E5A911 /* NSData+BeeCategory.h */,
+				F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */,
+				F638E48B1A06646800E5A911 /* NSString+LBExtension.h */,
+				F638E48C1A06646800E5A911 /* NSString+LBExtension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		F63E9C2A19DE79E700548AA9 /* RETableViewManager */ = {
@@ -1531,6 +1581,7 @@
 		F663D9BF19DA4F90002943D7 /* BeeSystem */ = {
 			isa = PBXGroup;
 			children = (
+				F638E4871A06646800E5A911 /* foundation */,
 				F663D9C419DA5287002943D7 /* BeeSystemInfo.h */,
 				F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */,
 				F6DAA42C19E6290A00ADA84A /* BeeDeviceInfo.h */,
@@ -1920,16 +1971,19 @@
 				F6DAA41919E5221900ADA84A /* AFHTTPRequestOperation.m in Sources */,
 				F63E9C9019DE79E700548AA9 /* REPlaceholderTextView.m in Sources */,
 				F63E9C7719DE79E700548AA9 /* RETableViewFloatCell.m in Sources */,
+				F638E49B1A06646800E5A911 /* LB_Sandbox.m in Sources */,
 				F6DAA3D819E10FCC00ADA84A /* ScoreLabel.m in Sources */,
 				F6981A9819F4E9C6008A403F /* TOActivitySafari.m in Sources */,
 				F6DAA41A19E5221900ADA84A /* AFHTTPRequestOperationManager.m in Sources */,
 				F63E9C7519DE79E700548AA9 /* RETableViewCreditCardCell.m in Sources */,
+				F638E49D1A06646800E5A911 /* LB_SystemInfo.m in Sources */,
 				F6DAA42119E5221900ADA84A /* AFURLSessionManager.m in Sources */,
 				F63E9C7B19DE79E700548AA9 /* RETableViewNumberCell.m in Sources */,
 				F63E9C8219DE79E700548AA9 /* REDateTimeItem.m in Sources */,
 				F698A19D19F0B8CE00EF30BA /* TaskListViewController.m in Sources */,
 				F6981A9A19F4E9C6008A403F /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */,
+				F638E49C1A06646800E5A911 /* LB_Singleton.m in Sources */,
 				F63E9C7F19DE79E700548AA9 /* RETableViewTextCell.m in Sources */,
 				F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */,
 				F6981A9919F4E9C6008A403F /* TOWebViewController.m in Sources */,
@@ -1941,6 +1995,7 @@
 				F63E9C8B19DE79E700548AA9 /* RESegmentedItem.m in Sources */,
 				F63E9C8E19DE79E700548AA9 /* REActionBar.m in Sources */,
 				F60270BD1A064D3500DF8D87 /* RecordListCell.m in Sources */,
+				F638E49A1A06646800E5A911 /* LB_Foundation.m in Sources */,
 				F63E9CAF19DE7A4300548AA9 /* REValidator.m in Sources */,
 				F63E9C9619DE79E700548AA9 /* RETableViewOptionsController.m in Sources */,
 				F628E36C19ECFF7200F4C959 /* RMMapper.m in Sources */,
@@ -1948,6 +2003,7 @@
 				F628E36919ECFF7200F4C959 /* NSObject+RMArchivable.m in Sources */,
 				F63E9CB319DE7A4300548AA9 /* REURLValidator.m in Sources */,
 				F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */,
+				F638E4991A06646800E5A911 /* LB_DeviceInfo.m in Sources */,
 				F663D85B19D7EFEE002943D7 /* ExchangeCenterViewController.m in Sources */,
 				F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */,
 				F628E35F19ECFD6D00F4C959 /* ChannelInfo.m in Sources */,
@@ -1979,6 +2035,7 @@
 				F63E9CAE19DE7A4300548AA9 /* REValidation.m in Sources */,
 				F6F9AD8A19E77A6B001AAF95 /* OpenUDID.m in Sources */,
 				F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */,
+				F638E4981A06646800E5A911 /* NSString+LBExtension.m in Sources */,
 				F6DAA41E19E5221900ADA84A /* AFURLConnectionOperation.m in Sources */,
 				F658BDFE19F0F4D600229373 /* ExchangeDetailViewController.m in Sources */,
 				F6DAA3DF19E1558700ADA84A /* SVProgressHUD.m in Sources */,
@@ -1998,6 +2055,7 @@
 				F63E9CBE19DE7B9900548AA9 /* NSString+RENumberFormat.m in Sources */,
 				F63E9C8919DE79E700548AA9 /* REPickerItem.m in Sources */,
 				F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */,
+				F638E4971A06646800E5A911 /* NSData+BeeCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

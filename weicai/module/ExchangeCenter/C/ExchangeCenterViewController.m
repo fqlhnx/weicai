@@ -24,6 +24,7 @@
 #import "SVProgressHUD.h"
 #import "BeeDeviceInfo.h"
 #import "GVUserDefaults+Setting.h"
+#import "NSString+LBExtension.h"
 
 static NSString *ipAddress;
 
@@ -145,23 +146,39 @@ static NSString *ipAddress;
         return;
     }
     
-    //不为空的话，查询积分看是否满足兑换条件
-    if (_userIntegral.text.integerValue >= 100)
-    {
-        [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
-                                                    target:aliPay
-                                                    fromIP:ipAddress
-                                                  integral:1
-                                                    amount:2
-                                            prepaidAccount:aliPayAccount success:^{
-                                                //to do
-                                            } failure:^(NSError *error) {
-                                                //tudo
-                                            }];
+    
+    //是否是邮箱或是手机号
+    BOOL isEmail = [_aliPayAccountField.text isEmail];
+    BOOL isPhoneNum = [_aliPayAccountField.text isPhoneNumber];
+    
+    if (isEmail || isPhoneNum) {
+        //积分条件
+        if (_userIntegral.text.integerValue >= 100)
+        {
+            __weak ExchangeCenterViewController *weakSelf = self;
+            //兑换比例100 = 1元;
+            NSInteger integralMultiples =    _userIntegral.text.integerValue / 100;
+            [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
+                                                        target:aliPay
+                                                        fromIP:ipAddress
+                                                      integral:(integralMultiples * 100)
+                                                        amount:2
+                                                prepaidAccount:aliPayAccount success:^{
+                                                    //to do
+                                                    [SVProgressHUD showSuccessWithStatus:@"支付宝提醒申请成功"];
+                                                    //刷新余额
+                                                    [weakSelf refreshUserIntegral];
+                                                } failure:^(NSError *error) {
+                                                    //tudo
+                                                }];
+            
+        }else
+        {
+            [SVProgressHUD showErrorWithStatus:@"100积分以上才能兑换"];
+        }
 
-    }else
-    {
-        [SVProgressHUD showErrorWithStatus:@"您的积分小于100"];
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"支付宝账户格式不正确"];
     }
     
     [_aliPayAccountField resignFirstResponder];
@@ -179,17 +196,35 @@ static NSString *ipAddress;
     }
     
     //判断手机号格式是否正确
-    
-    //查询积分看是否满足兑换条件
-    [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
-                                                target:phoneNumber
-                                                fromIP:ipAddress integral:1
-                                                amount:2
-                                        prepaidAccount:telNumber success:^{
-                                            
-                                        } failure:^(NSError *error) {
-                                            
-                                        }];
+    BOOL isPhoneNum = [_phoneNumField.text isPhoneNumber];
+    if (isPhoneNum) {
+        //查询积分看是否满足兑换条件
+        if (_userIntegral.text.integerValue >= 100) {
+            
+            NSInteger integralMultiples =    _userIntegral.text.integerValue / 100;
+            __weak ExchangeCenterViewController *weakSelf = self;
+
+            [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
+                                                        target:phoneNumber
+                                                        fromIP:ipAddress
+                                                      integral:(integralMultiples *100)
+                                                        amount:2
+                                                prepaidAccount:telNumber success:^{
+
+                                                    [SVProgressHUD showSuccessWithStatus:@"手机充值申请成功"];
+                                                    [weakSelf refreshUserIntegral];
+                                                    
+                                                } failure:^(NSError *error) {
+                                                    
+                                                }];
+
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"100积分以上才能兑换"];
+        }
+
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"手机号码格式不正确"];
+    }
     
     [_phoneNumField resignFirstResponder];
 

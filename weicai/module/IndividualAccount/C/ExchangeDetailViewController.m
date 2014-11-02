@@ -97,7 +97,6 @@
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"MM-dd HH:mm"];
-        [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
         exchangeTime = [dateFormatter stringFromDate:date];
 
         RecordListItem *item = [RecordListItem itemWithTitle:[NSString stringWithFormat:@" %@，消耗%@积分 %@",target,exchangeInfo.integral,exchangeTime]];
