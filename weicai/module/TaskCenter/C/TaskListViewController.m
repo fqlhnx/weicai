@@ -194,6 +194,9 @@ GuoMobWallDelegate>
             
         } failure:^(NSError *error) {
             
+            
+            [weakSelf.listView.pullToRefreshView stopAnimating];
+            
         }];
 
     }];
