@@ -37,8 +37,8 @@ id< GuoMobWallDelegate > delegate;
 //设应用密钥 和积分墙frame
 - (id)initWithId:(NSString *)appKey;
 //显示并加载广告列表（参数allow表示是否运行旋转 YES为允许  NO不允许,isHscreen表示应用开始是横还是竖  YES是横NO是竖）
--(void)pushGuoMobWall:(BOOL)allow Hscreen:(BOOL)isHscreen;//加载并显示积分墙
-- (void)requestRewardWall:(BOOL)allow Hscreen:(BOOL)isHscreen;//仅仅是加载积分墙
+-(void)pushGuoMobWall:(BOOL)allow Hscreen:(BOOL)isHscreen;//推出并加载积分墙
+- (void)requestRewardWall:(BOOL)allow Hscreen:(BOOL)isHscreen;//单独加载积分墙,自己显示
 //查询积分
 - (int)checkPoint;
 //读取所有积分并清空
