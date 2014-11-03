@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F60270BD1A064D3500DF8D87 /* RecordListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F60270BB1A064D3500DF8D87 /* RecordListCell.m */; };
-		F60270BE1A064D3500DF8D87 /* RecordListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F60270BC1A064D3500DF8D87 /* RecordListCell.xib */; };
 		F60270C11A064E3A00DF8D87 /* RecordListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F60270C01A064E3A00DF8D87 /* RecordListItem.m */; };
 		F614A7BF19F7426C004DEB96 /* navBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F614A7BD19F7426C004DEB96 /* navBar@2x.png */; };
 		F614A7C019F7426C004DEB96 /* tabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F614A7BE19F7426C004DEB96 /* tabBar@2x.png */; };
@@ -193,13 +191,6 @@
 		F663D95C19D9A795002943D7 /* _red_right_view.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D91219D9A795002943D7 /* _red_right_view.png */; };
 		F663D96119D9A8FE002943D7 /* libTalkingDataSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D95E19D9A8FE002943D7 /* libTalkingDataSDK.a */; };
 		F663D96A19DA4319002943D7 /* JupengSdkLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D96719DA4319002943D7 /* JupengSdkLib.a */; };
-		F663D97819DA43B2002943D7 /* MiiLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D96D19DA43B2002943D7 /* MiiLogo.png */; };
-		F663D97919DA43B2002943D7 /* MiiLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D96E19DA43B2002943D7 /* MiiLogo@2x.png */; };
-		F663D97A19DA43B2002943D7 /* MiiReturnButtonDw.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D96F19DA43B2002943D7 /* MiiReturnButtonDw.png */; };
-		F663D97B19DA43B2002943D7 /* MiiReturnButtonDw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D97019DA43B2002943D7 /* MiiReturnButtonDw@2x.png */; };
-		F663D97C19DA43B2002943D7 /* MiiReturnButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D97119DA43B2002943D7 /* MiiReturnButtonUp.png */; };
-		F663D97D19DA43B2002943D7 /* MiiReturnButtonUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F663D97219DA43B2002943D7 /* MiiReturnButtonUp@2x.png */; };
-		F663D97E19DA43B2002943D7 /* libMSecOfferLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D97719DA43B2002943D7 /* libMSecOfferLib.a */; };
 		F663D98619DA43FE002943D7 /* minizip64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D98119DA43FD002943D7 /* minizip64.a */; };
 		F663D98719DA43FE002943D7 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = F663D98219DA43FD002943D7 /* wall_template.zip */; };
 		F663D98819DA43FE002943D7 /* libzkcmone2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D98419DA43FD002943D7 /* libzkcmone2.3.a */; };
@@ -233,8 +224,6 @@
 		F6B910F119F77B7D00D39821 /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6B910EF19F77B7D00D39821 /* icon_phone@2x.png */; };
 		F6B910F319F77BE200D39821 /* commitIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6B910F219F77BE200D39821 /* commitIcon@2x.png */; };
 		F6B910F519F77C5F00D39821 /* textFieldBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6B910F419F77C5F00D39821 /* textFieldBG@2x.png */; };
-		F6C28A541A03864D002A1276 /* GuomobWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F6C28A511A03864D002A1276 /* GuomobWallBundle.bundle */; };
-		F6C28A551A03864D002A1276 /* libGuoMobWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C28A531A03864D002A1276 /* libGuoMobWall.a */; };
 		F6C28A571A03870D002A1276 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C28A561A03870D002A1276 /* ImageIO.framework */; };
 		F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3D419E1056400ADA84A /* MarqueeLabel.m */; };
 		F6DAA3D819E10FCC00ADA84A /* ScoreLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA3D719E10FCC00ADA84A /* ScoreLabel.m */; };
@@ -253,6 +242,24 @@
 		F6DAA42219E5221900ADA84A /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA41819E5221900ADA84A /* UIImageView+AFNetworking.m */; };
 		F6DAA42E19E6290A00ADA84A /* BeeDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */; };
 		F6DAA43119E633D300ADA84A /* ExchangeCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA43019E633D300ADA84A /* ExchangeCenterAPI.m */; };
+		F6E001F61A0767CF000B2BEC /* RecordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E001F51A0767CF000B2BEC /* RecordItem.m */; };
+		F6E001FB1A076AA0000B2BEC /* RecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E001F91A076AA0000B2BEC /* RecordCell.m */; };
+		F6E001FC1A076AA0000B2BEC /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E001FA1A076AA0000B2BEC /* RecordCell.xib */; };
+		F6E4D4401A076F3E003A677C /* ExchangeRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E4D43E1A076F3E003A677C /* ExchangeRecordCell.m */; };
+		F6E4D4411A076F3E003A677C /* ExchangeRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E4D43F1A076F3E003A677C /* ExchangeRecordCell.xib */; };
+		F6E4D4441A077022003A677C /* ExchangeRecordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E4D4431A077022003A677C /* ExchangeRecordItem.m */; };
+		F6E4D4471A077484003A677C /* ExchangeListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E4D4461A077484003A677C /* ExchangeListItem.m */; };
+		F6E73D001A072451007FE0D8 /* GuomobWallBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F6E73CFD1A072451007FE0D8 /* GuomobWallBundle.bundle */; };
+		F6E73D011A072451007FE0D8 /* libGuoMobWall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E73CFF1A072451007FE0D8 /* libGuoMobWall.a */; };
+		F6E73D2C1A07568F007FE0D8 /* MiiLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E73D211A07568F007FE0D8 /* MiiLogo.png */; };
+		F6E73D2D1A07568F007FE0D8 /* MiiLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E73D221A07568F007FE0D8 /* MiiLogo@2x.png */; };
+		F6E73D2E1A07568F007FE0D8 /* MiiReturnButtonDw.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E73D231A07568F007FE0D8 /* MiiReturnButtonDw.png */; };
+		F6E73D2F1A07568F007FE0D8 /* MiiReturnButtonDw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E73D241A07568F007FE0D8 /* MiiReturnButtonDw@2x.png */; };
+		F6E73D301A07568F007FE0D8 /* MiiReturnButtonUp.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E73D251A07568F007FE0D8 /* MiiReturnButtonUp.png */; };
+		F6E73D311A07568F007FE0D8 /* MiiReturnButtonUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6E73D261A07568F007FE0D8 /* MiiReturnButtonUp@2x.png */; };
+		F6E73D321A07568F007FE0D8 /* libMSecOfferLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E73D2B1A07568F007FE0D8 /* libMSecOfferLib.a */; };
+		F6E73D341A0757D9007FE0D8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E73D331A0757D9007FE0D8 /* MessageUI.framework */; };
+		F6E73D361A0757FE007FE0D8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E73D351A0757FE007FE0D8 /* MapKit.framework */; };
 		F6F3CFC919F10C5C0040E1BF /* TaskInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F3CFC819F10C5C0040E1BF /* TaskInfo.m */; };
 		F6F3CFCC19F10C650040E1BF /* Exchange.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F3CFCB19F10C650040E1BF /* Exchange.m */; };
 		F6F9AD8A19E77A6B001AAF95 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F9AD8919E77A6B001AAF95 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -270,9 +277,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F60270BA1A064D3500DF8D87 /* RecordListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordListCell.h; sourceTree = SOURCE_ROOT; };
-		F60270BB1A064D3500DF8D87 /* RecordListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordListCell.m; sourceTree = SOURCE_ROOT; };
-		F60270BC1A064D3500DF8D87 /* RecordListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordListCell.xib; sourceTree = SOURCE_ROOT; };
 		F60270BF1A064E3A00DF8D87 /* RecordListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordListItem.h; sourceTree = "<group>"; };
 		F60270C01A064E3A00DF8D87 /* RecordListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordListItem.m; sourceTree = "<group>"; };
 		F614A7BD19F7426C004DEB96 /* navBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBar@2x.png"; sourceTree = "<group>"; };
@@ -554,16 +558,6 @@
 		F663D96719DA4319002943D7 /* JupengSdkLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = JupengSdkLib.a; sourceTree = "<group>"; };
 		F663D96819DA4319002943D7 /* JupengWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengWall.h; sourceTree = "<group>"; };
 		F663D96919DA4319002943D7 /* JupengWallDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JupengWallDelegate.h; sourceTree = "<group>"; };
-		F663D96D19DA43B2002943D7 /* MiiLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiLogo.png; sourceTree = "<group>"; };
-		F663D96E19DA43B2002943D7 /* MiiLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiLogo@2x.png"; sourceTree = "<group>"; };
-		F663D96F19DA43B2002943D7 /* MiiReturnButtonDw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonDw.png; sourceTree = "<group>"; };
-		F663D97019DA43B2002943D7 /* MiiReturnButtonDw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonDw@2x.png"; sourceTree = "<group>"; };
-		F663D97119DA43B2002943D7 /* MiiReturnButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonUp.png; sourceTree = "<group>"; };
-		F663D97219DA43B2002943D7 /* MiiReturnButtonUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonUp@2x.png"; sourceTree = "<group>"; };
-		F663D97419DA43B2002943D7 /* MiidiObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiObfuscation.h; sourceTree = "<group>"; };
-		F663D97519DA43B2002943D7 /* MyOfferAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOfferAPI.h; sourceTree = "<group>"; };
-		F663D97619DA43B2002943D7 /* MyOfferAPIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOfferAPIDelegate.h; sourceTree = "<group>"; };
-		F663D97719DA43B2002943D7 /* libMSecOfferLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMSecOfferLib.a; sourceTree = "<group>"; };
 		F663D98119DA43FD002943D7 /* minizip64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = minizip64.a; sourceTree = "<group>"; };
 		F663D98219DA43FD002943D7 /* wall_template.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = wall_template.zip; sourceTree = "<group>"; };
 		F663D98419DA43FD002943D7 /* libzkcmone2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzkcmone2.3.a; sourceTree = "<group>"; };
@@ -611,9 +605,6 @@
 		F6B910EF19F77B7D00D39821 /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
 		F6B910F219F77BE200D39821 /* commitIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commitIcon@2x.png"; sourceTree = "<group>"; };
 		F6B910F419F77C5F00D39821 /* textFieldBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textFieldBG@2x.png"; sourceTree = "<group>"; };
-		F6C28A511A03864D002A1276 /* GuomobWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuomobWallBundle.bundle; sourceTree = "<group>"; };
-		F6C28A521A03864D002A1276 /* GuoMobWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuoMobWallViewController.h; sourceTree = "<group>"; };
-		F6C28A531A03864D002A1276 /* libGuoMobWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGuoMobWall.a; sourceTree = "<group>"; };
 		F6C28A561A03870D002A1276 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		F6DAA3D319E1056400ADA84A /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
 		F6DAA3D419E1056400ADA84A /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
@@ -651,6 +642,33 @@
 		F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeDeviceInfo.m; sourceTree = "<group>"; };
 		F6DAA42F19E633D300ADA84A /* ExchangeCenterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeCenterAPI.h; sourceTree = "<group>"; };
 		F6DAA43019E633D300ADA84A /* ExchangeCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeCenterAPI.m; sourceTree = "<group>"; };
+		F6E001F41A0767CF000B2BEC /* RecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordItem.h; sourceTree = "<group>"; };
+		F6E001F51A0767CF000B2BEC /* RecordItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordItem.m; sourceTree = "<group>"; };
+		F6E001F81A076AA0000B2BEC /* RecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCell.h; sourceTree = "<group>"; };
+		F6E001F91A076AA0000B2BEC /* RecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordCell.m; sourceTree = "<group>"; };
+		F6E001FA1A076AA0000B2BEC /* RecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordCell.xib; sourceTree = "<group>"; };
+		F6E4D43D1A076F3E003A677C /* ExchangeRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeRecordCell.h; sourceTree = "<group>"; };
+		F6E4D43E1A076F3E003A677C /* ExchangeRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRecordCell.m; sourceTree = "<group>"; };
+		F6E4D43F1A076F3E003A677C /* ExchangeRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeRecordCell.xib; sourceTree = "<group>"; };
+		F6E4D4421A077022003A677C /* ExchangeRecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeRecordItem.h; sourceTree = "<group>"; };
+		F6E4D4431A077022003A677C /* ExchangeRecordItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeRecordItem.m; sourceTree = "<group>"; };
+		F6E4D4451A077484003A677C /* ExchangeListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeListItem.h; sourceTree = "<group>"; };
+		F6E4D4461A077484003A677C /* ExchangeListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeListItem.m; sourceTree = "<group>"; };
+		F6E73CFD1A072451007FE0D8 /* GuomobWallBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GuomobWallBundle.bundle; sourceTree = "<group>"; };
+		F6E73CFE1A072451007FE0D8 /* GuoMobWallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuoMobWallViewController.h; sourceTree = "<group>"; };
+		F6E73CFF1A072451007FE0D8 /* libGuoMobWall.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGuoMobWall.a; sourceTree = "<group>"; };
+		F6E73D211A07568F007FE0D8 /* MiiLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiLogo.png; sourceTree = "<group>"; };
+		F6E73D221A07568F007FE0D8 /* MiiLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiLogo@2x.png"; sourceTree = "<group>"; };
+		F6E73D231A07568F007FE0D8 /* MiiReturnButtonDw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonDw.png; sourceTree = "<group>"; };
+		F6E73D241A07568F007FE0D8 /* MiiReturnButtonDw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonDw@2x.png"; sourceTree = "<group>"; };
+		F6E73D251A07568F007FE0D8 /* MiiReturnButtonUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MiiReturnButtonUp.png; sourceTree = "<group>"; };
+		F6E73D261A07568F007FE0D8 /* MiiReturnButtonUp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MiiReturnButtonUp@2x.png"; sourceTree = "<group>"; };
+		F6E73D281A07568F007FE0D8 /* MiidiObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiidiObfuscation.h; sourceTree = "<group>"; };
+		F6E73D291A07568F007FE0D8 /* MyOfferAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOfferAPI.h; sourceTree = "<group>"; };
+		F6E73D2A1A07568F007FE0D8 /* MyOfferAPIDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOfferAPIDelegate.h; sourceTree = "<group>"; };
+		F6E73D2B1A07568F007FE0D8 /* libMSecOfferLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMSecOfferLib.a; sourceTree = "<group>"; };
+		F6E73D331A0757D9007FE0D8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		F6E73D351A0757FE007FE0D8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F6F3CFC719F10C5C0040E1BF /* TaskInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfo.h; sourceTree = "<group>"; };
 		F6F3CFC819F10C5C0040E1BF /* TaskInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfo.m; sourceTree = "<group>"; };
 		F6F3CFCA19F10C650040E1BF /* Exchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exchange.h; sourceTree = "<group>"; };
@@ -673,6 +691,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E73D361A0757FE007FE0D8 /* MapKit.framework in Frameworks */,
+				F6E73D341A0757D9007FE0D8 /* MessageUI.framework in Frameworks */,
 				F6C28A571A03870D002A1276 /* ImageIO.framework in Frameworks */,
 				F6B1BFF319E907E400281631 /* libsqlite3.0.dylib in Frameworks */,
 				F65D46BB19EE94900020E92C /* WPLib.framework in Frameworks */,
@@ -680,10 +700,8 @@
 				F663D88619D931A8002943D7 /* libz.dylib in Frameworks */,
 				F663D98619DA43FE002943D7 /* minizip64.a in Frameworks */,
 				F663D7EB19D7A19F002943D7 /* CoreGraphics.framework in Frameworks */,
-				F6C28A551A03864D002A1276 /* libGuoMobWall.a in Frameworks */,
 				F663D87119D80FE5002943D7 /* CoreLocation.framework in Frameworks */,
 				F663D98819DA43FE002943D7 /* libzkcmone2.3.a in Frameworks */,
-				F663D97E19DA43B2002943D7 /* libMSecOfferLib.a in Frameworks */,
 				F663D88419D93141002943D7 /* AVFoundation.framework in Frameworks */,
 				F6B1BFF519E9089D00281631 /* libChanceAd.a in Frameworks */,
 				F663D86919D80FA2002943D7 /* CoreMedia.framework in Frameworks */,
@@ -691,7 +709,9 @@
 				F663D86F19D80FDE002943D7 /* SystemConfiguration.framework in Frameworks */,
 				F663D86D19D80FD6002943D7 /* StoreKit.framework in Frameworks */,
 				F663D86B19D80FCD002943D7 /* AdSupport.framework in Frameworks */,
+				F6E73D011A072451007FE0D8 /* libGuoMobWall.a in Frameworks */,
 				F661EE3B19FA74F80032FC3B /* libJJSDK.a in Frameworks */,
+				F6E73D321A07568F007FE0D8 /* libMSecOfferLib.a in Frameworks */,
 				F663D8C119D9A77C002943D7 /* libDianRuAdWall.a in Frameworks */,
 				F663D88219D930B2002943D7 /* libDMOfferWallSDK.a in Frameworks */,
 				F663D89719D93ED5002943D7 /* libYouMi.a in Frameworks */,
@@ -958,15 +978,10 @@
 			children = (
 				F643BB0F19F2A6AC00908734 /* ExchangeInfo.h */,
 				F643BB1019F2A6AC00908734 /* ExchangeInfo.m */,
+				F6E4D4451A077484003A677C /* ExchangeListItem.h */,
+				F6E4D4461A077484003A677C /* ExchangeListItem.m */,
 			);
 			path = M;
-			sourceTree = "<group>";
-		};
-		F643BB0E19F2A62200908734 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		F65D46BC19EEB53C0020E92C /* JHTickerView */ = {
@@ -1018,6 +1033,8 @@
 		F663D7E719D7A19F002943D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6E73D351A0757FE007FE0D8 /* MapKit.framework */,
+				F6E73D331A0757D9007FE0D8 /* MessageUI.framework */,
 				F6C28A561A03870D002A1276 /* ImageIO.framework */,
 				F65D46BA19EE94900020E92C /* WPLib.framework */,
 				F6B1BFF219E907E400281631 /* libsqlite3.0.dylib */,
@@ -1099,9 +1116,9 @@
 		F663D82D19D7EC00002943D7 /* ExchangeCenter */ = {
 			isa = PBXGroup;
 			children = (
+				F6E4D4481A0774AB003A677C /* V */,
 				F6B910ED19F77B3800D39821 /* Res */,
 				F643BB0C19F2A62200908734 /* M */,
-				F643BB0E19F2A62200908734 /* V */,
 				F663D82E19D7EC00002943D7 /* C */,
 			);
 			path = ExchangeCenter;
@@ -1164,8 +1181,8 @@
 		F663D83719D7EC00002943D7 /* IndividualAccount */ = {
 			isa = PBXGroup;
 			children = (
+				F6E001F71A076A0C000B2BEC /* V */,
 				F6F3CFCD19F10C9A0040E1BF /* Res */,
-				F6F3CFCE19F10C9A0040E1BF /* V */,
 				F6F3CFC619F10C440040E1BF /* M */,
 				F663D83819D7EC00002943D7 /* C */,
 			);
@@ -1278,14 +1295,14 @@
 		F663D87419D92E8F002943D7 /* thirdParts */ = {
 			isa = PBXGroup;
 			children = (
-				F6C28A501A03864D002A1276 /* GuomobWallSDK */,
+				F6E73D1E1A07567E007FE0D8 /* Midi1.5.2 */,
+				F6E73CFC1A072434007FE0D8 /* GuomobWallSDK */,
 				F661EE3619FA74EA0032FC3B /* dianJoy */,
 				F6F9AD8419E779CF001AAF95 /* OpenUDID */,
 				F6DAA40319E5221900ADA84A /* AFNetworking */,
 				F63E9C2A19DE79E700548AA9 /* RETableViewManager */,
 				F663D9BF19DA4F90002943D7 /* BeeSystem */,
 				F663D97F19DA43FD002943D7 /* zkcmoneSDK */,
-				F663D96B19DA43B2002943D7 /* libMiidiSDK */,
 				F663D96219DA430B002943D7 /* JuPeng */,
 				F663D8BF19D9A76E002943D7 /* dianru */,
 				F663D89C19D95861002943D7 /* chukongSDK */,
@@ -1518,39 +1535,6 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		F663D96B19DA43B2002943D7 /* libMiidiSDK */ = {
-			isa = PBXGroup;
-			children = (
-				F663D96C19DA43B2002943D7 /* images */,
-				F663D97319DA43B2002943D7 /* include */,
-				F663D97719DA43B2002943D7 /* libMSecOfferLib.a */,
-			);
-			path = libMiidiSDK;
-			sourceTree = "<group>";
-		};
-		F663D96C19DA43B2002943D7 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				F663D96D19DA43B2002943D7 /* MiiLogo.png */,
-				F663D96E19DA43B2002943D7 /* MiiLogo@2x.png */,
-				F663D96F19DA43B2002943D7 /* MiiReturnButtonDw.png */,
-				F663D97019DA43B2002943D7 /* MiiReturnButtonDw@2x.png */,
-				F663D97119DA43B2002943D7 /* MiiReturnButtonUp.png */,
-				F663D97219DA43B2002943D7 /* MiiReturnButtonUp@2x.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
-		F663D97319DA43B2002943D7 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				F663D97419DA43B2002943D7 /* MiidiObfuscation.h */,
-				F663D97519DA43B2002943D7 /* MyOfferAPI.h */,
-				F663D97619DA43B2002943D7 /* MyOfferAPIDelegate.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
 		F663D97F19DA43FD002943D7 /* zkcmoneSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -1628,16 +1612,6 @@
 			path = Res;
 			sourceTree = "<group>";
 		};
-		F6C28A501A03864D002A1276 /* GuomobWallSDK */ = {
-			isa = PBXGroup;
-			children = (
-				F6C28A511A03864D002A1276 /* GuomobWallBundle.bundle */,
-				F6C28A521A03864D002A1276 /* GuoMobWallViewController.h */,
-				F6C28A531A03864D002A1276 /* libGuoMobWall.a */,
-			);
-			path = GuomobWallSDK;
-			sourceTree = "<group>";
-		};
 		F6DAA3D219E1055000ADA84A /* MarqueeLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1686,6 +1660,77 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		F6E001F71A076A0C000B2BEC /* V */ = {
+			isa = PBXGroup;
+			children = (
+				F6E001F81A076AA0000B2BEC /* RecordCell.h */,
+				F6E001F91A076AA0000B2BEC /* RecordCell.m */,
+				F6E001FA1A076AA0000B2BEC /* RecordCell.xib */,
+				F6E4D43D1A076F3E003A677C /* ExchangeRecordCell.h */,
+				F6E4D43E1A076F3E003A677C /* ExchangeRecordCell.m */,
+				F6E4D43F1A076F3E003A677C /* ExchangeRecordCell.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		F6E4D4481A0774AB003A677C /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		F6E73CFC1A072434007FE0D8 /* GuomobWallSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F6E73CFD1A072451007FE0D8 /* GuomobWallBundle.bundle */,
+				F6E73CFE1A072451007FE0D8 /* GuoMobWallViewController.h */,
+				F6E73CFF1A072451007FE0D8 /* libGuoMobWall.a */,
+			);
+			path = GuomobWallSDK;
+			sourceTree = "<group>";
+		};
+		F6E73D1E1A07567E007FE0D8 /* Midi1.5.2 */ = {
+			isa = PBXGroup;
+			children = (
+				F6E73D1F1A07568F007FE0D8 /* libMiidiSDK */,
+			);
+			path = Midi1.5.2;
+			sourceTree = "<group>";
+		};
+		F6E73D1F1A07568F007FE0D8 /* libMiidiSDK */ = {
+			isa = PBXGroup;
+			children = (
+				F6E73D201A07568F007FE0D8 /* images */,
+				F6E73D271A07568F007FE0D8 /* include */,
+				F6E73D2B1A07568F007FE0D8 /* libMSecOfferLib.a */,
+			);
+			path = libMiidiSDK;
+			sourceTree = "<group>";
+		};
+		F6E73D201A07568F007FE0D8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F6E73D211A07568F007FE0D8 /* MiiLogo.png */,
+				F6E73D221A07568F007FE0D8 /* MiiLogo@2x.png */,
+				F6E73D231A07568F007FE0D8 /* MiiReturnButtonDw.png */,
+				F6E73D241A07568F007FE0D8 /* MiiReturnButtonDw@2x.png */,
+				F6E73D251A07568F007FE0D8 /* MiiReturnButtonUp.png */,
+				F6E73D261A07568F007FE0D8 /* MiiReturnButtonUp@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		F6E73D271A07568F007FE0D8 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				F6E73D281A07568F007FE0D8 /* MiidiObfuscation.h */,
+				F6E73D291A07568F007FE0D8 /* MyOfferAPI.h */,
+				F6E73D2A1A07568F007FE0D8 /* MyOfferAPIDelegate.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		F6F3CFC619F10C440040E1BF /* M */ = {
 			isa = PBXGroup;
 			children = (
@@ -1695,6 +1740,10 @@
 				F6F3CFC819F10C5C0040E1BF /* TaskInfo.m */,
 				F60270BF1A064E3A00DF8D87 /* RecordListItem.h */,
 				F60270C01A064E3A00DF8D87 /* RecordListItem.m */,
+				F6E001F41A0767CF000B2BEC /* RecordItem.h */,
+				F6E001F51A0767CF000B2BEC /* RecordItem.m */,
+				F6E4D4421A077022003A677C /* ExchangeRecordItem.h */,
+				F6E4D4431A077022003A677C /* ExchangeRecordItem.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1704,16 +1753,6 @@
 			children = (
 			);
 			path = Res;
-			sourceTree = "<group>";
-		};
-		F6F3CFCE19F10C9A0040E1BF /* V */ = {
-			isa = PBXGroup;
-			children = (
-				F60270BA1A064D3500DF8D87 /* RecordListCell.h */,
-				F60270BB1A064D3500DF8D87 /* RecordListCell.m */,
-				F60270BC1A064D3500DF8D87 /* RecordListCell.xib */,
-			);
-			path = V;
 			sourceTree = "<group>";
 		};
 		F6F9AD8419E779CF001AAF95 /* OpenUDID */ = {
@@ -1836,20 +1875,22 @@
 				F663D94D19D9A795002943D7 /* _purple_left_cell.png in Resources */,
 				F6B910F119F77B7D00D39821 /* icon_phone@2x.png in Resources */,
 				F6B910C619F7674200D39821 /* item4@2x.png in Resources */,
+				F6E73D2E1A07568F007FE0D8 /* MiiReturnButtonDw.png in Resources */,
 				F663D93219D9A795002943D7 /* _green__info.png in Resources */,
 				F663D91919D9A795002943D7 /* _cell_head_new.png in Resources */,
 				F63E9CBD19DE7B9900548AA9 /* README.md in Resources */,
+				F6E73D2D1A07568F007FE0D8 /* MiiLogo@2x.png in Resources */,
 				F663D94119D9A795002943D7 /* _orange_all_cell.png in Resources */,
 				F663D91319D9A795002943D7 /* _back.png in Resources */,
 				F663D91B19D9A795002943D7 /* _help.png in Resources */,
 				F6B910C719F7674200D39821 /* item4Select@2x.png in Resources */,
 				F663D93019D9A795002943D7 /* _green__bottom.png in Resources */,
-				F663D97819DA43B2002943D7 /* MiiLogo.png in Resources */,
 				F663D91F19D9A795002943D7 /* _set_btn.png in Resources */,
 				F663D93D19D9A795002943D7 /* _orange__info.png in Resources */,
 				F663D92619D9A795002943D7 /* _blue__download.png in Resources */,
 				F663D93B19D9A795002943D7 /* _orange__bottom.png in Resources */,
 				F698A19E19F0B8CE00EF30BA /* TaskListViewController.xib in Resources */,
+				F6E73D301A07568F007FE0D8 /* MiiReturnButtonUp.png in Resources */,
 				F6B910C219F7674200D39821 /* item2@2x.png in Resources */,
 				F663D93A19D9A795002943D7 /* _green_right_view.png in Resources */,
 				F658BDFF19F0F4D600229373 /* ExchangeDetailViewController.xib in Resources */,
@@ -1872,15 +1913,14 @@
 				F63E9CBC19DE7B9900548AA9 /* LICENSE in Resources */,
 				F663D94B19D9A795002943D7 /* _purple__triangle.png in Resources */,
 				F663D98719DA43FE002943D7 /* wall_template.zip in Resources */,
+				F6E001FC1A076AA0000B2BEC /* RecordCell.xib in Resources */,
 				F663D93919D9A795002943D7 /* _green_right_cell.png in Resources */,
 				F663D91719D9A795002943D7 /* _cell_.jpg in Resources */,
 				F663D95419D9A795002943D7 /* _red__iphone_download.png in Resources */,
 				F663D92519D9A795002943D7 /* _blue__bottom.png in Resources */,
 				F663D85C19D7EFEE002943D7 /* ExchangeCenterViewController.xib in Resources */,
-				F663D97A19DA43B2002943D7 /* MiiReturnButtonDw.png in Resources */,
 				F663D94319D9A795002943D7 /* _orange_left_view.png in Resources */,
 				F663D92319D9A795002943D7 /* _yuanjiao.png in Resources */,
-				F60270BE1A064D3500DF8D87 /* RecordListCell.xib in Resources */,
 				F663D95119D9A795002943D7 /* _red__bottom.png in Resources */,
 				F663D92719D9A795002943D7 /* _blue__info.png in Resources */,
 				F663D92819D9A795002943D7 /* _blue__iphone_download.png in Resources */,
@@ -1891,8 +1931,8 @@
 				F663D93319D9A795002943D7 /* _green__iphone_download.png in Resources */,
 				F6B910C519F7674200D39821 /* item3Select@2x.png in Resources */,
 				F663D92919D9A795002943D7 /* _blue__titlebg.jpg in Resources */,
-				F6C28A541A03864D002A1276 /* GuomobWallBundle.bundle in Resources */,
 				F663D84719D7EE86002943D7 /* BasePhoneViewController.xib in Resources */,
+				F6E73D001A072451007FE0D8 /* GuomobWallBundle.bundle in Resources */,
 				F663D93119D9A795002943D7 /* _green__download.png in Resources */,
 				F663D94E19D9A795002943D7 /* _purple_left_view.png in Resources */,
 				F663D93719D9A795002943D7 /* _green_left_cell.png in Resources */,
@@ -1902,9 +1942,9 @@
 				F663D95619D9A795002943D7 /* _red__triangle.png in Resources */,
 				F663D92119D9A795002943D7 /* _title_1.jpg in Resources */,
 				F63E9C9419DE79E700548AA9 /* RETableViewManager.bundle in Resources */,
+				F6E4D4411A076F3E003A677C /* ExchangeRecordCell.xib in Resources */,
 				F658BDF419F0DE2C00229373 /* IntegralDetailsViewController.xib in Resources */,
 				F663D94819D9A795002943D7 /* _purple__info.png in Resources */,
-				F663D97919DA43B2002943D7 /* MiiLogo@2x.png in Resources */,
 				F663D95819D9A795002943D7 /* _red_all_cell11.png in Resources */,
 				F663D94919D9A795002943D7 /* _purple__iphone_download.png in Resources */,
 				F663D95219D9A795002943D7 /* _red__download.png in Resources */,
@@ -1913,26 +1953,26 @@
 				F663D93C19D9A795002943D7 /* _orange__download.png in Resources */,
 				F663D93619D9A795002943D7 /* _green_all_cell.png in Resources */,
 				F663D92F19D9A795002943D7 /* _blue_right_view.png in Resources */,
+				F6E73D311A07568F007FE0D8 /* MiiReturnButtonUp@2x.png in Resources */,
 				F663D94219D9A795002943D7 /* _orange_left_cell.png in Resources */,
 				F663D95019D9A795002943D7 /* _purple_right_view.png in Resources */,
 				F663D7FB19D7A19F002943D7 /* Images.xcassets in Resources */,
 				F663D95719D9A795002943D7 /* _red_all_cell.png in Resources */,
 				F663D91E19D9A795002943D7 /* _point.png in Resources */,
+				F6E73D2C1A07568F007FE0D8 /* MiiLogo.png in Resources */,
 				F614A7C019F7426C004DEB96 /* tabBar@2x.png in Resources */,
 				F663D91619D9A795002943D7 /* _cell.jpg in Resources */,
 				F6F9ADA219E7B46A001AAF95 /* ChanceAdRes.bundle in Resources */,
 				F614A7BF19F7426C004DEB96 /* navBar@2x.png in Resources */,
 				F663D94619D9A795002943D7 /* _purple__bottom.png in Resources */,
 				F663D91C19D9A795002943D7 /* _logo.png in Resources */,
-				F663D97D19DA43B2002943D7 /* MiiReturnButtonUp@2x.png in Resources */,
 				F663D85719D7EFC5002943D7 /* HelpViewController.xib in Resources */,
-				F663D97B19DA43B2002943D7 /* MiiReturnButtonDw@2x.png in Resources */,
 				F6B910C819F7674200D39821 /* tabBarItem1_select@2x.png in Resources */,
 				F663D88819D936A8002943D7 /* navigation_bg@2x.jpg in Resources */,
+				F6E73D2F1A07568F007FE0D8 /* MiiReturnButtonDw@2x.png in Resources */,
 				F6DAA3DE19E1558700ADA84A /* SVProgressHUD.bundle in Resources */,
 				F663D92019D9A795002943D7 /* _title.jpg in Resources */,
 				F663D92D19D9A795002943D7 /* _blue_left_view.png in Resources */,
-				F663D97C19DA43B2002943D7 /* MiiReturnButtonUp.png in Resources */,
 				F663D92E19D9A795002943D7 /* _blue_right_cell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1967,9 +2007,11 @@
 				F628E36A19ECFF7200F4C959 /* NSObject+RMCopyable.m in Sources */,
 				F63E9C9219DE79E700548AA9 /* RETableViewCellStyle.m in Sources */,
 				F6DAA3FF19E5180700ADA84A /* BaseRequest.m in Sources */,
+				F6E4D4401A076F3E003A677C /* ExchangeRecordCell.m in Sources */,
 				F63E9C7E19DE79E700548AA9 /* RETableViewSegmentedCell.m in Sources */,
 				F6DAA41919E5221900ADA84A /* AFHTTPRequestOperation.m in Sources */,
 				F63E9C9019DE79E700548AA9 /* REPlaceholderTextView.m in Sources */,
+				F6E001F61A0767CF000B2BEC /* RecordItem.m in Sources */,
 				F63E9C7719DE79E700548AA9 /* RETableViewFloatCell.m in Sources */,
 				F638E49B1A06646800E5A911 /* LB_Sandbox.m in Sources */,
 				F6DAA3D819E10FCC00ADA84A /* ScoreLabel.m in Sources */,
@@ -1985,6 +2027,7 @@
 				F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */,
 				F638E49C1A06646800E5A911 /* LB_Singleton.m in Sources */,
 				F63E9C7F19DE79E700548AA9 /* RETableViewTextCell.m in Sources */,
+				F6E4D4471A077484003A677C /* ExchangeListItem.m in Sources */,
 				F6DAA3D519E1056400ADA84A /* MarqueeLabel.m in Sources */,
 				F6981A9919F4E9C6008A403F /* TOWebViewController.m in Sources */,
 				F695DD0919EE4E6800E82EAE /* IPAddressListRequest.m in Sources */,
@@ -1994,7 +2037,6 @@
 				F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */,
 				F63E9C8B19DE79E700548AA9 /* RESegmentedItem.m in Sources */,
 				F63E9C8E19DE79E700548AA9 /* REActionBar.m in Sources */,
-				F60270BD1A064D3500DF8D87 /* RecordListCell.m in Sources */,
 				F638E49A1A06646800E5A911 /* LB_Foundation.m in Sources */,
 				F63E9CAF19DE7A4300548AA9 /* REValidator.m in Sources */,
 				F63E9C9619DE79E700548AA9 /* RETableViewOptionsController.m in Sources */,
@@ -2034,6 +2076,7 @@
 				F63E9C8319DE79E700548AA9 /* REFloatItem.m in Sources */,
 				F63E9CAE19DE7A4300548AA9 /* REValidation.m in Sources */,
 				F6F9AD8A19E77A6B001AAF95 /* OpenUDID.m in Sources */,
+				F6E4D4441A077022003A677C /* ExchangeRecordItem.m in Sources */,
 				F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */,
 				F638E4981A06646800E5A911 /* NSString+LBExtension.m in Sources */,
 				F6DAA41E19E5221900ADA84A /* AFURLConnectionOperation.m in Sources */,
@@ -2044,6 +2087,7 @@
 				F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */,
 				F658BDF319F0DE2C00229373 /* IntegralDetailsViewController.m in Sources */,
 				F63E9C8719DE79E700548AA9 /* REMultipleChoiceItem.m in Sources */,
+				F6E001FB1A076AA0000B2BEC /* RecordCell.m in Sources */,
 				F63E9C9719DE79E700548AA9 /* RETableViewSection.m in Sources */,
 				F6DAA41F19E5221900ADA84A /* AFURLRequestSerialization.m in Sources */,
 				F63E9C8519DE79E700548AA9 /* REInlinePickerItem.m in Sources */,
@@ -2208,6 +2252,9 @@
 					"$(PROJECT_DIR)/weicai/thirdParts/chukongSDK/libChanceAd_NoAppZone",
 					"$(PROJECT_DIR)/weicai/thirdParts/dianJoy/libs",
 					"$(PROJECT_DIR)/weicai/thirdParts/GuomobWallSDK",
+					"$(PROJECT_DIR)/weicai/thirdParts/Midi1.4.1/Lib",
+					"$(PROJECT_DIR)/weicai/thirdParts/Midi1.4.7/Lib",
+					"$(PROJECT_DIR)/weicai/thirdParts/Midi1.5.2/libMiidiSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2255,10 +2302,13 @@
 					"$(PROJECT_DIR)/weicai/thirdParts/chukongSDK/libChanceAd_NoAppZone",
 					"$(PROJECT_DIR)/weicai/thirdParts/dianJoy/libs",
 					"$(PROJECT_DIR)/weicai/thirdParts/GuomobWallSDK",
+					"$(PROJECT_DIR)/weicai/thirdParts/Midi1.4.1/Lib",
+					"$(PROJECT_DIR)/weicai/thirdParts/Midi1.4.7/Lib",
+					"$(PROJECT_DIR)/weicai/thirdParts/Midi1.5.2/libMiidiSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b791a4ca-bd8f-44e4-a64a-a1f2197e2aad";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

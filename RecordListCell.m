@@ -23,7 +23,10 @@
 
 - (void)cellWillAppear
 {
-    self.content.text = self.item.title;
+    self.leftContent.text = self.item.leftTitle;
+    self.midContent.text = self.item.midTitle;
+    self.rightContent.text = self.item.rightTitle;
+    
 }
 
 @end

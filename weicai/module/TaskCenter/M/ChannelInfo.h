@@ -28,6 +28,7 @@ typedef enum : NSUInteger {
     MiDiPlatform = 2,
     DuoMengPlatform = 1,
     DianJoyPlatform = 8,
+    GuoMengPlatform = 9,
 } PlatformName;
 
 

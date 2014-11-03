@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExchangeRecordCell : UITableViewCell
+#import "RETableViewCell.h"
+#import "ExchangeRecordItem.h"
+@interface ExchangeRecordCell : RETableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *exchangeInfo;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (nonatomic,strong)ExchangeRecordItem *item;
 
 @end

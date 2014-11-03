@@ -10,4 +10,10 @@
 
 @interface ExchangeRecordItem : RETableViewItem
 
+@property (nonatomic,copy)NSString *info;
+@property (nonatomic,copy)NSString *timeString;
+
+- (instancetype)initWithExchangeInfo:(NSString*)info
+                           timeValue:(NSString*)time;
+
 @end

@@ -24,11 +24,13 @@
 
 #import "YouMiConfig.h"
 #import "YouMiWall.h"
-#import "MyOfferAPI.h"
 
 #import "CSAppZone.h"
 #import "ChanceAd.h"
 #import "JJSDK.h"
+//midi
+#import "MyOfferAPI.h"
+
 //guo meng
 #import "GuoMobWallViewController.h"
 
@@ -40,7 +42,6 @@
 #import "JHTickerView.h"
 
 @interface TaskListViewController ()<DMOfferWallManagerDelegate,
-MyOfferAPIDelegate,
 OfferWallDelegate,
 RETableViewManagerDelegate,
 GuoMobWallDelegate>
@@ -105,12 +106,11 @@ GuoMobWallDelegate>
     
     //点入
     [OfferWall initWithOfferWallDelegate:self];
-
-    //初始化米迪
-    [MyOfferAPI setAppPublisher:MiDiAppPID
-                  withAppSecret:MiDiAppSecret];
+    
+    //米迪
+    [MyOfferAPI setAppPublisher:MiDiAppPID withAppSecret:MiDiAppSecret];
     [MyOfferAPI setUserParam:userID];
-
+    
     //万普
     [AppConnect getConnect:WPAPP_ID
                        pid:@"test"
@@ -332,13 +332,6 @@ GuoMobWallDelegate>
 {
     RETableViewSection *section = [RETableViewSection section];
     
-#warning lingshi guomeng
-    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
-        
-        [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
-    }];
-    [section addItem:item];
-
     
     for (ChannelInfo *channel in self.allChannels)
     {
@@ -422,7 +415,8 @@ GuoMobWallDelegate>
                 case MiDiPlatform:
                 {
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
-                        [MyOfferAPI showAppOffers:weakSelf withDelegate:self];
+                        
+                        [MyOfferAPI showAppOffers:weakSelf withDelegate:nil];
                     }];
                     
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
@@ -455,6 +449,17 @@ GuoMobWallDelegate>
                     item.detailLabelText = subName;
                     [section addItem:item];
                     
+                    break;
+                }
+                case GuoMengPlatform:
+                {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                        
+                        [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
+                    }];
+                    item.detailLabelText = subName;
+                    item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    [section addItem:item];
                     break;
                 }
                 default:

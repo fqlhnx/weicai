@@ -20,4 +20,10 @@
     // Configure the view for the selected state
 }
 
+- (void)cellWillAppear
+{
+    self.exchangeInfo.text = self.item.info;
+    self.timeLabel.text = self.item.timeString;
+}
+
 @end

@@ -11,8 +11,8 @@
 #import "ServerConfig.h"
 #import "Exchange.h"
 
-#import "RecordListCell.h"
-#import "RecordListItem.h"
+#import "ExchangeRecordCell.h"
+#import "ExchangeRecordItem.h"
 
 #import "RETableViewManager.h"
 #import "SVPullToRefresh.h"
@@ -46,8 +46,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     _tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView];
-    [_tableViewMager registerClass:NSStringFromClass([RecordListItem class])
-        forCellWithReuseIdentifier:NSStringFromClass([RecordListCell class])];
+    [_tableViewMager registerClass:NSStringFromClass([ExchangeRecordItem class])
+        forCellWithReuseIdentifier:NSStringFromClass([ExchangeRecordCell class])];
     
     _allExchangeInfo = [NSMutableArray array];
     
@@ -96,10 +96,14 @@
         
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"YY-MM-dd HH:mm"];
         exchangeTime = [dateFormatter stringFromDate:date];
 
-        RecordListItem *item = [RecordListItem itemWithTitle:[NSString stringWithFormat:@" %@，消耗%@积分 %@",target,exchangeInfo.integral,exchangeTime]];
+        NSString *RMB = [NSString stringWithFormat:@"%d元",exchangeInfo.integral.integerValue / 100];
+        NSString *content = [NSString stringWithFormat:@"%@%@",target,RMB];
+        
+        ExchangeRecordItem *item = [[ExchangeRecordItem alloc]initWithExchangeInfo:content
+                                                                         timeValue:exchangeTime];
         item.cellHeight = 26.f;
         [section addItem:item];
     }

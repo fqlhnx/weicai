@@ -52,9 +52,13 @@
             result = @"点乐";
             break;
         }
+        case GuoMengPlatform:
+        {
+            result = @"果盟";
+        }
         default:
         {
-            NSLog(@"未知的平台ID%d",channelType);
+            NSLog(@"未知的平台ID%lu",(unsigned long)channelType);
             break;
         }
     }

@@ -22,4 +22,12 @@
     // Configure the view for the selected state
 }
 
+- (void)cellWillAppear
+{
+    self.leftLabel.text = self.item.leftTitle;
+    self.midLabel.text = self.item.midTitle;
+    self.rightLabel.text  = self.item.rightTitle;
+    
+}
+
 @end

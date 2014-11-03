@@ -11,7 +11,10 @@
 
 @interface RecordListCell : RETableViewCell
 
-@property (nonatomic,weak)IBOutlet UILabel *content;
+@property (nonatomic,weak)IBOutlet UILabel *leftContent;
+@property (nonatomic,weak)IBOutlet UILabel *rightContent;
+@property (nonatomic,weak)IBOutlet UILabel *midContent;
+
 @property (nonatomic,readwrite,strong) RecordListItem *item;
 
 @end

@@ -10,4 +10,15 @@
 
 @implementation ExchangeRecordItem
 
+- (instancetype)initWithExchangeInfo:(NSString *)info timeValue:(NSString *)time
+{
+    if (self = [super init]) {
+        
+        self.info = info;
+        self.timeString = time;
+        
+    }
+    return self;
+}
+
 @end

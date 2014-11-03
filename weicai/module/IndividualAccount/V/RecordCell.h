@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecordCell : UITableViewCell
+#import "RETableViewCell.h"
+#import "RecordItem.h"
+@interface RecordCell : RETableViewCell
+
+@property (nonatomic,weak)IBOutlet UILabel *leftLabel;
+@property (nonatomic,weak)IBOutlet UILabel *midLabel;
+@property (nonatomic,weak)IBOutlet UILabel *rightLabel;
+
+@property (nonatomic,strong)RecordItem *item;
 
 @end

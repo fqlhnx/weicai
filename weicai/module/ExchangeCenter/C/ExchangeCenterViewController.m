@@ -13,9 +13,8 @@
 #import "ExchangeInfo.h"
 
 #import "IPAddressController.h"
-
-#import "RecordListItem.h"
-#import "RecordListCell.h"
+#import "ExchangeRecordItem.h"
+#import "ExchangeRecordCell.h"
 
 #import "SVPullToRefresh.h"
 #import "RETableViewManager.h"
@@ -116,8 +115,8 @@ static NSString *ipAddress;
     }];
     
     self.tableViewManger = [[RETableViewManager alloc] initWithTableView:self.listView];
-    [self.tableViewManger registerClass:NSStringFromClass([RecordListItem class])
-             forCellWithReuseIdentifier:NSStringFromClass([RecordListCell class])];
+    [self.tableViewManger registerClass:NSStringFromClass([ExchangeRecordItem class])
+             forCellWithReuseIdentifier:NSStringFromClass([ExchangeRecordCell class])];
     RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"最新兑换记录"];
     [self.tableViewManger addSection:section];
     
@@ -247,21 +246,26 @@ static NSString *ipAddress;
             NSString *target = nil;
             //1 代表支付宝提现
             if ([exchangeInfo.exchange_target isEqualToString:@"1"]) {
-                target = @"申请支付宝提现";
+                target = @"支付宝";
             }else{
-                target = @"申请手机充值";
+                target = @"手机充值";
             }
             
             NSString *exchangeTime = nil;
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
-            [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+//            [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
             exchangeTime = [dateFormatter stringFromDate:date];
-
-            RecordListItem *item = [RecordListItem itemWithTitle:[NSString stringWithFormat:@"%@%@ %@",exchangeInfo.telmember_id,target,exchangeTime]];
+            
+            NSString *RMB = [NSString stringWithFormat:@"%ld元",(long)(exchangeInfo.integral.integerValue / 100)];
+            
+            NSString *info = [NSString stringWithFormat:@"%@ %@%@",exchangeInfo.telmember_id,target,RMB];
+            ExchangeRecordItem *item = [[ExchangeRecordItem alloc] initWithExchangeInfo:info timeValue:exchangeTime];
             item.cellHeight = 26.f;
             [section addItem:item];
+            
+
         }
         [self.listView.pullToRefreshView stopAnimating];
         

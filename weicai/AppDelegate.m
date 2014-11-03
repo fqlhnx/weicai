@@ -16,16 +16,6 @@
 #import "HelpCenterWebViewController.h"
 #import "IPAddressController.h"
 
-//各大广告平台SDK头文件
-#import "DMOfferWallManager.h"
-#import "ZKcmoneZKcmtwo.h"
-#import <WPLib/AppConnect.h>
-#import "OfferWall.h"
-
-#import "YouMiConfig.h"
-#import "YouMiWall.h"
-#import "MyOfferAPI.h"
-
 
 @interface AppDelegate ()
 

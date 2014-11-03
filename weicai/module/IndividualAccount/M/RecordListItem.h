@@ -10,4 +10,11 @@
 
 @interface RecordListItem : RETableViewItem
 
+@property(nonatomic,copy)NSString *leftTitle;
+@property(nonatomic,copy)NSString *midTitle;
+@property(nonatomic,copy)NSString *rightTitle;
+
++ (instancetype)itemWithLeftTitle:(NSString*)leftTitle
+                         midTitle:(NSString*)midTitle
+                       rightTitle:(NSString*)rightTitle;
 @end
