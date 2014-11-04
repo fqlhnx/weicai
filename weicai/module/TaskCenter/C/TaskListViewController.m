@@ -41,6 +41,8 @@
 #import "GVUserDefaults+Setting.h"
 #import "JHTickerView.h"
 
+#define cellDefaultHeight 50.f
+
 @interface TaskListViewController ()<DMOfferWallManagerDelegate,
 OfferWallDelegate,
 RETableViewManagerDelegate,
@@ -152,7 +154,16 @@ GuoMobWallDelegate>
             NSLog(@"label touched");
             //刷新积分
         };
-        self.scoreLabel.text = [NSString stringWithFormat:@"%@分钱",totalIntegral];
+        
+        if ([totalIntegral isEqualToString:@"0"]) {
+            self.scoreLabel.text = [NSString stringWithFormat:@"%@元",totalIntegral];
+        }else{
+            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
+            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
+            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
+            self.scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+        }
+
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.scoreLabel ];
         self.navigationItem.rightBarButtonItem = rightItem;
 
@@ -304,7 +315,14 @@ GuoMobWallDelegate>
     
     [_taskCenterRequest getIntegral:[GVUserDefaults standardUserDefaults].userID success:^(NSString *totalIntegral) {
         
-        _scoreLabel.text = [NSString stringWithFormat:@"%@分钱",totalIntegral];
+        if ([totalIntegral isEqualToString:@"0"]) {
+            self.scoreLabel.text = [NSString stringWithFormat:@"%@元",totalIntegral];
+        }else{
+            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
+            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
+            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
+            self.scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+        }
         
     } failure:^(NSError *error) {
         
@@ -355,6 +373,7 @@ GuoMobWallDelegate>
                                                              }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
                     [section addItem:item];
                     item.detailLabelText = subName;
                     
@@ -367,6 +386,7 @@ GuoMobWallDelegate>
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
                     item.detailLabelText = subName;
                     [section addItem:item];
                     break;
@@ -378,6 +398,7 @@ GuoMobWallDelegate>
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -390,6 +411,7 @@ GuoMobWallDelegate>
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -407,6 +429,7 @@ GuoMobWallDelegate>
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -421,6 +444,7 @@ GuoMobWallDelegate>
                     
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -434,6 +458,7 @@ GuoMobWallDelegate>
                     
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -447,6 +472,8 @@ GuoMobWallDelegate>
                     item.style = UITableViewCellStyleSubtitle;
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.detailLabelText = subName;
+                    item.cellHeight = cellDefaultHeight;
+
                     [section addItem:item];
                     
                     break;
@@ -459,6 +486,8 @@ GuoMobWallDelegate>
                     }];
                     item.detailLabelText = subName;
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.cellHeight = cellDefaultHeight;
+
                     [section addItem:item];
                     break;
                 }

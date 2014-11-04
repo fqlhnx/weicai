@@ -74,7 +74,15 @@
     //调用查询用户剩余积分API
     [_taskCenterAPI getIntegral:_myUserID success:^(NSString *totalIntegral) {
         //成功刷新显示
-        _balanceLabel.text = totalIntegral;
+        if ([totalIntegral isEqualToString:@"0"]) {
+            _balanceLabel.text = [NSString stringWithFormat:@"%@元",totalIntegral];
+        }else{
+            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
+            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
+            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
+            _balanceLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+        }
+        
     } failure:^(NSError *error) {
         //失败给出提醒
     }];
