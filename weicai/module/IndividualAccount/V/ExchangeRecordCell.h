@@ -12,7 +12,9 @@
 #import "ExchangeRecordItem.h"
 @interface ExchangeRecordCell : RETableViewCell
 
+@property (weak,nonatomic)IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UILabel *exchangeInfo;
+@property (nonatomic,weak) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (nonatomic,strong)ExchangeRecordItem *item;

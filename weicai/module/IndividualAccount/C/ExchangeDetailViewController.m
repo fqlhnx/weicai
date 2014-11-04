@@ -91,7 +91,7 @@
         if ([exchangeInfo.exchange_target isEqualToString:@"1"]) {
             target = @"支付宝提现";
         }else{
-            target = @"手机充值";
+            target = @"手机话费充值";
         }
         
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
@@ -102,8 +102,9 @@
         NSString *RMB = [NSString stringWithFormat:@"%d元",exchangeInfo.integral.integerValue / 100];
         NSString *content = [NSString stringWithFormat:@"%@%@",target,RMB];
         
-        ExchangeRecordItem *item = [[ExchangeRecordItem alloc]initWithExchangeInfo:content
-                                                                         timeValue:exchangeTime];
+        ExchangeRecordItem *item = [[ExchangeRecordItem alloc] initWithUserID:exchangeInfo.telmember_id
+                                                                 ExchangeInfo:content
+                                                                    timeValue:exchangeTime];
         item.cellHeight = 26.f;
         [section addItem:item];
     }

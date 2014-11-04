@@ -10,10 +10,11 @@
 
 @implementation ExchangeRecordItem
 
-- (instancetype)initWithExchangeInfo:(NSString *)info timeValue:(NSString *)time
+- (instancetype)initWithUserID:(NSString *)uid ExchangeInfo:(NSString *)info timeValue:(NSString *)time
 {
     if (self = [super init]) {
         
+        self.userID = uid;
         self.info = info;
         self.timeString = time;
         

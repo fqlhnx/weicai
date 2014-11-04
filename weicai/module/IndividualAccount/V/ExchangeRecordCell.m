@@ -22,6 +22,7 @@
 
 - (void)cellWillAppear
 {
+    self.userLabel.text = self.item.userID;
     self.exchangeInfo.text = self.item.info;
     self.timeLabel.text = self.item.timeString;
 }

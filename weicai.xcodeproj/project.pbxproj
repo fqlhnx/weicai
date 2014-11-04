@@ -19,6 +19,7 @@
 		F628E37419ED02A700F4C959 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37219ED02A700F4C959 /* UIScrollView+SVPullToRefresh.m */; };
 		F628E37819ED1B5D00F4C959 /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37719ED1B5D00F4C959 /* GVUserDefaults.m */; };
 		F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */; };
+		F62ADDDA1A08670A002902F8 /* horn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F62ADDD91A08670A002902F8 /* horn@2x.png */; };
 		F638E4971A06646800E5A911 /* NSData+BeeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */; };
 		F638E4981A06646800E5A911 /* NSString+LBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48C1A06646800E5A911 /* NSString+LBExtension.m */; };
 		F638E4991A06646800E5A911 /* LB_DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48E1A06646800E5A911 /* LB_DeviceInfo.m */; };
@@ -300,6 +301,7 @@
 		F628E37719ED1B5D00F4C959 /* GVUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUserDefaults.m; sourceTree = "<group>"; };
 		F628E37919ED1BCC00F4C959 /* GVUserDefaults+Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+Setting.h"; sourceTree = "<group>"; };
 		F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+Setting.m"; sourceTree = "<group>"; };
+		F62ADDD91A08670A002902F8 /* horn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "horn@2x.png"; sourceTree = "<group>"; };
 		F638E4891A06646800E5A911 /* NSData+BeeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BeeCategory.h"; sourceTree = "<group>"; };
 		F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BeeCategory.m"; sourceTree = "<group>"; };
 		F638E48B1A06646800E5A911 /* NSString+LBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LBExtension.h"; sourceTree = "<group>"; };
@@ -1604,6 +1606,7 @@
 		F6B910ED19F77B3800D39821 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				F62ADDD91A08670A002902F8 /* horn@2x.png */,
 				F6B910F219F77BE200D39821 /* commitIcon@2x.png */,
 				F6B910EE19F77B7D00D39821 /* icon_alipay@2x.png */,
 				F6B910EF19F77B7D00D39821 /* icon_phone@2x.png */,
@@ -1958,6 +1961,7 @@
 				F663D95019D9A795002943D7 /* _purple_right_view.png in Resources */,
 				F663D7FB19D7A19F002943D7 /* Images.xcassets in Resources */,
 				F663D95719D9A795002943D7 /* _red_all_cell.png in Resources */,
+				F62ADDDA1A08670A002902F8 /* horn@2x.png in Resources */,
 				F663D91E19D9A795002943D7 /* _point.png in Resources */,
 				F6E73D2C1A07568F007FE0D8 /* MiiLogo.png in Resources */,
 				F614A7C019F7426C004DEB96 /* tabBar@2x.png in Resources */,

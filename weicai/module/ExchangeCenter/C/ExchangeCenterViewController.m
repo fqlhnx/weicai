@@ -91,7 +91,8 @@ static NSString *ipAddress;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     self.aliPayFieldBG.image = [[UIImage imageNamed:@"textFieldBG"] stretchableImageWithLeftCapWidth:20 topCapHeight:10];
     self.phoneFieldBG.image = [[UIImage imageNamed:@"textFieldBG"]stretchableImageWithLeftCapWidth:20 topCapHeight:10];
     
@@ -236,7 +237,7 @@ static NSString *ipAddress;
     [_exchangeAPI getTheLatestExchangeRecords:^(NSArray *records) {
         
         [self.tableViewManger removeAllSections];
-        RETableViewSection *section = [RETableViewSection section];
+        RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"最新兑换记录"];
         [self.tableViewManger addSection:section];
         
         //刷新界面
@@ -246,22 +247,23 @@ static NSString *ipAddress;
             NSString *target = nil;
             //1 代表支付宝提现
             if ([exchangeInfo.exchange_target isEqualToString:@"1"]) {
-                target = @"支付宝";
+                target = @"支付宝提现";
             }else{
-                target = @"手机充值";
+                target = @"手机话费充值";
             }
             
             NSString *exchangeTime = nil;
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"yy-MM-dd HH:mm"];
-//            [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+            [dateFormatter setDateFormat:@"MM-dd HH:mm"];
             exchangeTime = [dateFormatter stringFromDate:date];
             
             NSString *RMB = [NSString stringWithFormat:@"%ld元",(long)(exchangeInfo.integral.integerValue / 100)];
-            
-            NSString *info = [NSString stringWithFormat:@"%@ %@%@",exchangeInfo.telmember_id,target,RMB];
-            ExchangeRecordItem *item = [[ExchangeRecordItem alloc] initWithExchangeInfo:info timeValue:exchangeTime];
+            NSString *userID = exchangeInfo.telmember_id;
+            NSString *info = [NSString stringWithFormat:@"%@%@",target,RMB];
+            ExchangeRecordItem *item = [[ExchangeRecordItem alloc]initWithUserID:userID
+                                                                    ExchangeInfo:info
+                                                                       timeValue:exchangeTime];
             item.cellHeight = 26.f;
             [section addItem:item];
             
