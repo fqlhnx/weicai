@@ -131,34 +131,8 @@
 {
     [super viewDidLoad];
     
-    __weak PersonalCenterViewController *weakSelf = self;
-    //初始化列表
-    self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
-    RETableViewSection *oneSection = [RETableViewSection section];
-    [self.tableViewMager addSection:oneSection];
-    
-    [oneSection addItem:[RETableViewItem itemWithTitle:@"收益明细"
-                                        accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                     selectionHandler:^(RETableViewItem *item)
-    {        
-        IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
-        integralDetailsVC.userid = _userID.text;
-        [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
-        [item deselectRowAnimated:YES];
-    }]];
-    
-    [oneSection addItem:[RETableViewItem itemWithTitle:@"兑换记录"
-                                        accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                     selectionHandler:^(RETableViewItem *item)
-    {
-        ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
-        vc.userid = _userID.text;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-        
-        [item deselectRowAnimated:YES];
-        
-    }]];
-    
+    //加载list view
+    [self loadTableView];
     //获取描述信息
     [_personalCenterAPI getNewsDescription];
     
@@ -194,6 +168,40 @@
 }
 
 #pragma mark prive
+
+- (void)loadTableView
+{
+    __weak PersonalCenterViewController *weakSelf = self;
+
+    self.myList.scrollEnabled = NO;
+    //初始化列表
+    self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
+    RETableViewSection *oneSection = [RETableViewSection section];
+    [self.tableViewMager addSection:oneSection];
+    
+    [oneSection addItem:[RETableViewItem itemWithTitle:@"收益明细"
+                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
+                                      selectionHandler:^(RETableViewItem *item)
+                         {
+                             IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
+                             integralDetailsVC.userid = _userID.text;
+                             [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
+                             [item deselectRowAnimated:YES];
+                         }]];
+    
+    [oneSection addItem:[RETableViewItem itemWithTitle:@"兑换记录"
+                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
+                                      selectionHandler:^(RETableViewItem *item)
+                         {
+                             ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
+                             vc.userid = _userID.text;
+                             [weakSelf.navigationController pushViewController:vc animated:YES];
+                             
+                             [item deselectRowAnimated:YES];
+                             
+                         }]];
+
+}
 
 - (void)didGetIPAddress:(NSNotification*)notification
 {

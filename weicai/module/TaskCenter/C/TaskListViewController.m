@@ -183,6 +183,7 @@ GuoMobWallDelegate>
 - (void)setupListView
 {
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView delegate:nil];
+    [self.listView setSeparatorInset:(UIEdgeInsetsMake(0, 0, 0, 0))];
 
     __weak TaskListViewController *weakSelf = self;
     
@@ -368,7 +369,7 @@ GuoMobWallDelegate>
                 case ChuKongPlatform:
                 {
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName
-                                                             accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                                                             accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                                                                  [[CSAppZone sharedAppZone]showAppZoneWithScale:0.9];
                                                              }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
@@ -381,7 +382,7 @@ GuoMobWallDelegate>
                 }
                 case WanPuPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [AppConnect showList:weakSelf];
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
@@ -393,7 +394,7 @@ GuoMobWallDelegate>
                 }
                 case DianRuPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [OfferWall showOfferWall:weakSelf];
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
@@ -406,7 +407,7 @@ GuoMobWallDelegate>
                 }
                 case AnWoPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         ZKcmoneOWPresentZKcmtwo(anwoPID, weakSelf);
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
@@ -420,7 +421,7 @@ GuoMobWallDelegate>
                 }
                 case YouMiPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [YouMiWall showOffers:YES didShowBlock:^{
                             
                         } didDismissBlock:^{
@@ -437,7 +438,7 @@ GuoMobWallDelegate>
                 }
                 case MiDiPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         
                         [MyOfferAPI showAppOffers:weakSelf withDelegate:nil];
                     }];
@@ -452,7 +453,7 @@ GuoMobWallDelegate>
                 }
                 case DuoMengPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [_duoMengOfferWall presentOfferWallWithViewController:weakSelf type:eDMOfferWallTypeList];
                     }];
                     
@@ -466,7 +467,7 @@ GuoMobWallDelegate>
                 }
                 case DianJoyPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [JJSDK showJJDiamondWithViewController:weakSelf];
                     }];
                     item.style = UITableViewCellStyleSubtitle;
@@ -480,7 +481,7 @@ GuoMobWallDelegate>
                 }
                 case GuoMengPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         
                         [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
                     }];

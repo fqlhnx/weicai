@@ -104,6 +104,8 @@
         RETableViewItem *item = (RETableViewItem *)self.item;
         self.textLabel.text = item.title;
         self.textLabel.backgroundColor = [UIColor clearColor];
+        self.detailTextLabel.textColor = [UIColor colorWithWhite:0.498 alpha:1.000];
+
         self.accessoryType = item.accessoryType;
         self.accessoryView = item.accessoryView;
         self.textLabel.textAlignment = item.textAlignment;
