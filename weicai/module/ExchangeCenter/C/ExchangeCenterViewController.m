@@ -11,6 +11,7 @@
 #import "TaskCenterAPI.h"
 #import "ServerConfig.h"
 #import "ExchangeInfo.h"
+#import "NSString+conversionUserID.h"
 
 #import "IPAddressController.h"
 #import "ExchangeRecordItem.h"
@@ -26,6 +27,7 @@
 #import "NSString+LBExtension.h"
 
 static NSString *ipAddress;
+static NSString *userIntegral;
 
 @interface ExchangeCenterViewController ()
 
@@ -153,11 +155,11 @@ static NSString *ipAddress;
     
     if (isEmail || isPhoneNum) {
         //积分条件
-        if (_userIntegral.text.integerValue >= 100)
+        if (userIntegral.integerValue >= 100)
         {
             __weak ExchangeCenterViewController *weakSelf = self;
             //兑换比例100 = 1元;
-            NSInteger integralMultiples =    _userIntegral.text.integerValue / 100;
+            NSInteger integralMultiples =    userIntegral.integerValue / 100;
             [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
                                                         target:aliPay
                                                         fromIP:ipAddress
@@ -174,7 +176,7 @@ static NSString *ipAddress;
             
         }else
         {
-            [SVProgressHUD showErrorWithStatus:@"100积分以上才能兑换"];
+            [SVProgressHUD showErrorWithStatus:@"账户余额1元以上才能兑换"];
         }
 
     }else{
@@ -199,9 +201,9 @@ static NSString *ipAddress;
     BOOL isPhoneNum = [_phoneNumField.text isPhoneNumber];
     if (isPhoneNum) {
         //查询积分看是否满足兑换条件
-        if (_userIntegral.text.integerValue >= 100) {
+        if (userIntegral.integerValue >= 100) {
             
-            NSInteger integralMultiples =    _userIntegral.text.integerValue / 100;
+            NSInteger integralMultiples =    userIntegral.integerValue / 100;
             __weak ExchangeCenterViewController *weakSelf = self;
 
             [_exchangeAPI applicationForConversionWithUserName:[GVUserDefaults standardUserDefaults].userID
@@ -219,7 +221,7 @@ static NSString *ipAddress;
                                                 }];
 
         }else{
-            [SVProgressHUD showErrorWithStatus:@"100积分以上才能兑换"];
+            [SVProgressHUD showErrorWithStatus:@"账户余额1元以上才能兑换"];
         }
 
     }else{
@@ -285,12 +287,14 @@ static NSString *ipAddress;
     NSString *userID = [GVUserDefaults standardUserDefaults].userID;
     [_taskCenterAPI getIntegral:userID success:^(NSString *totalIntegral) {
         
+        userIntegral = totalIntegral;
         if ([totalIntegral isEqualToString:@"0"]) {
-            _userIntegral.text = [NSString stringWithFormat:@"%@元",totalIntegral];
-        }else{
+            _userIntegral.text = @"0元";
+        }else
+        {
             NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
-            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
             _userIntegral.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
         

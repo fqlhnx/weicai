@@ -13,6 +13,7 @@
 #import "PersonalCenterAPI.h"
 #import "ServerConfig.h"
 #import "IPAddressController.h"
+#import "NSString+conversionUserID.h"
 
 #import "BeeDeviceInfo.h"
 #import "MarqueeLabel.h"
@@ -75,14 +76,15 @@
     [_taskCenterAPI getIntegral:_myUserID success:^(NSString *totalIntegral) {
         //成功刷新显示
         if ([totalIntegral isEqualToString:@"0"]) {
-            _balanceLabel.text = [NSString stringWithFormat:@"%@元",totalIntegral];
-        }else{
+            _balanceLabel.text = @"0元";
+        }else
+        {
             NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
-            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
             _balanceLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
-        
+
     } failure:^(NSError *error) {
         //失败给出提醒
     }];
@@ -95,7 +97,16 @@
         
         if (!error) {
             _totalPoint.text = [NSString stringWithFormat:@"%ld",(long)todayIntegral.integerValue];
-            
+            if (todayIntegral.integerValue == 0) {
+                _totalPoint.text = @"0元";
+            }else
+            {
+                NSString *yuan = [NSString stringWithFormat:@"%d",todayIntegral.integerValue / 100];
+                NSString *jiao = [NSString stringWithFormat:@"%d",todayIntegral.integerValue % 100 / 10];
+                NSString *fen = [NSString stringWithFormat:@"%d",todayIntegral.integerValue %100 % 10 %10];
+                _totalPoint.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+            }
+
         }
     }];
 
@@ -131,8 +142,7 @@
 {
     [super viewDidLoad];
     
-    //加载list view
-    [self loadTableView];
+    [self setupListView];
     //获取描述信息
     [_personalCenterAPI getNewsDescription];
     
@@ -142,7 +152,7 @@
     //获取累计方法积分数
     [self refreshTotalPoints];
     
-    _userID.text = _myUserID;
+    _userID.text = [_myUserID conversionIDbyUserType:defaultUser];
     if (_myUserID) {
         [self refreshBalance];
     }
@@ -169,13 +179,13 @@
 
 #pragma mark prive
 
-- (void)loadTableView
+- (void)setupListView
 {
     __weak PersonalCenterViewController *weakSelf = self;
-
-    self.myList.scrollEnabled = NO;
     //初始化列表
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
+    self.myList.scrollEnabled = NO;
+    
     RETableViewSection *oneSection = [RETableViewSection section];
     [self.tableViewMager addSection:oneSection];
     
@@ -184,7 +194,7 @@
                                       selectionHandler:^(RETableViewItem *item)
                          {
                              IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
-                             integralDetailsVC.userid = _userID.text;
+                             integralDetailsVC.userid = _myUserID;
                              [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
                              [item deselectRowAnimated:YES];
                          }]];
@@ -194,7 +204,7 @@
                                       selectionHandler:^(RETableViewItem *item)
                          {
                              ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
-                             vc.userid = _userID.text;
+                             vc.userid = _myUserID;
                              [weakSelf.navigationController pushViewController:vc animated:YES];
                              
                              [item deselectRowAnimated:YES];
@@ -216,7 +226,7 @@
                             if (!error) {
                                 _myUserID = uID;
                                 //刷新显示ID
-                                _userID.text = uID;
+                                _userID.text = [uID conversionIDbyUserType:defaultUser];
                                 //刷新用户剩余积分
                                 [self refreshBalance];
                                 

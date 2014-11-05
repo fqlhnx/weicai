@@ -9,11 +9,12 @@
 #import "HelpViewController.h"
 
 #import "FTCoreTextView.h"
+#import "FTCoreTextStyle.h"
 
 @interface HelpViewController ()
 
-@property (nonatomic,strong)UIScrollView *myScrollView;
-@property (nonatomic,strong)FTCoreTextView *ftCoreTextView;
+@property (nonatomic,weak)IBOutlet UIScrollView *myScorllView;
+@property (nonatomic,strong) FTCoreTextView *coreTextView;
 
 @end
 
@@ -25,10 +26,9 @@
     if (self) {
         // Custom initialization
         self.title = @"帮助中心";
-        
-        [self.tabBarItem setImage:[[UIImage imageNamed:@"item4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-        [self.tabBarItem setSelectedImage:[[UIImage imageNamed:@"item4Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-        
+        self.tabBarItem.image = [[UIImage imageNamed:@"item4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item4Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
     }
     return self;
 }
@@ -38,18 +38,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.myScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.coreTextView = [[FTCoreTextView alloc] initWithFrame:CGRectMake(20, 20, CGRectGetWidth(self.view.frame) - 40, 0)];
+    [self.coreTextView setText:[self helpContent]];
     
-    self.ftCoreTextView = [[FTCoreTextView alloc] initWithFrame:CGRectMake(20, 20, 280, 0)];
-    [self.ftCoreTextView setText:[self helpContent]];
-    [self.ftCoreTextView addStyles:[self coreTextStyle]];
-    [self.ftCoreTextView fitToSuggestedHeight];
+    FTCoreTextStyle *defaultStyle = [FTCoreTextStyle new];
+    defaultStyle.name = FTCoreTextTagDefault;	//thought the default name is already set to FTCoreTextTagDefault
+    defaultStyle.font = [UIFont fontWithName:@"TimesNewRomanPSMT" size:16.f];
+    defaultStyle.textAlignment = FTCoreTextAlignementJustified;
+
+    [self.coreTextView addStyle:defaultStyle];
     
-    [self.myScrollView setContentSize:CGSizeMake(CGRectGetWidth(self.myScrollView.frame), CGRectGetHeight(self.ftCoreTextView.frame) + 100.)];
-    [self.myScrollView addSubview:self.ftCoreTextView];
-    [self.view addSubview:self.myScrollView];
+    [self.myScorllView addSubview:self.coreTextView];
     
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [self.coreTextView fitToSuggestedHeight];
+    
+    [self.myScorllView setContentSize:CGSizeMake(CGRectGetWidth(self.myScorllView.bounds), CGRectGetHeight(self.coreTextView.frame) + 110.f)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,24 +66,11 @@
 }
 
 #pragma mark prive
-- (NSArray *)coreTextStyle
-{
-    NSMutableArray *result = [NSMutableArray array];
-    
-    FTCoreTextStyle *defaultStyle = [FTCoreTextStyle new];
-    defaultStyle.name = FTCoreTextTagDefault;	//thought the default name is already set to FTCoreTextTagDefault
-    defaultStyle.font = [UIFont fontWithName:@"TimesNewRomanPSMT" size:16.f];
-    defaultStyle.textAlignment = FTCoreTextAlignementJustified;
-    [result addObject:defaultStyle];
-
-    return result;
-}
-
-
 
 - (NSString*)helpContent
 {
-    return [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"help" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
+    return [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"helpDoc" ofType:@"html"] encoding:NSUTF8StringEncoding error:nil];
+    
 }
 
 @end

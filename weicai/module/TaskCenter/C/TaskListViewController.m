@@ -16,6 +16,8 @@
 #import "ChannelInfo.h"
 #import "IPAddressController.h"
 
+#import "NSString+conversionUserID.h"
+
 //各大广告平台SDK头文件
 #import "DMOfferWallManager.h"
 #import "ZKcmoneZKcmtwo.h"
@@ -154,16 +156,17 @@ GuoMobWallDelegate>
             NSLog(@"label touched");
             //刷新积分
         };
-        
+        //成功刷新显示
         if ([totalIntegral isEqualToString:@"0"]) {
-            self.scoreLabel.text = [NSString stringWithFormat:@"%@元",totalIntegral];
-        }else{
+            self.scoreLabel.text = @"0元";
+        }else
+        {
             NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
-            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
             self.scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
-
+        
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.scoreLabel ];
         self.navigationItem.rightBarButtonItem = rightItem;
 
@@ -183,8 +186,8 @@ GuoMobWallDelegate>
 - (void)setupListView
 {
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView delegate:nil];
-    [self.listView setSeparatorInset:(UIEdgeInsetsMake(0, 0, 0, 0))];
 
+    [self.listView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     __weak TaskListViewController *weakSelf = self;
     
     [self.listView addPullToRefreshWithActionHandler:^{
@@ -316,14 +319,17 @@ GuoMobWallDelegate>
     
     [_taskCenterRequest getIntegral:[GVUserDefaults standardUserDefaults].userID success:^(NSString *totalIntegral) {
         
+        //成功刷新显示
         if ([totalIntegral isEqualToString:@"0"]) {
-            self.scoreLabel.text = [NSString stringWithFormat:@"%@元",totalIntegral];
-        }else{
+            _scoreLabel.text = @"0元";
+        }else
+        {
             NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) / 10];
-            NSString *fen  = [NSString stringWithFormat:@"%d",(totalIntegral.integerValue % 100) % 10];
-            self.scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            _scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
+
         
     } failure:^(NSError *error) {
         
@@ -335,6 +341,7 @@ GuoMobWallDelegate>
     if ([GVUserDefaults standardUserDefaults].userID) {
         
         NSString *uid = [GVUserDefaults standardUserDefaults].userID;
+        
         [self advertisingPlatformInitWithUserID:uid];
         [self initNavBarItems];
         
@@ -387,8 +394,9 @@ GuoMobWallDelegate>
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
-                    item.cellHeight = cellDefaultHeight;
                     item.detailLabelText = subName;
+                    item.cellHeight = cellDefaultHeight;
+
                     [section addItem:item];
                     break;
                 }
@@ -472,19 +480,20 @@ GuoMobWallDelegate>
                     }];
                     item.style = UITableViewCellStyleSubtitle;
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
-                    item.detailLabelText = subName;
                     item.cellHeight = cellDefaultHeight;
 
+                    item.detailLabelText = subName;
                     [section addItem:item];
                     
                     break;
                 }
                 case GuoMengPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         
                         [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
                     }];
+                    item.style = UITableViewCellStyleSubtitle;
                     item.detailLabelText = subName;
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.cellHeight = cellDefaultHeight;

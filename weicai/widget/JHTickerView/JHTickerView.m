@@ -70,7 +70,7 @@
 	
 	// Set the font
 //	tickerFont = [UIFont fontWithName:@"Marker Felt" size:22.0];
-    tickerFont = [UIFont systemFontOfSize:14.];
+    tickerFont = [UIFont systemFontOfSize:14.f];
 	
 	// Add the label (i'm gonna center it on the view - please feel free to do your own thing)
 	tickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height / 4, self.frame.size.width, self.frame.size.height)];

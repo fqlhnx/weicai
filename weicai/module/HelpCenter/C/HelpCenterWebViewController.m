@@ -16,10 +16,7 @@
     if (self) {
         self.url = [NSURL URLWithString:@"http://121.40.193.213/Integral/public/index.php/api/help"];
         self.showPageTitles = NO;
-        
-        self.tabBarItem.image = [[UIImage imageNamed:@"item4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        self.tabBarItem.selectedImage = [[UIImage imageNamed:@"item4Select"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
+                
         self.title = @"帮助中心";
     }
     return self;

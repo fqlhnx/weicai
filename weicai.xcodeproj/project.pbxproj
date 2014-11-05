@@ -27,24 +27,6 @@
 		F638E49B1A06646800E5A911 /* LB_Sandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4921A06646800E5A911 /* LB_Sandbox.m */; };
 		F638E49C1A06646800E5A911 /* LB_Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4941A06646800E5A911 /* LB_Singleton.m */; };
 		F638E49D1A06646800E5A911 /* LB_SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4961A06646800E5A911 /* LB_SystemInfo.m */; };
-		F638E4C41A09040100E5A911 /* AHHyperlinkScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4AB1A09040100E5A911 /* AHHyperlinkScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4C51A09040100E5A911 /* AHLinkLexer.l in Sources */ = {isa = PBXBuildFile; fileRef = F638E4AD1A09040100E5A911 /* AHLinkLexer.l */; };
-		F638E4C61A09040100E5A911 /* AHMarkedHyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4AF1A09040100E5A911 /* AHMarkedHyperlink.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4C71A09040100E5A911 /* Copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = F638E4B11A09040100E5A911 /* Copyright.txt */; };
-		F638E4C81A09040100E5A911 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = F638E4B21A09040100E5A911 /* License.txt */; };
-		F638E4C91A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4B41A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4CA1A09040100E5A911 /* CoreTextHyperlinkViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4B61A09040100E5A911 /* CoreTextHyperlinkViewViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4CB1A09040100E5A911 /* JSCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4B81A09040100E5A911 /* JSCoreTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4CC1A09040100E5A911 /* JSEmailCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4BA1A09040100E5A911 /* JSEmailCoreTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4CD1A09040100E5A911 /* JSTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4BC1A09040100E5A911 /* JSTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4CE1A09040100E5A911 /* JSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4BE1A09040100E5A911 /* JSTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4CF1A09040100E5A911 /* JSTwitterCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4C01A09040100E5A911 /* JSTwitterCoreTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4D01A09040100E5A911 /* JSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4C21A09040100E5A911 /* JSWebViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4D11A09040100E5A911 /* JSWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F638E4C31A09040100E5A911 /* JSWebViewController.xib */; };
-		F638E4D31A09095C00E5A911 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F638E4D21A09095C00E5A911 /* CoreText.framework */; };
-		F638E4D91A090BB400E5A911 /* FTCoreTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4D61A090BB400E5A911 /* FTCoreTextStyle.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4DA1A090BB400E5A911 /* FTCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4D81A090BB400E5A911 /* FTCoreTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F638E4DC1A090C1D00E5A911 /* help.txt in Resources */ = {isa = PBXBuildFile; fileRef = F638E4DB1A090C1D00E5A911 /* help.txt */; };
 		F63E9C7419DE79E700548AA9 /* RETableViewBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C2D19DE79E700548AA9 /* RETableViewBoolCell.m */; };
 		F63E9C7519DE79E700548AA9 /* RETableViewCreditCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C2F19DE79E700548AA9 /* RETableViewCreditCardCell.m */; };
 		F63E9C7619DE79E700548AA9 /* RETableViewDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C3119DE79E700548AA9 /* RETableViewDateTimeCell.m */; };
@@ -261,6 +243,10 @@
 		F6DAA42219E5221900ADA84A /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA41819E5221900ADA84A /* UIImageView+AFNetworking.m */; };
 		F6DAA42E19E6290A00ADA84A /* BeeDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */; };
 		F6DAA43119E633D300ADA84A /* ExchangeCenterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DAA43019E633D300ADA84A /* ExchangeCenterAPI.m */; };
+		F6DF567D1A09B3AB0021A0BE /* FTCoreTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF567A1A09B3AB0021A0BE /* FTCoreTextStyle.m */; };
+		F6DF567E1A09B3AB0021A0BE /* FTCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF567C1A09B3AB0021A0BE /* FTCoreTextView.m */; };
+		F6DF56831A09B6E40021A0BE /* helpDoc.html in Resources */ = {isa = PBXBuildFile; fileRef = F6DF56821A09B6E40021A0BE /* helpDoc.html */; };
+		F6DF56861A09E61A0021A0BE /* NSString+conversionUserID.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */; };
 		F6E001F61A0767CF000B2BEC /* RecordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E001F51A0767CF000B2BEC /* RecordItem.m */; };
 		F6E001FB1A076AA0000B2BEC /* RecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E001F91A076AA0000B2BEC /* RecordCell.m */; };
 		F6E001FC1A076AA0000B2BEC /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E001FA1A076AA0000B2BEC /* RecordCell.xib */; };
@@ -334,38 +320,6 @@
 		F638E4941A06646800E5A911 /* LB_Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_Singleton.m; sourceTree = "<group>"; };
 		F638E4951A06646800E5A911 /* LB_SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_SystemInfo.h; sourceTree = "<group>"; };
 		F638E4961A06646800E5A911 /* LB_SystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_SystemInfo.m; sourceTree = "<group>"; };
-		F638E4AA1A09040100E5A911 /* AHHyperlinkScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHHyperlinkScanner.h; sourceTree = "<group>"; };
-		F638E4AB1A09040100E5A911 /* AHHyperlinkScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHHyperlinkScanner.m; sourceTree = "<group>"; };
-		F638E4AC1A09040100E5A911 /* AHLinkLexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHLinkLexer.h; sourceTree = "<group>"; };
-		F638E4AD1A09040100E5A911 /* AHLinkLexer.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = AHLinkLexer.l; sourceTree = "<group>"; };
-		F638E4AE1A09040100E5A911 /* AHMarkedHyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AHMarkedHyperlink.h; sourceTree = "<group>"; };
-		F638E4AF1A09040100E5A911 /* AHMarkedHyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AHMarkedHyperlink.m; sourceTree = "<group>"; };
-		F638E4B01A09040100E5A911 /* AutoHyperlinks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoHyperlinks.h; sourceTree = "<group>"; };
-		F638E4B11A09040100E5A911 /* Copyright.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Copyright.txt; sourceTree = "<group>"; };
-		F638E4B21A09040100E5A911 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		F638E4B31A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextHyperlinkViewAppDelegate.h; sourceTree = "<group>"; };
-		F638E4B41A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextHyperlinkViewAppDelegate.m; sourceTree = "<group>"; };
-		F638E4B51A09040100E5A911 /* CoreTextHyperlinkViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextHyperlinkViewViewController.h; sourceTree = "<group>"; };
-		F638E4B61A09040100E5A911 /* CoreTextHyperlinkViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextHyperlinkViewViewController.m; sourceTree = "<group>"; };
-		F638E4B71A09040100E5A911 /* JSCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCoreTextView.h; sourceTree = "<group>"; };
-		F638E4B81A09040100E5A911 /* JSCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCoreTextView.m; sourceTree = "<group>"; };
-		F638E4B91A09040100E5A911 /* JSEmailCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEmailCoreTextView.h; sourceTree = "<group>"; };
-		F638E4BA1A09040100E5A911 /* JSEmailCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEmailCoreTextView.m; sourceTree = "<group>"; };
-		F638E4BB1A09040100E5A911 /* JSTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTableViewCell.h; sourceTree = "<group>"; };
-		F638E4BC1A09040100E5A911 /* JSTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTableViewCell.m; sourceTree = "<group>"; };
-		F638E4BD1A09040100E5A911 /* JSTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTableViewController.h; sourceTree = "<group>"; };
-		F638E4BE1A09040100E5A911 /* JSTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTableViewController.m; sourceTree = "<group>"; };
-		F638E4BF1A09040100E5A911 /* JSTwitterCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTwitterCoreTextView.h; sourceTree = "<group>"; };
-		F638E4C01A09040100E5A911 /* JSTwitterCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTwitterCoreTextView.m; sourceTree = "<group>"; };
-		F638E4C11A09040100E5A911 /* JSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWebViewController.h; sourceTree = "<group>"; };
-		F638E4C21A09040100E5A911 /* JSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWebViewController.m; sourceTree = "<group>"; };
-		F638E4C31A09040100E5A911 /* JSWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSWebViewController.xib; sourceTree = "<group>"; };
-		F638E4D21A09095C00E5A911 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		F638E4D51A090BB400E5A911 /* FTCoreTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextStyle.h; sourceTree = "<group>"; };
-		F638E4D61A090BB400E5A911 /* FTCoreTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextStyle.m; sourceTree = "<group>"; };
-		F638E4D71A090BB400E5A911 /* FTCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextView.h; sourceTree = "<group>"; };
-		F638E4D81A090BB400E5A911 /* FTCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextView.m; sourceTree = "<group>"; };
-		F638E4DB1A090C1D00E5A911 /* help.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = help.txt; sourceTree = "<group>"; };
 		F63E9C2C19DE79E700548AA9 /* RETableViewBoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewBoolCell.h; sourceTree = "<group>"; };
 		F63E9C2D19DE79E700548AA9 /* RETableViewBoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewBoolCell.m; sourceTree = "<group>"; };
 		F63E9C2E19DE79E700548AA9 /* RETableViewCreditCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCreditCardCell.h; sourceTree = "<group>"; };
@@ -694,6 +648,13 @@
 		F6DAA42D19E6290A00ADA84A /* BeeDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeDeviceInfo.m; sourceTree = "<group>"; };
 		F6DAA42F19E633D300ADA84A /* ExchangeCenterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeCenterAPI.h; sourceTree = "<group>"; };
 		F6DAA43019E633D300ADA84A /* ExchangeCenterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeCenterAPI.m; sourceTree = "<group>"; };
+		F6DF56791A09B3AB0021A0BE /* FTCoreTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextStyle.h; sourceTree = "<group>"; };
+		F6DF567A1A09B3AB0021A0BE /* FTCoreTextStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextStyle.m; sourceTree = "<group>"; };
+		F6DF567B1A09B3AB0021A0BE /* FTCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextView.h; sourceTree = "<group>"; };
+		F6DF567C1A09B3AB0021A0BE /* FTCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextView.m; sourceTree = "<group>"; };
+		F6DF56821A09B6E40021A0BE /* helpDoc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = helpDoc.html; sourceTree = "<group>"; };
+		F6DF56841A09E61A0021A0BE /* NSString+conversionUserID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+conversionUserID.h"; sourceTree = "<group>"; };
+		F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+conversionUserID.m"; sourceTree = "<group>"; };
 		F6E001F41A0767CF000B2BEC /* RecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordItem.h; sourceTree = "<group>"; };
 		F6E001F51A0767CF000B2BEC /* RecordItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordItem.m; sourceTree = "<group>"; };
 		F6E001F81A076AA0000B2BEC /* RecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCell.h; sourceTree = "<group>"; };
@@ -743,7 +704,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F638E4D31A09095C00E5A911 /* CoreText.framework in Frameworks */,
 				F6E73D361A0757FE007FE0D8 /* MapKit.framework in Frameworks */,
 				F6E73D341A0757D9007FE0D8 /* MessageUI.framework in Frameworks */,
 				F6C28A571A03870D002A1276 /* ImageIO.framework in Frameworks */,
@@ -870,95 +830,6 @@
 				F638E48C1A06646800E5A911 /* NSString+LBExtension.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		F638E49E1A08FF4000E5A911 /* Res */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Res;
-			sourceTree = "<group>";
-		};
-		F638E49F1A08FF7000E5A911 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
-			sourceTree = "<group>";
-		};
-		F638E4A11A08FF7000E5A911 /* V */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = V;
-			sourceTree = "<group>";
-		};
-		F638E4A41A09017F00E5A911 /* Res */ = {
-			isa = PBXGroup;
-			children = (
-				F638E4DB1A090C1D00E5A911 /* help.txt */,
-			);
-			path = Res;
-			sourceTree = "<group>";
-		};
-		F638E4A71A0903F400E5A911 /* JSCoreTextView */ = {
-			isa = PBXGroup;
-			children = (
-				F638E4A81A09040100E5A911 /* Classes */,
-			);
-			path = JSCoreTextView;
-			sourceTree = "<group>";
-		};
-		F638E4A81A09040100E5A911 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F638E4A91A09040100E5A911 /* AutoHyperlinks */,
-				F638E4B31A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.h */,
-				F638E4B41A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.m */,
-				F638E4B51A09040100E5A911 /* CoreTextHyperlinkViewViewController.h */,
-				F638E4B61A09040100E5A911 /* CoreTextHyperlinkViewViewController.m */,
-				F638E4B71A09040100E5A911 /* JSCoreTextView.h */,
-				F638E4B81A09040100E5A911 /* JSCoreTextView.m */,
-				F638E4B91A09040100E5A911 /* JSEmailCoreTextView.h */,
-				F638E4BA1A09040100E5A911 /* JSEmailCoreTextView.m */,
-				F638E4BB1A09040100E5A911 /* JSTableViewCell.h */,
-				F638E4BC1A09040100E5A911 /* JSTableViewCell.m */,
-				F638E4BD1A09040100E5A911 /* JSTableViewController.h */,
-				F638E4BE1A09040100E5A911 /* JSTableViewController.m */,
-				F638E4BF1A09040100E5A911 /* JSTwitterCoreTextView.h */,
-				F638E4C01A09040100E5A911 /* JSTwitterCoreTextView.m */,
-				F638E4C11A09040100E5A911 /* JSWebViewController.h */,
-				F638E4C21A09040100E5A911 /* JSWebViewController.m */,
-				F638E4C31A09040100E5A911 /* JSWebViewController.xib */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		F638E4A91A09040100E5A911 /* AutoHyperlinks */ = {
-			isa = PBXGroup;
-			children = (
-				F638E4AA1A09040100E5A911 /* AHHyperlinkScanner.h */,
-				F638E4AB1A09040100E5A911 /* AHHyperlinkScanner.m */,
-				F638E4AC1A09040100E5A911 /* AHLinkLexer.h */,
-				F638E4AD1A09040100E5A911 /* AHLinkLexer.l */,
-				F638E4AE1A09040100E5A911 /* AHMarkedHyperlink.h */,
-				F638E4AF1A09040100E5A911 /* AHMarkedHyperlink.m */,
-				F638E4B01A09040100E5A911 /* AutoHyperlinks.h */,
-				F638E4B11A09040100E5A911 /* Copyright.txt */,
-				F638E4B21A09040100E5A911 /* License.txt */,
-			);
-			path = AutoHyperlinks;
-			sourceTree = "<group>";
-		};
-		F638E4D41A090BA600E5A911 /* FCCoreText */ = {
-			isa = PBXGroup;
-			children = (
-				F638E4D51A090BB400E5A911 /* FTCoreTextStyle.h */,
-				F638E4D61A090BB400E5A911 /* FTCoreTextStyle.m */,
-				F638E4D71A090BB400E5A911 /* FTCoreTextView.h */,
-				F638E4D81A090BB400E5A911 /* FTCoreTextView.m */,
-			);
-			path = FCCoreText;
 			sourceTree = "<group>";
 		};
 		F63E9C2A19DE79E700548AA9 /* RETableViewManager */ = {
@@ -1175,7 +1046,6 @@
 		F663D7E719D7A19F002943D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F638E4D21A09095C00E5A911 /* CoreText.framework */,
 				F6E73D351A0757FE007FE0D8 /* MapKit.framework */,
 				F6E73D331A0757D9007FE0D8 /* MessageUI.framework */,
 				F6C28A561A03870D002A1276 /* ImageIO.framework */,
@@ -1280,9 +1150,9 @@
 		F663D83219D7EC00002943D7 /* HelpCenter */ = {
 			isa = PBXGroup;
 			children = (
-				F638E4A41A09017F00E5A911 /* Res */,
-				F638E49F1A08FF7000E5A911 /* M */,
-				F638E4A11A08FF7000E5A911 /* V */,
+				F6DF567F1A09B6DE0021A0BE /* M */,
+				F6DF56801A09B6DE0021A0BE /* Res */,
+				F6DF56811A09B6DE0021A0BE /* V */,
 				F663D83319D7EC00002943D7 /* C */,
 			);
 			path = HelpCenter;
@@ -1303,8 +1173,8 @@
 		F663D83719D7EC00002943D7 /* IndividualAccount */ = {
 			isa = PBXGroup;
 			children = (
-				F638E49E1A08FF4000E5A911 /* Res */,
 				F6E001F71A076A0C000B2BEC /* V */,
+				F6F3CFCD19F10C9A0040E1BF /* Res */,
 				F6F3CFC619F10C440040E1BF /* M */,
 				F663D83819D7EC00002943D7 /* C */,
 			);
@@ -1378,6 +1248,8 @@
 				F6DAA3D719E10FCC00ADA84A /* ScoreLabel.m */,
 				F67C98CB19FE00E000C26988 /* IPAddressController.h */,
 				F67C98CC19FE00E000C26988 /* IPAddressController.m */,
+				F6DF56841A09E61A0021A0BE /* NSString+conversionUserID.h */,
+				F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */,
 				F614A7BC19F74221004DEB96 /* Res */,
 			);
 			path = common;
@@ -1386,8 +1258,7 @@
 		F663D84219D7EE37002943D7 /* widget */ = {
 			isa = PBXGroup;
 			children = (
-				F638E4D41A090BA600E5A911 /* FCCoreText */,
-				F638E4A71A0903F400E5A911 /* JSCoreTextView */,
+				F6DF56781A09B3AB0021A0BE /* FTCoreText */,
 				F6981A8E19F4E9BF008A403F /* TOWebViewController */,
 				F65D46BC19EEB53C0020E92C /* JHTickerView */,
 				F628E37519ED1B5D00F4C959 /* GVUserDefaults */,
@@ -1785,6 +1656,39 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		F6DF56781A09B3AB0021A0BE /* FTCoreText */ = {
+			isa = PBXGroup;
+			children = (
+				F6DF56791A09B3AB0021A0BE /* FTCoreTextStyle.h */,
+				F6DF567A1A09B3AB0021A0BE /* FTCoreTextStyle.m */,
+				F6DF567B1A09B3AB0021A0BE /* FTCoreTextView.h */,
+				F6DF567C1A09B3AB0021A0BE /* FTCoreTextView.m */,
+			);
+			path = FTCoreText;
+			sourceTree = "<group>";
+		};
+		F6DF567F1A09B6DE0021A0BE /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		F6DF56801A09B6DE0021A0BE /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				F6DF56821A09B6E40021A0BE /* helpDoc.html */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		F6DF56811A09B6DE0021A0BE /* V */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
 		F6E001F71A076A0C000B2BEC /* V */ = {
 			isa = PBXGroup;
 			children = (
@@ -1871,6 +1775,13 @@
 				F6E4D4431A077022003A677C /* ExchangeRecordItem.m */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		F6F3CFCD19F10C9A0040E1BF /* Res */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Res;
 			sourceTree = "<group>";
 		};
 		F6F9AD8419E779CF001AAF95 /* OpenUDID */ = {
@@ -1992,7 +1903,6 @@
 				F663D91519D9A795002943D7 /* _background.png in Resources */,
 				F663D94D19D9A795002943D7 /* _purple_left_cell.png in Resources */,
 				F6B910F119F77B7D00D39821 /* icon_phone@2x.png in Resources */,
-				F638E4DC1A090C1D00E5A911 /* help.txt in Resources */,
 				F6B910C619F7674200D39821 /* item4@2x.png in Resources */,
 				F6E73D2E1A07568F007FE0D8 /* MiiReturnButtonDw.png in Resources */,
 				F663D93219D9A795002943D7 /* _green__info.png in Resources */,
@@ -2004,7 +1914,6 @@
 				F663D91B19D9A795002943D7 /* _help.png in Resources */,
 				F6B910C719F7674200D39821 /* item4Select@2x.png in Resources */,
 				F663D93019D9A795002943D7 /* _green__bottom.png in Resources */,
-				F638E4D11A09040100E5A911 /* JSWebViewController.xib in Resources */,
 				F663D91F19D9A795002943D7 /* _set_btn.png in Resources */,
 				F663D93D19D9A795002943D7 /* _orange__info.png in Resources */,
 				F663D92619D9A795002943D7 /* _blue__download.png in Resources */,
@@ -2019,7 +1928,6 @@
 				F663D94719D9A795002943D7 /* _purple__download.png in Resources */,
 				F663D92B19D9A795002943D7 /* _blue_all_cell.png in Resources */,
 				F663D95319D9A795002943D7 /* _red__info.png in Resources */,
-				F638E4C71A09040100E5A911 /* Copyright.txt in Resources */,
 				F663D92419D9A795002943D7 /* _yuanjiao_horizontal.png in Resources */,
 				F663D92A19D9A795002943D7 /* _blue__triangle.png in Resources */,
 				F663D94F19D9A795002943D7 /* _purple_right_cell.png in Resources */,
@@ -2040,6 +1948,7 @@
 				F663D95419D9A795002943D7 /* _red__iphone_download.png in Resources */,
 				F663D92519D9A795002943D7 /* _blue__bottom.png in Resources */,
 				F663D85C19D7EFEE002943D7 /* ExchangeCenterViewController.xib in Resources */,
+				F6DF56831A09B6E40021A0BE /* helpDoc.html in Resources */,
 				F663D94319D9A795002943D7 /* _orange_left_view.png in Resources */,
 				F663D92319D9A795002943D7 /* _yuanjiao.png in Resources */,
 				F663D95119D9A795002943D7 /* _red__bottom.png in Resources */,
@@ -2067,7 +1976,6 @@
 				F658BDF419F0DE2C00229373 /* IntegralDetailsViewController.xib in Resources */,
 				F663D94819D9A795002943D7 /* _purple__info.png in Resources */,
 				F663D95819D9A795002943D7 /* _red_all_cell11.png in Resources */,
-				F638E4C81A09040100E5A911 /* License.txt in Resources */,
 				F663D94919D9A795002943D7 /* _purple__iphone_download.png in Resources */,
 				F663D95219D9A795002943D7 /* _red__download.png in Resources */,
 				F663D91819D9A795002943D7 /* _cell_head.png in Resources */,
@@ -2120,7 +2028,6 @@
 				F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */,
 				F63E9C8019DE79E700548AA9 /* REBoolItem.m in Sources */,
 				F663D7F919D7A19F002943D7 /* AppDelegate.m in Sources */,
-				F638E4CB1A09040100E5A911 /* JSCoreTextView.m in Sources */,
 				F63E9C7A19DE79E700548AA9 /* RETableViewLongTextCell.m in Sources */,
 				F63E9C8419DE79E700548AA9 /* REInlineDatePickerItem.m in Sources */,
 				F6DAA42E19E6290A00ADA84A /* BeeDeviceInfo.m in Sources */,
@@ -2136,7 +2043,7 @@
 				F6DAA41919E5221900ADA84A /* AFHTTPRequestOperation.m in Sources */,
 				F63E9C9019DE79E700548AA9 /* REPlaceholderTextView.m in Sources */,
 				F6E001F61A0767CF000B2BEC /* RecordItem.m in Sources */,
-				F638E4C41A09040100E5A911 /* AHHyperlinkScanner.m in Sources */,
+				F6DF567E1A09B3AB0021A0BE /* FTCoreTextView.m in Sources */,
 				F63E9C7719DE79E700548AA9 /* RETableViewFloatCell.m in Sources */,
 				F638E49B1A06646800E5A911 /* LB_Sandbox.m in Sources */,
 				F6DAA3D819E10FCC00ADA84A /* ScoreLabel.m in Sources */,
@@ -2148,6 +2055,7 @@
 				F63E9C7B19DE79E700548AA9 /* RETableViewNumberCell.m in Sources */,
 				F63E9C8219DE79E700548AA9 /* REDateTimeItem.m in Sources */,
 				F698A19D19F0B8CE00EF30BA /* TaskListViewController.m in Sources */,
+				F6DF567D1A09B3AB0021A0BE /* FTCoreTextStyle.m in Sources */,
 				F6981A9A19F4E9C6008A403F /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */,
 				F638E49C1A06646800E5A911 /* LB_Singleton.m in Sources */,
@@ -2161,6 +2069,7 @@
 				F63E9C8819DE79E700548AA9 /* RENumberItem.m in Sources */,
 				F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */,
 				F63E9C8B19DE79E700548AA9 /* RESegmentedItem.m in Sources */,
+				F6DF56861A09E61A0021A0BE /* NSString+conversionUserID.m in Sources */,
 				F63E9C8E19DE79E700548AA9 /* REActionBar.m in Sources */,
 				F638E49A1A06646800E5A911 /* LB_Foundation.m in Sources */,
 				F63E9CAF19DE7A4300548AA9 /* REValidator.m in Sources */,
@@ -2171,10 +2080,7 @@
 				F63E9CB319DE7A4300548AA9 /* REURLValidator.m in Sources */,
 				F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */,
 				F638E4991A06646800E5A911 /* LB_DeviceInfo.m in Sources */,
-				F638E4CD1A09040100E5A911 /* JSTableViewCell.m in Sources */,
 				F663D85B19D7EFEE002943D7 /* ExchangeCenterViewController.m in Sources */,
-				F638E4CA1A09040100E5A911 /* CoreTextHyperlinkViewViewController.m in Sources */,
-				F638E4CE1A09040100E5A911 /* JSTableViewController.m in Sources */,
 				F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */,
 				F628E35F19ECFD6D00F4C959 /* ChannelInfo.m in Sources */,
 				F63E9C8F19DE79E700548AA9 /* RECommonFunctions.m in Sources */,
@@ -2183,17 +2089,13 @@
 				F663D7F519D7A19F002943D7 /* main.m in Sources */,
 				F63E9C9519DE79E700548AA9 /* RETableViewManager.m in Sources */,
 				F628E36B19ECFF7200F4C959 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
-				F638E4C51A09040100E5A911 /* AHLinkLexer.l in Sources */,
 				F628E37319ED02A700F4C959 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				F63E9CB119DE7A4300548AA9 /* RELengthValidator.m in Sources */,
 				F63E9C8A19DE79E700548AA9 /* RERadioItem.m in Sources */,
 				F6981A9719F4E9C6008A403F /* TOActivityChrome.m in Sources */,
 				F63E9C7D19DE79E700548AA9 /* RETableViewPickerCell.m in Sources */,
 				F63E9CAD19DE7A4300548AA9 /* NSError+REValidation.m in Sources */,
-				F638E4DA1A090BB400E5A911 /* FTCoreTextView.m in Sources */,
 				F6DAA42219E5221900ADA84A /* UIImageView+AFNetworking.m in Sources */,
-				F638E4CC1A09040100E5A911 /* JSEmailCoreTextView.m in Sources */,
-				F638E4CF1A09040100E5A911 /* JSTwitterCoreTextView.m in Sources */,
 				F698A1A419F0BA3B00EF30BA /* ScrollContentInfo.m in Sources */,
 				F6DAA41D19E5221900ADA84A /* AFSecurityPolicy.m in Sources */,
 				F63E9C7619DE79E700548AA9 /* RETableViewDateTimeCell.m in Sources */,
@@ -2202,7 +2104,6 @@
 				F63E9C7919DE79E700548AA9 /* RETableViewInlinePickerCell.m in Sources */,
 				F63E9C9319DE79E700548AA9 /* RETableViewItem.m in Sources */,
 				F643BB1119F2A6AC00908734 /* ExchangeInfo.m in Sources */,
-				F638E4C61A09040100E5A911 /* AHMarkedHyperlink.m in Sources */,
 				F628E37819ED1B5D00F4C959 /* GVUserDefaults.m in Sources */,
 				F698A1AC19F0BC2400EF30BA /* PersonalCenterAPI.m in Sources */,
 				F63E9C8C19DE79E700548AA9 /* RETextItem.m in Sources */,
@@ -2210,7 +2111,6 @@
 				F63E9CAE19DE7A4300548AA9 /* REValidation.m in Sources */,
 				F6F9AD8A19E77A6B001AAF95 /* OpenUDID.m in Sources */,
 				F6E4D4441A077022003A677C /* ExchangeRecordItem.m in Sources */,
-				F638E4C91A09040100E5A911 /* CoreTextHyperlinkViewAppDelegate.m in Sources */,
 				F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */,
 				F638E4981A06646800E5A911 /* NSString+LBExtension.m in Sources */,
 				F6DAA41E19E5221900ADA84A /* AFURLConnectionOperation.m in Sources */,
@@ -2225,7 +2125,6 @@
 				F63E9C9719DE79E700548AA9 /* RETableViewSection.m in Sources */,
 				F6DAA41F19E5221900ADA84A /* AFURLRequestSerialization.m in Sources */,
 				F63E9C8519DE79E700548AA9 /* REInlinePickerItem.m in Sources */,
-				F638E4D91A090BB400E5A911 /* FTCoreTextStyle.m in Sources */,
 				F63E9C8619DE79E700548AA9 /* RELongTextItem.m in Sources */,
 				F63E9C7C19DE79E700548AA9 /* RETableViewOptionCell.m in Sources */,
 				F663D9C619DA5287002943D7 /* BeeSystemInfo.mm in Sources */,
@@ -2235,7 +2134,6 @@
 				F63E9C8919DE79E700548AA9 /* REPickerItem.m in Sources */,
 				F65D46C719EFF6CE0020E92C /* NSString+BeeExtension.m in Sources */,
 				F638E4971A06646800E5A911 /* NSData+BeeCategory.m in Sources */,
-				F638E4D01A09040100E5A911 /* JSWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
