@@ -13,7 +13,7 @@
 #import "TaskListViewController.h"
 #import "BeeSystemInfo.h"
 #import "BeeDeviceInfo.h"
-#import "HelpCenterWebViewController.h"
+#import "HelpViewController.h"
 #import "IPAddressController.h"
 
 
@@ -30,7 +30,7 @@
 @property (nonatomic,strong)ExchangeCenterViewController *exchangeVC;
 @property (nonatomic,strong)UINavigationController *exchangeRootNavCtrl;
 
-@property (nonatomic,strong)HelpCenterWebViewController *helpVC;
+@property (nonatomic,strong)HelpViewController *helpVC;
 @property (nonatomic,strong)UINavigationController *helpRootNavCtrl;
 
 @end
@@ -64,7 +64,7 @@
     self.exchangeRootNavCtrl = [[UINavigationController alloc]initWithRootViewController:self.exchangeVC];
     
     //help
-    self.helpVC = [[HelpCenterWebViewController alloc]init];
+    self.helpVC = [[HelpViewController alloc]initWithNibName:@"HelpViewController" bundle:nil];
     self.helpRootNavCtrl = [[UINavigationController alloc] initWithRootViewController:_helpVC];
     
     [self customUIAppearance];
