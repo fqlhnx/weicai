@@ -20,8 +20,9 @@
                success:(void(^)(NSArray* results))success failed:(void (^)(NSError* error))failed;
 //兑换详情
 - (void)queryExchangeDetailWithUserID:(NSString*)uID page:(NSString*)page success:(void(^)(NSArray *results))success failed:(void(^)(NSError *error))failed;
-
-- (void)getNewsDescription;
+//获取最新的消息
+- (void)getNewsDescriptionSuccess:(void(^)(NSString*desString))success
+                           failed:(void(^)(NSError *error))failed;
 
 //获取用户ID
 - (void)getUserID:(NSString*)uuid

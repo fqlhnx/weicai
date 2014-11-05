@@ -27,6 +27,8 @@
 		F638E49B1A06646800E5A911 /* LB_Sandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4921A06646800E5A911 /* LB_Sandbox.m */; };
 		F638E49C1A06646800E5A911 /* LB_Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4941A06646800E5A911 /* LB_Singleton.m */; };
 		F638E49D1A06646800E5A911 /* LB_SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4961A06646800E5A911 /* LB_SystemInfo.m */; };
+		F638E4DF1A0A67E000E5A911 /* DescriptionInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4DE1A0A67E000E5A911 /* DescriptionInfoCell.m */; };
+		F638E4E21A0A680100E5A911 /* DescriptionInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E4E11A0A680100E5A911 /* DescriptionInfoItem.m */; };
 		F63E9C7419DE79E700548AA9 /* RETableViewBoolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C2D19DE79E700548AA9 /* RETableViewBoolCell.m */; };
 		F63E9C7519DE79E700548AA9 /* RETableViewCreditCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C2F19DE79E700548AA9 /* RETableViewCreditCardCell.m */; };
 		F63E9C7619DE79E700548AA9 /* RETableViewDateTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F63E9C3119DE79E700548AA9 /* RETableViewDateTimeCell.m */; };
@@ -320,6 +322,10 @@
 		F638E4941A06646800E5A911 /* LB_Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_Singleton.m; sourceTree = "<group>"; };
 		F638E4951A06646800E5A911 /* LB_SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LB_SystemInfo.h; sourceTree = "<group>"; };
 		F638E4961A06646800E5A911 /* LB_SystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LB_SystemInfo.m; sourceTree = "<group>"; };
+		F638E4DD1A0A67E000E5A911 /* DescriptionInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionInfoCell.h; sourceTree = "<group>"; };
+		F638E4DE1A0A67E000E5A911 /* DescriptionInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionInfoCell.m; sourceTree = "<group>"; };
+		F638E4E01A0A680100E5A911 /* DescriptionInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionInfoItem.h; sourceTree = "<group>"; };
+		F638E4E11A0A680100E5A911 /* DescriptionInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionInfoItem.m; sourceTree = "<group>"; };
 		F63E9C2C19DE79E700548AA9 /* RETableViewBoolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewBoolCell.h; sourceTree = "<group>"; };
 		F63E9C2D19DE79E700548AA9 /* RETableViewBoolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETableViewBoolCell.m; sourceTree = "<group>"; };
 		F63E9C2E19DE79E700548AA9 /* RETableViewCreditCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETableViewCreditCardCell.h; sourceTree = "<group>"; };
@@ -1698,6 +1704,8 @@
 				F6E4D43D1A076F3E003A677C /* ExchangeRecordCell.h */,
 				F6E4D43E1A076F3E003A677C /* ExchangeRecordCell.m */,
 				F6E4D43F1A076F3E003A677C /* ExchangeRecordCell.xib */,
+				F638E4DD1A0A67E000E5A911 /* DescriptionInfoCell.h */,
+				F638E4DE1A0A67E000E5A911 /* DescriptionInfoCell.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1773,6 +1781,8 @@
 				F6E001F51A0767CF000B2BEC /* RecordItem.m */,
 				F6E4D4421A077022003A677C /* ExchangeRecordItem.h */,
 				F6E4D4431A077022003A677C /* ExchangeRecordItem.m */,
+				F638E4E01A0A680100E5A911 /* DescriptionInfoItem.h */,
+				F638E4E11A0A680100E5A911 /* DescriptionInfoItem.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -2023,6 +2033,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F638E4DF1A0A67E000E5A911 /* DescriptionInfoCell.m in Sources */,
 				F6F3CFCC19F10C650040E1BF /* Exchange.m in Sources */,
 				F60270C11A064E3A00DF8D87 /* RecordListItem.m in Sources */,
 				F65D46BF19EEB53C0020E92C /* JHTickerView.m in Sources */,
@@ -2120,6 +2131,7 @@
 				F63E9C8D19DE79E700548AA9 /* NSString+RETableViewManagerAdditions.m in Sources */,
 				F63E9CBF19DE7B9900548AA9 /* REFormattedNumberField.m in Sources */,
 				F658BDF319F0DE2C00229373 /* IntegralDetailsViewController.m in Sources */,
+				F638E4E21A0A680100E5A911 /* DescriptionInfoItem.m in Sources */,
 				F63E9C8719DE79E700548AA9 /* REMultipleChoiceItem.m in Sources */,
 				F6E001FB1A076AA0000B2BEC /* RecordCell.m in Sources */,
 				F63E9C9719DE79E700548AA9 /* RETableViewSection.m in Sources */,

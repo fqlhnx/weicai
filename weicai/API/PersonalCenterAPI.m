@@ -90,25 +90,32 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
     
 }
 
-- (void)getNewsDescription
+- (void)getNewsDescriptionSuccess:(void (^)(NSString *))success
+                           failed:(void (^)(NSError *))failed
 {
+//    {
+//        "message": {
+//            "id": "3",
+//            "description": "123123456456111"
+//        }
+//    }
+
     [super getRequestFromePath:kgetDescriptionURL
                     parameters:nil
                        success:^(id responseResult)
     {
-//        {
-//            "message": {
-//                "id": "3",
-//                "description": "123123456456111"
-//            }
-//        }
-        
+        NSDictionary *responseDic = responseResult[@"message"];
+        if (responseDic[@"description"]) {
+            NSString *content = responseDic[@"description"];
+            success(content);
+        }
     }
+     
     
                        failure:^(NSError *error, id errorResponse)
     
     {
-        
+        failed(error);
     }];
 }
 
