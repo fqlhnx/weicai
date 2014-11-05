@@ -13,6 +13,7 @@
 #import "PersonalCenterAPI.h"
 #import "ServerConfig.h"
 #import "IPAddressController.h"
+#import "NSString+conversionUserID.h"
 
 #import "BeeDeviceInfo.h"
 #import "MarqueeLabel.h"
@@ -151,7 +152,7 @@
     //获取累计方法积分数
     [self refreshTotalPoints];
     
-    _userID.text = _myUserID;
+    _userID.text = [_myUserID conversionIDbyUserType:defaultUser];
     if (_myUserID) {
         [self refreshBalance];
     }
@@ -193,7 +194,7 @@
                                       selectionHandler:^(RETableViewItem *item)
                          {
                              IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
-                             integralDetailsVC.userid = _userID.text;
+                             integralDetailsVC.userid = _myUserID;
                              [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
                              [item deselectRowAnimated:YES];
                          }]];
@@ -203,7 +204,7 @@
                                       selectionHandler:^(RETableViewItem *item)
                          {
                              ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
-                             vc.userid = _userID.text;
+                             vc.userid = _myUserID;
                              [weakSelf.navigationController pushViewController:vc animated:YES];
                              
                              [item deselectRowAnimated:YES];
@@ -225,7 +226,7 @@
                             if (!error) {
                                 _myUserID = uID;
                                 //刷新显示ID
-                                _userID.text = uID;
+                                _userID.text = [uID conversionIDbyUserType:defaultUser];
                                 //刷新用户剩余积分
                                 [self refreshBalance];
                                 

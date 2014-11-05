@@ -16,6 +16,8 @@
 #import "ChannelInfo.h"
 #import "IPAddressController.h"
 
+#import "NSString+conversionUserID.h"
+
 //各大广告平台SDK头文件
 #import "DMOfferWallManager.h"
 #import "ZKcmoneZKcmtwo.h"
@@ -339,6 +341,7 @@ GuoMobWallDelegate>
     if ([GVUserDefaults standardUserDefaults].userID) {
         
         NSString *uid = [GVUserDefaults standardUserDefaults].userID;
+        
         [self advertisingPlatformInitWithUserID:uid];
         [self initNavBarItems];
         
@@ -486,7 +489,7 @@ GuoMobWallDelegate>
                 }
                 case GuoMengPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         
                         [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
                     }];

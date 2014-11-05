@@ -246,6 +246,7 @@
 		F6DF567D1A09B3AB0021A0BE /* FTCoreTextStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF567A1A09B3AB0021A0BE /* FTCoreTextStyle.m */; };
 		F6DF567E1A09B3AB0021A0BE /* FTCoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF567C1A09B3AB0021A0BE /* FTCoreTextView.m */; };
 		F6DF56831A09B6E40021A0BE /* helpDoc.html in Resources */ = {isa = PBXBuildFile; fileRef = F6DF56821A09B6E40021A0BE /* helpDoc.html */; };
+		F6DF56861A09E61A0021A0BE /* NSString+conversionUserID.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */; };
 		F6E001F61A0767CF000B2BEC /* RecordItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E001F51A0767CF000B2BEC /* RecordItem.m */; };
 		F6E001FB1A076AA0000B2BEC /* RecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E001F91A076AA0000B2BEC /* RecordCell.m */; };
 		F6E001FC1A076AA0000B2BEC /* RecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E001FA1A076AA0000B2BEC /* RecordCell.xib */; };
@@ -652,6 +653,8 @@
 		F6DF567B1A09B3AB0021A0BE /* FTCoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTCoreTextView.h; sourceTree = "<group>"; };
 		F6DF567C1A09B3AB0021A0BE /* FTCoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTCoreTextView.m; sourceTree = "<group>"; };
 		F6DF56821A09B6E40021A0BE /* helpDoc.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = helpDoc.html; sourceTree = "<group>"; };
+		F6DF56841A09E61A0021A0BE /* NSString+conversionUserID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+conversionUserID.h"; sourceTree = "<group>"; };
+		F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+conversionUserID.m"; sourceTree = "<group>"; };
 		F6E001F41A0767CF000B2BEC /* RecordItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordItem.h; sourceTree = "<group>"; };
 		F6E001F51A0767CF000B2BEC /* RecordItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordItem.m; sourceTree = "<group>"; };
 		F6E001F81A076AA0000B2BEC /* RecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordCell.h; sourceTree = "<group>"; };
@@ -1245,6 +1248,8 @@
 				F6DAA3D719E10FCC00ADA84A /* ScoreLabel.m */,
 				F67C98CB19FE00E000C26988 /* IPAddressController.h */,
 				F67C98CC19FE00E000C26988 /* IPAddressController.m */,
+				F6DF56841A09E61A0021A0BE /* NSString+conversionUserID.h */,
+				F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */,
 				F614A7BC19F74221004DEB96 /* Res */,
 			);
 			path = common;
@@ -2064,6 +2069,7 @@
 				F63E9C8819DE79E700548AA9 /* RENumberItem.m in Sources */,
 				F663D85619D7EFC5002943D7 /* HelpViewController.m in Sources */,
 				F63E9C8B19DE79E700548AA9 /* RESegmentedItem.m in Sources */,
+				F6DF56861A09E61A0021A0BE /* NSString+conversionUserID.m in Sources */,
 				F63E9C8E19DE79E700548AA9 /* REActionBar.m in Sources */,
 				F638E49A1A06646800E5A911 /* LB_Foundation.m in Sources */,
 				F63E9CAF19DE7A4300548AA9 /* REValidator.m in Sources */,
