@@ -90,6 +90,11 @@
     [[UINavigationBar appearance]setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     
     [[UITabBar appearance]setBackgroundImage:[UIImage imageNamed:@"tabBar"]];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor grayColor] }
+                                             forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor grayColor] }
+                                             forState:UIControlStateHighlighted];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

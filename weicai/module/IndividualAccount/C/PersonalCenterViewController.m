@@ -74,7 +74,16 @@
     //调用查询用户剩余积分API
     [_taskCenterAPI getIntegral:_myUserID success:^(NSString *totalIntegral) {
         //成功刷新显示
-        _balanceLabel.text = totalIntegral;
+        if ([totalIntegral isEqualToString:@"0"]) {
+            _balanceLabel.text = @"0元";
+        }else
+        {
+            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            _balanceLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+        }
+
     } failure:^(NSError *error) {
         //失败给出提醒
     }];
@@ -87,7 +96,16 @@
         
         if (!error) {
             _totalPoint.text = [NSString stringWithFormat:@"%ld",(long)todayIntegral.integerValue];
-            
+            if (todayIntegral.integerValue == 0) {
+                _totalPoint.text = @"0元";
+            }else
+            {
+                NSString *yuan = [NSString stringWithFormat:@"%d",todayIntegral.integerValue / 100];
+                NSString *jiao = [NSString stringWithFormat:@"%d",todayIntegral.integerValue % 100 / 10];
+                NSString *fen = [NSString stringWithFormat:@"%d",todayIntegral.integerValue %100 % 10 %10];
+                _totalPoint.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+            }
+
         }
     }];
 
@@ -123,34 +141,7 @@
 {
     [super viewDidLoad];
     
-    __weak PersonalCenterViewController *weakSelf = self;
-    //初始化列表
-    self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
-    RETableViewSection *oneSection = [RETableViewSection section];
-    [self.tableViewMager addSection:oneSection];
-    
-    [oneSection addItem:[RETableViewItem itemWithTitle:@"收益明细"
-                                        accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                     selectionHandler:^(RETableViewItem *item)
-    {        
-        IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
-        integralDetailsVC.userid = _userID.text;
-        [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
-        [item deselectRowAnimated:YES];
-    }]];
-    
-    [oneSection addItem:[RETableViewItem itemWithTitle:@"兑换记录"
-                                        accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                     selectionHandler:^(RETableViewItem *item)
-    {
-        ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
-        vc.userid = _userID.text;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-        
-        [item deselectRowAnimated:YES];
-        
-    }]];
-    
+    [self setupListView];
     //获取描述信息
     [_personalCenterAPI getNewsDescription];
     
@@ -186,6 +177,40 @@
 }
 
 #pragma mark prive
+
+- (void)setupListView
+{
+    __weak PersonalCenterViewController *weakSelf = self;
+    //初始化列表
+    self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
+    self.myList.scrollEnabled = NO;
+    
+    RETableViewSection *oneSection = [RETableViewSection section];
+    [self.tableViewMager addSection:oneSection];
+    
+    [oneSection addItem:[RETableViewItem itemWithTitle:@"收益明细"
+                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
+                                      selectionHandler:^(RETableViewItem *item)
+                         {
+                             IntegralDetailsViewController *integralDetailsVC = [[IntegralDetailsViewController alloc] initWithNibName:@"IntegralDetailsViewController" bundle:nil];
+                             integralDetailsVC.userid = _userID.text;
+                             [weakSelf.navigationController pushViewController:integralDetailsVC animated:YES];
+                             [item deselectRowAnimated:YES];
+                         }]];
+    
+    [oneSection addItem:[RETableViewItem itemWithTitle:@"兑换记录"
+                                         accessoryType:UITableViewCellAccessoryDisclosureIndicator
+                                      selectionHandler:^(RETableViewItem *item)
+                         {
+                             ExchangeDetailViewController *vc = [[ExchangeDetailViewController alloc] initWithNibName:@"ExchangeDetailViewController" bundle:nil];
+                             vc.userid = _userID.text;
+                             [weakSelf.navigationController pushViewController:vc animated:YES];
+                             
+                             [item deselectRowAnimated:YES];
+                             
+                         }]];
+
+}
 
 - (void)didGetIPAddress:(NSNotification*)notification
 {

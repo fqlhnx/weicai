@@ -96,7 +96,7 @@
         
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:exchangeInfo.created.integerValue];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"YY-MM-dd HH:mm"];
+        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
         exchangeTime = [dateFormatter stringFromDate:date];
 
         NSString *RMB = [NSString stringWithFormat:@"%d元",exchangeInfo.integral.integerValue / 100];

@@ -41,6 +41,8 @@
 #import "GVUserDefaults+Setting.h"
 #import "JHTickerView.h"
 
+#define cellDefaultHeight 50.f
+
 @interface TaskListViewController ()<DMOfferWallManagerDelegate,
 OfferWallDelegate,
 RETableViewManagerDelegate,
@@ -152,7 +154,17 @@ GuoMobWallDelegate>
             NSLog(@"label touched");
             //刷新积分
         };
-        self.scoreLabel.text = [NSString stringWithFormat:@"%@分钱",totalIntegral];
+        //成功刷新显示
+        if ([totalIntegral isEqualToString:@"0"]) {
+            self.scoreLabel.text = @"0元";
+        }else
+        {
+            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            self.scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+        }
+        
         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:self.scoreLabel ];
         self.navigationItem.rightBarButtonItem = rightItem;
 
@@ -173,6 +185,7 @@ GuoMobWallDelegate>
 {
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.listView delegate:nil];
 
+    [self.listView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     __weak TaskListViewController *weakSelf = self;
     
     [self.listView addPullToRefreshWithActionHandler:^{
@@ -304,7 +317,17 @@ GuoMobWallDelegate>
     
     [_taskCenterRequest getIntegral:[GVUserDefaults standardUserDefaults].userID success:^(NSString *totalIntegral) {
         
-        _scoreLabel.text = [NSString stringWithFormat:@"%@分钱",totalIntegral];
+        //成功刷新显示
+        if ([totalIntegral isEqualToString:@"0"]) {
+            _scoreLabel.text = @"0元";
+        }else
+        {
+            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
+            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
+            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            _scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
+        }
+
         
     } failure:^(NSError *error) {
         
@@ -350,11 +373,12 @@ GuoMobWallDelegate>
                 case ChuKongPlatform:
                 {
                     RETableViewItem *item = [RETableViewItem itemWithTitle:channelName
-                                                             accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                                                             accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                                                                  [[CSAppZone sharedAppZone]showAppZoneWithScale:0.9];
                                                              }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
                     [section addItem:item];
                     item.detailLabelText = subName;
                     
@@ -362,22 +386,25 @@ GuoMobWallDelegate>
                 }
                 case WanPuPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [AppConnect showList:weakSelf];
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
                     item.detailLabelText = subName;
+                    item.cellHeight = cellDefaultHeight;
+
                     [section addItem:item];
                     break;
                 }
                 case DianRuPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [OfferWall showOfferWall:weakSelf];
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -385,11 +412,12 @@ GuoMobWallDelegate>
                 }
                 case AnWoPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         ZKcmoneOWPresentZKcmtwo(anwoPID, weakSelf);
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -398,7 +426,7 @@ GuoMobWallDelegate>
                 }
                 case YouMiPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [YouMiWall showOffers:YES didShowBlock:^{
                             
                         } didDismissBlock:^{
@@ -407,6 +435,7 @@ GuoMobWallDelegate>
                     }];
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -414,13 +443,14 @@ GuoMobWallDelegate>
                 }
                 case MiDiPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         
                         [MyOfferAPI showAppOffers:weakSelf withDelegate:nil];
                     }];
                     
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -428,12 +458,13 @@ GuoMobWallDelegate>
                 }
                 case DuoMengPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [_duoMengOfferWall presentOfferWallWithViewController:weakSelf type:eDMOfferWallTypeList];
                     }];
                     
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
                     item.style = UITableViewCellStyleSubtitle;
+                    item.cellHeight = cellDefaultHeight;
 
                     item.detailLabelText = subName;
                     [section addItem:item];
@@ -441,11 +472,13 @@ GuoMobWallDelegate>
                 }
                 case DianJoyPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:channelName accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         [JJSDK showJJDiamondWithViewController:weakSelf];
                     }];
                     item.style = UITableViewCellStyleSubtitle;
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.cellHeight = cellDefaultHeight;
+
                     item.detailLabelText = subName;
                     [section addItem:item];
                     
@@ -453,12 +486,15 @@ GuoMobWallDelegate>
                 }
                 case GuoMengPlatform:
                 {
-                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryNone selectionHandler:^(RETableViewItem *item) {
+                    RETableViewItem *item = [RETableViewItem itemWithTitle:@"果盟" accessoryType:UITableViewCellAccessoryDisclosureIndicator selectionHandler:^(RETableViewItem *item) {
                         
                         [_guoMengWallVC pushGuoMobWall:YES Hscreen:NO];
                     }];
+                    item.style = UITableViewCellStyleSubtitle;
                     item.detailLabelText = subName;
                     item.image = [UIImage imageNamed:@"taskCellIcon"];
+                    item.cellHeight = cellDefaultHeight;
+
                     [section addItem:item];
                     break;
                 }
