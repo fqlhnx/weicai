@@ -245,19 +245,27 @@
 #if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
 - (CGSize)sizeWithFont:(UIFont *)font byWidth:(CGFloat)width
 {
-    CGSize constraintSize = CGSizeMake(width, 9999.f);
-    if (IOS7_OR_EARLIER) {
+    CGSize constraintSize = CGSizeMake(width, 0);
+    if (IOS7_OR_LATER) {
         
-//        return [self sizeWithFont:font
-//                constrainedToSize:constraintSize
-//                    lineBreakMode:NSLineBreakByWordWrapping];
+        NSDictionary *attribute = @{NSFontAttributeName: font};
+
+        CGSize retSize = [self boundingRectWithSize:constraintSize
+                                                 options:
+                          NSStringDrawingTruncatesLastVisibleLine |
+                          NSStringDrawingUsesLineFragmentOrigin |
+                          NSStringDrawingUsesFontLeading
+                                              attributes:attribute
+                                                 context:nil].size;
+
+        return retSize;
+
     }else{
         
-        return [self boundingRectWithSize:constraintSize
-                                  options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading
-                               attributes:@{NSFontAttributeName:font}
-                                  context:nil].size;
-        
+                return [self sizeWithFont:font
+                        constrainedToSize:constraintSize
+                            lineBreakMode:NSLineBreakByWordWrapping];
+
     }
 
     return CGSizeMake(0, 0);

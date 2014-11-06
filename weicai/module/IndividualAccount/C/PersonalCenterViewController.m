@@ -15,8 +15,12 @@
 #import "IPAddressController.h"
 #import "NSString+conversionUserID.h"
 
+#import "DescriptionInfoCell.h"
+#import "DescriptionInfoItem.h"
+
 #import "BeeDeviceInfo.h"
 #import "MarqueeLabel.h"
+#import "NSString+LBExtension.h"
 #import "RETableViewManager.h"
 #import "OpenUDID.h"
 #import "GVUserDefaults+Setting.h"
@@ -30,6 +34,7 @@
 
 @property (nonatomic,weak)IBOutlet UITableView *myList;
 @property (nonatomic,strong)RETableViewManager *tableViewMager;
+@property (nonatomic,strong)RETableViewSection *section;
 
 @property (nonatomic,weak)IBOutlet MarqueeLabel *scrolLabel;
 
@@ -143,8 +148,6 @@
     [super viewDidLoad];
     
     [self setupListView];
-    //获取描述信息
-    [_personalCenterAPI getNewsDescription];
     
     //初始化定时器服务
     [self startTimers];
@@ -156,6 +159,30 @@
     if (_myUserID) {
         [self refreshBalance];
     }
+    //获取描述信息
+    [_personalCenterAPI getNewsDescriptionSuccess:^(NSString *desString) {
+        
+        //算高度
+        CGSize stringSize = [desString sizeWithFont:[UIFont systemFontOfSize:18.f]
+                                            byWidth:CGRectGetWidth(self.myList.frame)];
+        NSLog(@"%f",stringSize.height);
+        //添加item
+        RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"系统公告"];
+        DescriptionInfoItem *item = [DescriptionInfoItem itemWithTitle:desString
+                                                 accessoryType:UITableViewCellAccessoryNone
+                                              selectionHandler:^(RETableViewItem *item) {
+                                                  
+                                              }];
+        item.cellHeight = stringSize.height + 50.f;
+        [section addItem:item];
+        [self.tableViewMager insertSection:section atIndex:1];
+        [self.myList reloadData];
+        
+        
+    } failed:^(NSError *error) {
+        
+    }];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -184,12 +211,13 @@
     __weak PersonalCenterViewController *weakSelf = self;
     //初始化列表
     self.tableViewMager = [[RETableViewManager alloc] initWithTableView:self.myList];
-    self.myList.scrollEnabled = NO;
+    [self.tableViewMager registerClass:NSStringFromClass([DescriptionInfoItem class])
+            forCellWithReuseIdentifier:NSStringFromClass([DescriptionInfoCell class])];
     
-    RETableViewSection *oneSection = [RETableViewSection section];
-    [self.tableViewMager addSection:oneSection];
+    _section = [RETableViewSection section];
+    [self.tableViewMager addSection:_section];
     
-    [oneSection addItem:[RETableViewItem itemWithTitle:@"收益明细"
+    [_section addItem:[RETableViewItem itemWithTitle:@"收益明细"
                                          accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                       selectionHandler:^(RETableViewItem *item)
                          {
@@ -199,7 +227,7 @@
                              [item deselectRowAnimated:YES];
                          }]];
     
-    [oneSection addItem:[RETableViewItem itemWithTitle:@"兑换记录"
+    [_section addItem:[RETableViewItem itemWithTitle:@"兑换记录"
                                          accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                       selectionHandler:^(RETableViewItem *item)
                          {
