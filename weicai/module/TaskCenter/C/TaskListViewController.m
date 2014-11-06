@@ -161,9 +161,9 @@ GuoMobWallDelegate>
             self.scoreLabel.text = @"0元";
         }else
         {
-            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
-            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            NSString *yuan = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue / 100)];
+            NSString *jiao = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue % 100 / 10)];
+            NSString *fen = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue %100 % 10 %10)];
             self.scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
         
@@ -324,9 +324,9 @@ GuoMobWallDelegate>
             _scoreLabel.text = @"0元";
         }else
         {
-            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
-            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            NSString *yuan = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue / 100)];
+            NSString *jiao = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue % 100 / 10)];
+            NSString *fen = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue %100 % 10 %10)];
             _scoreLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
 
@@ -523,11 +523,15 @@ GuoMobWallDelegate>
 {
     //获取最新的滚动消息内容
     [self.taskCenterRequest getScrollContent:^(NSArray *contents, NSError *error) {
+        
         self.scrollLabel.tickerStrings = contents;
         
     }];
     //跟新滚动标签内容
-    [self.scrollLabel resume];
+    if (self.scrollLabel.tickerStrings.count > 0) {
+        [self.scrollLabel resume];
+
+    }
     
 
 }

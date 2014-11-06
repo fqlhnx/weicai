@@ -27,9 +27,14 @@
 #import "NSString+LBExtension.h"
 
 static NSString *ipAddress;
+
+#define exchangeConditions 500
 static NSString *userIntegral;
 
 @interface ExchangeCenterViewController ()
+
+@property (nonatomic,weak)IBOutlet UIButton *button1;
+@property (nonatomic,weak)IBOutlet UIButton *button2;
 
 @property(nonatomic,weak)IBOutlet UITextField *aliPayAccountField;
 @property (nonatomic,weak)IBOutlet UIImageView *aliPayFieldBG;
@@ -155,7 +160,7 @@ static NSString *userIntegral;
     
     if (isEmail || isPhoneNum) {
         //积分条件
-        if (userIntegral.integerValue >= 100)
+        if (userIntegral.integerValue >= exchangeConditions)
         {
             __weak ExchangeCenterViewController *weakSelf = self;
             //兑换比例100 = 1元;
@@ -164,20 +169,33 @@ static NSString *userIntegral;
                                                         target:aliPay
                                                         fromIP:ipAddress
                                                       integral:(integralMultiples * 100)
-                                                        amount:2
-                                                prepaidAccount:aliPayAccount success:^{
+                                                        amount:integralMultiples
+                                                prepaidAccount:aliPayAccount
+                                                       success:^{
                                                     //to do
                                                     [SVProgressHUD showSuccessWithStatus:@"支付宝提醒申请成功"];
+                                                           //扣分
+                                                           NSString *remainingIntegral = [NSString stringWithFormat:@"%d",userIntegral.integerValue - (integralMultiples * 100)];
+                                                           userIntegral = remainingIntegral;
+
                                                     //刷新余额
                                                     [weakSelf refreshUserIntegral];
-                                                } failure:^(NSError *error) {
+                                                           [weakSelf unlockExchangeButtons];
+                                                           
+                                                   
+                                                       } failure:^(NSError *error) {
                                                     //tudo
+                                                           [weakSelf unlockExchangeButtons];
                                                 }];
+            
+            //锁定兑换按钮
+            [self lockExchangeButtons];
             
         }
         else
         {
-            [SVProgressHUD showErrorWithStatus:@"账户余额1元以上才能兑换"];
+            NSString *errStr = [NSString stringWithFormat:@"账户余额%d元以上才能兑换",exchangeConditions/100];
+            [SVProgressHUD showErrorWithStatus:errStr];
         }
 
     }else{
@@ -202,7 +220,7 @@ static NSString *userIntegral;
     BOOL isPhoneNum = [_phoneNumField.text isPhoneNumber];
     if (isPhoneNum) {
         //查询积分看是否满足兑换条件
-        if (userIntegral.integerValue >= 100) {
+        if (userIntegral.integerValue >= exchangeConditions) {
             
             NSInteger integralMultiples =    userIntegral.integerValue / 100;
             __weak ExchangeCenterViewController *weakSelf = self;
@@ -211,20 +229,31 @@ static NSString *userIntegral;
                                                         target:phoneNumber
                                                         fromIP:ipAddress
                                                       integral:(integralMultiples *100)
-                                                        amount:2
+                                                        amount:integralMultiples
                                                 prepaidAccount:telNumber success:^{
 
                                                     [SVProgressHUD showSuccessWithStatus:@"手机充值申请成功"];
+                                                    //扣分
+                                                    NSString *remainingIntegral = [NSString stringWithFormat:@"%d",userIntegral.integerValue - (integralMultiples * 100)];
+                                                    
+                                                    userIntegral = remainingIntegral;
                                                     [weakSelf refreshUserIntegral];
+                                                    
+                                                    [weakSelf unlockExchangeButtons];
                                                     
                                                 } failure:^(NSError *error) {
                                                     
+                                                    [weakSelf unlockExchangeButtons];
                                                 }];
+            
+            //禁用兑换按钮
+            [self lockExchangeButtons];
 
         }
         else
         {
-            [SVProgressHUD showErrorWithStatus:@"账户余额1元以上才能兑换"];
+            NSString *errStr = [NSString stringWithFormat:@"账户余额%d元以上才能兑换",exchangeConditions/100];
+            [SVProgressHUD showErrorWithStatus:errStr];
         }
 
     }else{
@@ -291,13 +320,14 @@ static NSString *userIntegral;
     [_taskCenterAPI getIntegral:userID success:^(NSString *totalIntegral) {
         
         userIntegral = totalIntegral;
+
         if ([totalIntegral isEqualToString:@"0"]) {
             _userIntegral.text = @"0元";
         }else
         {
-            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
-            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            NSString *yuan = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue / 100)];
+            NSString *jiao = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue % 100 / 10)];
+            NSString *fen = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue %100 % 10 %10)];
             _userIntegral.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
         
@@ -310,6 +340,18 @@ static NSString *userIntegral;
 {
     [_phoneNumField resignFirstResponder];
     [_aliPayAccountField resignFirstResponder];
+}
+
+- (void)lockExchangeButtons
+{
+    self.button1.enabled = NO;
+    self.button2.enabled = NO;
+}
+
+- (void)unlockExchangeButtons
+{
+    self.button1.enabled = YES;
+    self.button2.enabled = YES;
 }
 
 - (void)didGetIP:(NSNotification*)notification

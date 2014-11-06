@@ -99,7 +99,7 @@
         [dateFormatter setDateFormat:@"MM-dd HH:mm"];
         exchangeTime = [dateFormatter stringFromDate:date];
 
-        NSString *RMB = [NSString stringWithFormat:@"%d元",exchangeInfo.integral.integerValue / 100];
+        NSString *RMB = [NSString stringWithFormat:@"%ld元",(long)(exchangeInfo.integral.integerValue / 100)];
         NSString *content = [NSString stringWithFormat:@"%@%@",target,RMB];
         
         ExchangeRecordItem *item = [[ExchangeRecordItem alloc] initWithUserID:exchangeInfo.telmember_id

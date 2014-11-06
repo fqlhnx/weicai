@@ -262,9 +262,9 @@
 
     }else{
         
-                return [self sizeWithFont:font
-                        constrainedToSize:constraintSize
-                            lineBreakMode:NSLineBreakByWordWrapping];
+//                return [self sizeWithFont:font
+//                        constrainedToSize:constraintSize
+//                            lineBreakMode:NSLineBreakByWordWrapping];
 
     }
 

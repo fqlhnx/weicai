@@ -44,6 +44,7 @@
 @property (nonatomic,strong)PersonalCenterAPI *personalCenterAPI;
 @property(nonatomic,strong)TaskCenterAPI *taskCenterAPI;
 
+@property (nonatomic,strong)IBOutlet UITextView *describeTextView;
 
 @end
 
@@ -84,9 +85,9 @@
             _balanceLabel.text = @"0元";
         }else
         {
-            NSString *yuan = [NSString stringWithFormat:@"%d",totalIntegral.integerValue / 100];
-            NSString *jiao = [NSString stringWithFormat:@"%d",totalIntegral.integerValue % 100 / 10];
-            NSString *fen = [NSString stringWithFormat:@"%d",totalIntegral.integerValue %100 % 10 %10];
+            NSString *yuan = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue / 100)];
+            NSString *jiao = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue % 100 / 10)];
+            NSString *fen = [NSString stringWithFormat:@"%ld",(long)(totalIntegral.integerValue %100 % 10 %10)];
             _balanceLabel.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
         }
 
@@ -106,9 +107,9 @@
                 _totalPoint.text = @"0元";
             }else
             {
-                NSString *yuan = [NSString stringWithFormat:@"%d",todayIntegral.integerValue / 100];
-                NSString *jiao = [NSString stringWithFormat:@"%d",todayIntegral.integerValue % 100 / 10];
-                NSString *fen = [NSString stringWithFormat:@"%d",todayIntegral.integerValue %100 % 10 %10];
+                NSString *yuan = [NSString stringWithFormat:@"%ld",(long)(todayIntegral.integerValue / 100)];
+                NSString *jiao = [NSString stringWithFormat:@"%ld",(long)(todayIntegral.integerValue % 100 / 10)];
+                NSString *fen = [NSString stringWithFormat:@"%ld",(long)(todayIntegral.integerValue %100 % 10 %10)];
                 _totalPoint.text = [NSString stringWithFormat:@"%@.%@%@元",yuan,jiao,fen];
             }
 
@@ -159,25 +160,11 @@
     if (_myUserID) {
         [self refreshBalance];
     }
+    __weak PersonalCenterViewController *weakSelf = self;
     //获取描述信息
     [_personalCenterAPI getNewsDescriptionSuccess:^(NSString *desString) {
         
-        //算高度
-        CGSize stringSize = [desString sizeWithFont:[UIFont systemFontOfSize:18.f]
-                                            byWidth:CGRectGetWidth(self.myList.frame)];
-        NSLog(@"%f",stringSize.height);
-        //添加item
-        RETableViewSection *section = [RETableViewSection sectionWithHeaderTitle:@"系统公告"];
-        DescriptionInfoItem *item = [DescriptionInfoItem itemWithTitle:desString
-                                                 accessoryType:UITableViewCellAccessoryNone
-                                              selectionHandler:^(RETableViewItem *item) {
-                                                  
-                                              }];
-        item.cellHeight = stringSize.height + 50.f;
-        [section addItem:item];
-        [self.tableViewMager insertSection:section atIndex:1];
-        [self.myList reloadData];
-        
+        weakSelf.describeTextView.text = desString;
         
     } failed:^(NSError *error) {
         
