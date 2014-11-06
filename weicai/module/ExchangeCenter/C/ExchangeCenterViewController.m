@@ -174,7 +174,8 @@ static NSString *userIntegral;
                                                     //tudo
                                                 }];
             
-        }else
+        }
+        else
         {
             [SVProgressHUD showErrorWithStatus:@"账户余额1元以上才能兑换"];
         }
@@ -220,7 +221,9 @@ static NSString *userIntegral;
                                                     
                                                 }];
 
-        }else{
+        }
+        else
+        {
             [SVProgressHUD showErrorWithStatus:@"账户余额1元以上才能兑换"];
         }
 
