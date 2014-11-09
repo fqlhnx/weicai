@@ -125,7 +125,8 @@ NSString *const kgetUserIDURL = @"Integral/public/index.php/api/storeUsername";
 {
     [super getRequestFromePath:kgetUserIDURL
                     parameters:@{@"username": uuid,
-                                 @"ip":ipAddress}
+                                 @"ip":ipAddress,
+                                 @"gzsname":[NSNull null]}
                        success:^(id responseResult)
     {
         //获取用户id成功

@@ -28,7 +28,7 @@
 
 static NSString *ipAddress;
 
-#define exchangeConditions 500
+#define exchangeConditions 200
 static NSString *userIntegral;
 
 @interface ExchangeCenterViewController ()

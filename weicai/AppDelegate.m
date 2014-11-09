@@ -15,7 +15,8 @@
 #import "BeeDeviceInfo.h"
 #import "HelpViewController.h"
 #import "IPAddressController.h"
-
+#import "LB_DeviceInfo.h"
+#import "GVUserDefaults+generalData.h"
 
 @interface AppDelegate ()
 
@@ -39,8 +40,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     //ip 地址
     [IPAddressController sharedInstance];
+    
+    //获取UDID或是设备序列号
+    NSString *udid = [LB_DeviceInfo getUDID];
+    if (udid) {
+        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = udid;
+        [GVUserDefaults standardUserDefaults].isJaBreak = YES;
+    }else{
+        
+        NSString *sn = [LB_DeviceInfo serialNumber];
+        NSAssert(sn, @"sn is nil");
+        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = sn;
+        [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+    }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

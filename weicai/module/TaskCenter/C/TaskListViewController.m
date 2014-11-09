@@ -11,11 +11,10 @@
 #import "ADConfig.h"
 #import "TaskCenterAPI.h"
 #import "PersonalCenterAPI.h"
-#import "OpenUDID.h"
 #import "ServerConfig.h"
 #import "ChannelInfo.h"
 #import "IPAddressController.h"
-
+#import "GVUserDefaults+generalData.h"
 #import "NSString+conversionUserID.h"
 
 //各大广告平台SDK头文件
@@ -222,7 +221,8 @@ GuoMobWallDelegate>
     __weak TaskListViewController *weakSelf = self;
     _personalCenterAPI = [[PersonalCenterAPI alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
     NSString *ip = address;
-    [_personalCenterAPI getUserID:[OpenUDID value] fromIP:ip competion:^(NSString *uID, NSError *error) {
+    NSString *udid = [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber;
+    [_personalCenterAPI getUserID:udid fromIP:ip competion:^(NSString *uID, NSError *error) {
 
         if (!error) {
             

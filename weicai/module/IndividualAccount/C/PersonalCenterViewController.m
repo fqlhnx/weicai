@@ -14,6 +14,7 @@
 #import "ServerConfig.h"
 #import "IPAddressController.h"
 #import "NSString+conversionUserID.h"
+#import "GVUserDefaults+generalData.h"
 
 #import "DescriptionInfoCell.h"
 #import "DescriptionInfoItem.h"
@@ -22,8 +23,8 @@
 #import "MarqueeLabel.h"
 #import "NSString+LBExtension.h"
 #import "RETableViewManager.h"
-#import "OpenUDID.h"
 #import "GVUserDefaults+Setting.h"
+#import "LB_DeviceInfo.h"
 
 @interface PersonalCenterViewController ()
 
@@ -156,7 +157,8 @@
     //获取累计方法积分数
     [self refreshTotalPoints];
     
-    _userID.text = [_myUserID conversionIDbyUserType:defaultUser];
+    _userID.text = _myUserID;
+    
     if (_myUserID) {
         [self refreshBalance];
     }
@@ -231,25 +233,21 @@
 - (void)didGetIPAddress:(NSNotification*)notification
 {
     NSString *ip = notification.object;
-    
+
     //获取用户ID
-    NSString *uuid = [OpenUDID value];
-    [_personalCenterAPI getUserID:uuid
+    NSString *deviceID = [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber;
+    [_personalCenterAPI getUserID:deviceID
                            fromIP:ip
                         competion:^(NSString *uID, NSError *error) {
                             
                             if (!error) {
                                 _myUserID = uID;
                                 //刷新显示ID
-                                _userID.text = [uID conversionIDbyUserType:defaultUser];
+                                _userID.text = uID;
                                 //刷新用户剩余积分
                                 [self refreshBalance];
-                                
                                 //本地保存UID
                                 [GVUserDefaults standardUserDefaults].userID = uID;
-                                //内存保存UID
-                                
-                                
                             }
                             
                         }];

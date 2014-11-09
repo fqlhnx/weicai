@@ -45,4 +45,7 @@ typedef NS_ENUM(NSInteger, DeviceSize){
 + (BOOL)isDevicePhone;
 + (BOOL)isDevicePad;
 
++ (NSString*)getUDID;
++ (NSString*)serialNumber;
+
 @end
