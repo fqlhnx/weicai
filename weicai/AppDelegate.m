@@ -15,9 +15,9 @@
 #import "BeeDeviceInfo.h"
 #import "HelpViewController.h"
 #import "IPAddressController.h"
-#import <AdSupport/ASIdentifierManager.h>
+#import "LB_DeviceInfo.h"
+#import "GVUserDefaults+generalData.h"
 
-#import "FCUUID.h"
 @interface AppDelegate ()
 
 @property (nonatomic,strong)UITabBarController *tabBarCtrl;
@@ -38,33 +38,24 @@
 
 @implementation AppDelegate
 
-- (NSString *)getIOSUUID
-{
-    NSString *retrieveuuid = [SSKeychain passwordForService:@"com.mohe.userinfo"account:@"uuid"];
-    
-    if ( retrieveuuid == nil || [retrieveuuid isEqualToString:@""]){
-        CFUUIDRef uuid = CFUUIDCreate(NULL);
-        assert(uuid != NULL);
-        CFStringRef uuidStr = CFUUIDCreateString(NULL, uuid);
-        
-        retrieveuuid = [NSString stringWithFormat:@"%@", uuidStr];
-        
-        [SSKeychain setPassword:retrieveuuid forService:@"com.mohe.userinfo"account:@"uuid"];
-    }
-    return retrieveuuid;
-}
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    NSString *uuid = [FCUUID uuidForDevice];
     //ip 地址
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:uuid
-                               message:uuid
-                              delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-    [av show];
-    
     [IPAddressController sharedInstance];
+    
+    //获取UDID或是设备序列号
+    NSString *udid = [LB_DeviceInfo getUDID];
+    if (udid) {
+        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = udid;
+        [GVUserDefaults standardUserDefaults].isJaBreak = YES;
+    }else{
+        
+        NSString *sn = [LB_DeviceInfo serialNumber];
+        NSAssert(sn, @"sn is nil");
+        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = sn;
+        [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+    }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

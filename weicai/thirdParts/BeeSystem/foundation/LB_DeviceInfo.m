@@ -11,6 +11,30 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <sys/utsname.h>
 #import <UIKit/UIKit.h>
+#import <dlfcn.h>
+
+
+#define IOKit_PATH "/System/Library/Frameworks/IOKit.framework/IOKit"
+
+typedef UInt32 IOOptionBits;
+typedef mach_port_t io_object_t;
+typedef mach_port_t io_service_t;
+typedef io_object_t io_registry_entry_t;
+extern const mach_port_t kIOMasterPortDefault;
+typedef kern_return_t (* IOObjectRelease)(io_object_t	object );
+typedef CFMutableDictionaryRef (* IOServiceMatching)(const char *name );
+typedef CFMutableDictionaryRef (* IOServiceNameMatching)(const char *name);
+typedef io_service_t (* IOServiceGetMatchingService)( mach_port_t masterPort, CFDictionaryRef matching );
+typedef kern_return_t (*IORegistryEntryCreateCFProperties)(
+                                                           io_registry_entry_t entry,
+                                                           CFMutableDictionaryRef *properties,
+                                                           CFAllocatorRef allocator,
+                                                           IOOptionBits options );
+typedef CFTypeRef (* IORegistryEntryCreateCFProperty)(
+                                                      io_registry_entry_t entry,
+                                                      CFStringRef key,
+                                                      CFAllocatorRef allocator,
+                                                      IOOptionBits options );
 
 @implementation LB_DeviceInfo
 +(NSDictionary*)deviceNamesByCode {
@@ -130,6 +154,47 @@
         return NO;
 }
 
++ (NSString *)getUDID
+{
+    NSString *udid = nil;
+    
+    NSBundle *a = [NSBundle bundleWithPath:@"System/Library/PrivateFrameworks/AppleAccount.framework"];
+    NSBundle *b = [NSBundle bundleWithPath:@"System/Library/PrivateFrameworks/ApplePushService.framework"];
+    if ([a load]) {
+        if ([b load]) {
+            NSLog(@"%s>>>>>>%d",__func__,__LINE__);
+            Class aa = NSClassFromString(@"AADeviceInfo");
+            udid = (NSString*)[aa performSelector:@selector(udid)];
+        }
+    }
+    
+    return udid;
+}
 
++ (NSString *)serialNumber
+{
+    void *IOKit = dlopen("/System/Library/Frameworks/IOKit.framework/IOKit", RTLD_NOW);
+    if (!IOKit) {
+        return nil;
+    }
+    IOServiceGetMatchingService pIOServiceGetMatchingService = dlsym(IOKit, "IOServiceGetMatchingService");
+    IOServiceMatching pIOServiceMatching = dlsym(IOKit, "IOServiceMatching");
+    IORegistryEntryCreateCFProperty pIORegistryEntryCreateCFProperty = dlsym(IOKit, "IORegistryEntryCreateCFProperty");
+    IORegistryEntryCreateCFProperties pIORegistryEntryCreateCFProperties = dlsym(IOKit, "IORegistryEntryCreateCFProperties");
+    IOObjectRelease pIOObjectRelease = dlsym(IOKit, "IOObjectRelease");
+    mach_port_t *kIOMasterPortDefault = dlsym(IOKit, "kIOMasterPortDefault");
+    io_object_t platformExpert;
+    IOServiceNameMatching pIOServiceNameMatching = dlsym(IOKit, "IOServiceNameMatching");
+    CFDictionaryRef ma = pIOServiceMatching("IOPlatformExpertDevice");
+    platformExpert = pIOServiceGetMatchingService(*kIOMasterPortDefault, ma);
+    NSString *sNum = nil;
+    if (platformExpert) {
+        CFTypeRef sn = pIORegistryEntryCreateCFProperty(platformExpert, CFSTR("IOPlatformSerialNumber"), kCFAllocatorDefault, 0);
+        NSLog(@"device SN = %@\n",sn);
+        sNum = (NSString*)CFBridgingRelease(sn);
+        pIOObjectRelease(platformExpert);
+    }
+    return sNum;
+}
 
 @end
