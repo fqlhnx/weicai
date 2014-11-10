@@ -18,6 +18,10 @@
 #import "LB_DeviceInfo.h"
 #import "GVUserDefaults+generalData.h"
 
+#import "UIDevice+IOKitDeviceInfo.h"
+#import "OpenUDID.h"
+
+
 @interface AppDelegate ()
 
 @property (nonatomic,strong)UITabBarController *tabBarCtrl;
@@ -38,12 +42,12 @@
 
 @implementation AppDelegate
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     //ip 地址
     [IPAddressController sharedInstance];
-    
+
     //获取UDID或是设备序列号
     NSString *udid = [LB_DeviceInfo getUDID];
     if (udid) {
@@ -51,10 +55,17 @@
         [GVUserDefaults standardUserDefaults].isJaBreak = YES;
     }else{
         
-        NSString *sn = [LB_DeviceInfo serialNumber];
-        NSAssert(sn, @"sn is nil");
-        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = sn;
-        [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+        if ([LB_DeviceInfo serialNumber]) {
+            NSString *sn = [LB_DeviceInfo serialNumber];
+            [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = sn;
+            [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+
+        }else{
+            //open uuid
+            NSString *deviceNumber = [OpenUDID value];
+            [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = deviceNumber;
+            [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+        }
     }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
