@@ -15,8 +15,9 @@
 #import "BeeDeviceInfo.h"
 #import "HelpViewController.h"
 #import "IPAddressController.h"
+#import <AdSupport/ASIdentifierManager.h>
 
-
+#import "FCUUID.h"
 @interface AppDelegate ()
 
 @property (nonatomic,strong)UITabBarController *tabBarCtrl;
@@ -37,9 +38,32 @@
 
 @implementation AppDelegate
 
+- (NSString *)getIOSUUID
+{
+    NSString *retrieveuuid = [SSKeychain passwordForService:@"com.mohe.userinfo"account:@"uuid"];
+    
+    if ( retrieveuuid == nil || [retrieveuuid isEqualToString:@""]){
+        CFUUIDRef uuid = CFUUIDCreate(NULL);
+        assert(uuid != NULL);
+        CFStringRef uuidStr = CFUUIDCreateString(NULL, uuid);
+        
+        retrieveuuid = [NSString stringWithFormat:@"%@", uuidStr];
+        
+        [SSKeychain setPassword:retrieveuuid forService:@"com.mohe.userinfo"account:@"uuid"];
+    }
+    return retrieveuuid;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    NSString *uuid = [FCUUID uuidForDevice];
     //ip 地址
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:uuid
+                               message:uuid
+                              delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+    [av show];
+    
     [IPAddressController sharedInstance];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
