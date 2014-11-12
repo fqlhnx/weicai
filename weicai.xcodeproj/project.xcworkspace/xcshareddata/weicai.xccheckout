@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3DA54662-415D-451D-AD9F-23233E762286</string>
+	<string>50136369-13F0-4DD8-985B-1E1ADC3956A6</string>
 	<key>IDESourceControlProjectName</key>
 	<string>weicai</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D73407660598F6A89764BD4CEF924C2CD320EBF8</key>
-		<string>ssh://github.com/fqlhnx/weicai.git</string>
+		<string>github.com:fqlhnx/weicai.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>weicai.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/fqlhnx/weicai.git</string>
+	<string>github.com:fqlhnx/weicai.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
