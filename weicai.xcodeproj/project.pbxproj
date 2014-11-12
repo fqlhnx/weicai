@@ -10,6 +10,7 @@
 		F60270C11A064E3A00DF8D87 /* RecordListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F60270C01A064E3A00DF8D87 /* RecordListItem.m */; };
 		F614A7BF19F7426C004DEB96 /* navBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F614A7BD19F7426C004DEB96 /* navBar@2x.png */; };
 		F614A7C019F7426C004DEB96 /* tabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F614A7BE19F7426C004DEB96 /* tabBar@2x.png */; };
+		F624EE491A10A1C500DAABEC /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = F624EE481A10A1C500DAABEC /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F628E35F19ECFD6D00F4C959 /* ChannelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E35E19ECFD6D00F4C959 /* ChannelInfo.m */; };
 		F628E36919ECFF7200F4C959 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E36219ECFF7200F4C959 /* NSObject+RMArchivable.m */; };
 		F628E36A19ECFF7200F4C959 /* NSObject+RMCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E36419ECFF7200F4C959 /* NSObject+RMCopyable.m */; };
@@ -20,6 +21,7 @@
 		F628E37819ED1B5D00F4C959 /* GVUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37719ED1B5D00F4C959 /* GVUserDefaults.m */; };
 		F628E37B19ED1BCC00F4C959 /* GVUserDefaults+Setting.m in Sources */ = {isa = PBXBuildFile; fileRef = F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */; };
 		F62ADDDA1A08670A002902F8 /* horn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F62ADDD91A08670A002902F8 /* horn@2x.png */; };
+		F63191C61A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F63191C51A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.m */; };
 		F638E4971A06646800E5A911 /* NSData+BeeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */; };
 		F638E4981A06646800E5A911 /* NSString+LBExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48C1A06646800E5A911 /* NSString+LBExtension.m */; };
 		F638E4991A06646800E5A911 /* LB_DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F638E48E1A06646800E5A911 /* LB_DeviceInfo.m */; };
@@ -289,6 +291,8 @@
 		F60270C01A064E3A00DF8D87 /* RecordListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordListItem.m; sourceTree = "<group>"; };
 		F614A7BD19F7426C004DEB96 /* navBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navBar@2x.png"; sourceTree = "<group>"; };
 		F614A7BE19F7426C004DEB96 /* tabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBar@2x.png"; sourceTree = "<group>"; };
+		F624EE471A10A1C500DAABEC /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		F624EE481A10A1C500DAABEC /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		F628E35D19ECFD6D00F4C959 /* ChannelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelInfo.h; sourceTree = "<group>"; };
 		F628E35E19ECFD6D00F4C959 /* ChannelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelInfo.m; sourceTree = "<group>"; };
 		F628E36119ECFF7200F4C959 /* NSObject+RMArchivable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMArchivable.h"; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 		F628E37919ED1BCC00F4C959 /* GVUserDefaults+Setting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+Setting.h"; sourceTree = "<group>"; };
 		F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+Setting.m"; sourceTree = "<group>"; };
 		F62ADDD91A08670A002902F8 /* horn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "horn@2x.png"; sourceTree = "<group>"; };
+		F63191C41A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IOKitDeviceInfo.h"; sourceTree = "<group>"; };
+		F63191C51A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IOKitDeviceInfo.m"; sourceTree = "<group>"; };
 		F638E4891A06646800E5A911 /* NSData+BeeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BeeCategory.h"; sourceTree = "<group>"; };
 		F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BeeCategory.m"; sourceTree = "<group>"; };
 		F638E48B1A06646800E5A911 /* NSString+LBExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+LBExtension.h"; sourceTree = "<group>"; };
@@ -776,6 +782,15 @@
 			path = Res;
 			sourceTree = "<group>";
 		};
+		F624EE461A10A1C500DAABEC /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				F624EE471A10A1C500DAABEC /* OpenUDID.h */,
+				F624EE481A10A1C500DAABEC /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
 		F628E36019ECFF7200F4C959 /* RMMapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +848,8 @@
 		F638E4881A06646800E5A911 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F63191C41A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.h */,
+				F63191C51A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.m */,
 				F638E4891A06646800E5A911 /* NSData+BeeCategory.h */,
 				F638E48A1A06646800E5A911 /* NSData+BeeCategory.m */,
 				F638E48B1A06646800E5A911 /* NSString+LBExtension.h */,
@@ -1310,6 +1327,7 @@
 		F663D87419D92E8F002943D7 /* thirdParts */ = {
 			isa = PBXGroup;
 			children = (
+				F624EE461A10A1C500DAABEC /* OpenUDID */,
 				F638E4F71A0CE69700E5A911 /* sskey */,
 				F6E73D1E1A07567E007FE0D8 /* Midi1.5.2 */,
 				F6E73CFC1A072434007FE0D8 /* GuomobWallSDK */,
@@ -2071,6 +2089,7 @@
 				F63E9C7B19DE79E700548AA9 /* RETableViewNumberCell.m in Sources */,
 				F63E9C8219DE79E700548AA9 /* REDateTimeItem.m in Sources */,
 				F698A19D19F0B8CE00EF30BA /* TaskListViewController.m in Sources */,
+				F624EE491A10A1C500DAABEC /* OpenUDID.m in Sources */,
 				F6DF567D1A09B3AB0021A0BE /* FTCoreTextStyle.m in Sources */,
 				F6981A9A19F4E9C6008A403F /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */,
@@ -2096,6 +2115,7 @@
 				F63E9CB319DE7A4300548AA9 /* REURLValidator.m in Sources */,
 				F698A1A119F0B9D000EF30BA /* TaskCenterAPI.m in Sources */,
 				F638E4991A06646800E5A911 /* LB_DeviceInfo.m in Sources */,
+				F63191C61A1057ED00F36D17 /* UIDevice+IOKitDeviceInfo.m in Sources */,
 				F663D85B19D7EFEE002943D7 /* ExchangeCenterViewController.m in Sources */,
 				F638E4FA1A0CE6A600E5A911 /* SSKeychain.m in Sources */,
 				F663D84619D7EE86002943D7 /* BasePhoneViewController.m in Sources */,
@@ -2312,7 +2332,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8fb7be03-aac2-44ac-a2fc-db4a575e7169";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2364,7 +2384,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8520470e-3d2e-4491-9a8a-98cdf6bd2f32";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
