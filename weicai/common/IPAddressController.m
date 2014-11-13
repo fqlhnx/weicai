@@ -39,14 +39,16 @@
 
 - (void) getCurrentIp
 {
+    __weak IPAddressController *weakSelf = self;
+    
     [BeeDeviceInfo connectedToTheInternetToGetIPAddress:^(NSString *ipAddr, NSError *error) {
         
         if (!error) {
-            self.currentIP = ipAddr;
+            weakSelf.currentIP = ipAddr;
             [[NSNotificationCenter defaultCenter]postNotificationName:DidGetCurrentIPAddress
-                                                               object:self.currentIP];
+                                                               object:weakSelf.currentIP];
         }else{
-            [self getCurrentIp];
+            [weakSelf getCurrentIp];
         }
     }];
     

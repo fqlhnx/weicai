@@ -17,12 +17,14 @@
 #import "IPAddressController.h"
 #import "LB_DeviceInfo.h"
 #import "GVUserDefaults+generalData.h"
+#import "IPAddressListRequest.h"
+#import "ServerConfig.h"
 
 #import "UIDevice+IOKitDeviceInfo.h"
 #import "OpenUDID.h"
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
 
 @property (nonatomic,strong)UITabBarController *tabBarCtrl;
 
@@ -38,6 +40,7 @@
 @property (nonatomic,strong)HelpViewController *helpVC;
 @property (nonatomic,strong)UINavigationController *helpRootNavCtrl;
 
+@property (nonatomic,strong)IPAddressListRequest *ipListRequest;
 @end
 
 @implementation AppDelegate
@@ -48,29 +51,13 @@
     //ip 地址
     [IPAddressController sharedInstance];
 
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(getedIPAddress:)
+                                                name:DidGetCurrentIPAddress
+                                              object:nil];
     //获取UDID或是设备序列号
-    NSString *udid = [LB_DeviceInfo getUDID];
-    if (udid) {
-        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = udid;
-        [GVUserDefaults standardUserDefaults].isJaBreak = YES;
-    }else{
-        
-        if ([LB_DeviceInfo serialNumber]) {
-            NSString *sn = [LB_DeviceInfo serialNumber];
-            [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = sn;
-            [GVUserDefaults standardUserDefaults].isJaBreak = NO;
-
-        }else{
-            //open uuid
-            NSString *deviceNumber = [OpenUDID value];
-            [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = deviceNumber;
-            [GVUserDefaults standardUserDefaults].isJaBreak = NO;
-        }
-    }
-
+    [self setupDeviceID];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     
     [self customUIAppearance];
 
@@ -104,11 +91,61 @@
     self.window.rootViewController = self.tabBarCtrl;
     
     [self.window makeKeyAndVisible];
-    
+
     return YES;
 }
 
+
+
 #pragma mark prive
+
+- (void)getedIPAddress:(NSNotification*)notification
+{
+    NSString *currentIP = notification.object;
+    self.ipListRequest = [[IPAddressListRequest alloc] initWithBaseURL:[NSURL URLWithString:ServerURL]];
+    [self.ipListRequest getIPAddressOfTheLimitSuccess:^(NSArray *ipList) {
+        
+        for (NSString *ipAddress in ipList) {
+            
+            if ([ipAddress isEqualToString:currentIP]) {
+                
+                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"IP禁用"
+                                                          message:@"你的IP已被禁用"
+                                                         delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil, nil];
+                [av show];
+
+            }
+        }
+        
+    } Failed:^(NSError *error) {
+        
+    }];
+}
+
+- (void)setupDeviceID
+{
+    NSString *udid = [LB_DeviceInfo getUDID];
+    if (udid) {
+        [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = udid;
+        [GVUserDefaults standardUserDefaults].isJaBreak = YES;
+    }else{
+        
+        if ([LB_DeviceInfo serialNumber]) {
+            NSString *sn = [LB_DeviceInfo serialNumber];
+            [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = sn;
+            [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+            
+        }else{
+            //open uuid
+            NSString *deviceNumber = [OpenUDID value];
+            [GVUserDefaults standardUserDefaults].theOnlyDeviceNumber = deviceNumber;
+            [GVUserDefaults standardUserDefaults].isJaBreak = NO;
+        }
+    }
+
+}
 
 - (void)customUIAppearance
 {
@@ -148,6 +185,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark UIAlertViewDelegate
+//禁用IP 退出程序
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    exit(0);
 }
 
 @end

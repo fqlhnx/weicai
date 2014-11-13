@@ -201,6 +201,9 @@
 		F663D98719DA43FE002943D7 /* wall_template.zip in Resources */ = {isa = PBXBuildFile; fileRef = F663D98219DA43FD002943D7 /* wall_template.zip */; };
 		F663D98819DA43FE002943D7 /* libzkcmone2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F663D98419DA43FD002943D7 /* libzkcmone2.3.a */; };
 		F663D9C619DA5287002943D7 /* BeeSystemInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */; };
+		F6659F7E1A14DF8400232318 /* IPInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F6659F7D1A14DF8400232318 /* IPInfo.m */; };
+		F6659F821A14E4E800232318 /* IPDisabledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6659F801A14E4E800232318 /* IPDisabledViewController.m */; };
+		F6659F831A14E4E800232318 /* IPDisabledViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6659F811A14E4E800232318 /* IPDisabledViewController.xib */; };
 		F67C98CD19FE00E000C26988 /* IPAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67C98CC19FE00E000C26988 /* IPAddressController.m */; };
 		F695DD0919EE4E6800E82EAE /* IPAddressListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F695DD0819EE4E6800E82EAE /* IPAddressListRequest.m */; };
 		F6981A9719F4E9C6008A403F /* TOActivityChrome.m in Sources */ = {isa = PBXBuildFile; fileRef = F6981A9019F4E9C6008A403F /* TOActivityChrome.m */; };
@@ -585,6 +588,11 @@
 		F663D98519DA43FD002943D7 /* ZKcmoneZKcmtwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKcmoneZKcmtwo.h; sourceTree = "<group>"; };
 		F663D9C419DA5287002943D7 /* BeeSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeSystemInfo.h; sourceTree = "<group>"; };
 		F663D9C519DA5287002943D7 /* BeeSystemInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BeeSystemInfo.mm; sourceTree = "<group>"; };
+		F6659F7C1A14DF8400232318 /* IPInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPInfo.h; sourceTree = "<group>"; };
+		F6659F7D1A14DF8400232318 /* IPInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPInfo.m; sourceTree = "<group>"; };
+		F6659F7F1A14E4E800232318 /* IPDisabledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDisabledViewController.h; sourceTree = "<group>"; };
+		F6659F801A14E4E800232318 /* IPDisabledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDisabledViewController.m; sourceTree = "<group>"; };
+		F6659F811A14E4E800232318 /* IPDisabledViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPDisabledViewController.xib; sourceTree = "<group>"; };
 		F67C98CB19FE00E000C26988 /* IPAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddressController.h; sourceTree = "<group>"; };
 		F67C98CC19FE00E000C26988 /* IPAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPAddressController.m; sourceTree = "<group>"; };
 		F695DD0719EE4E6800E82EAE /* IPAddressListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPAddressListRequest.h; sourceTree = "<group>"; };
@@ -1252,6 +1260,8 @@
 				F628E37A19ED1BCC00F4C959 /* GVUserDefaults+Setting.m */,
 				F698A1A219F0BA3B00EF30BA /* ScrollContentInfo.h */,
 				F698A1A319F0BA3B00EF30BA /* ScrollContentInfo.m */,
+				F6659F7C1A14DF8400232318 /* IPInfo.h */,
+				F6659F7D1A14DF8400232318 /* IPInfo.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -1287,6 +1297,9 @@
 				F6DF56851A09E61A0021A0BE /* NSString+conversionUserID.m */,
 				F6E696511A0E336200A26603 /* GVUserDefaults+generalData.h */,
 				F6E696521A0E336200A26603 /* GVUserDefaults+generalData.m */,
+				F6659F7F1A14E4E800232318 /* IPDisabledViewController.h */,
+				F6659F801A14E4E800232318 /* IPDisabledViewController.m */,
+				F6659F811A14E4E800232318 /* IPDisabledViewController.xib */,
 				F614A7BC19F74221004DEB96 /* Res */,
 			);
 			path = common;
@@ -1932,6 +1945,7 @@
 				F663D92219D9A795002943D7 /* _titlebg.jpg in Resources */,
 				F663D93519D9A795002943D7 /* _green__triangle.png in Resources */,
 				F6B910C419F7674200D39821 /* item3@2x.png in Resources */,
+				F6659F831A14E4E800232318 /* IPDisabledViewController.xib in Resources */,
 				F698A1A919F0BB9200EF30BA /* PersonalCenterViewController.xib in Resources */,
 				F663D91519D9A795002943D7 /* _background.png in Resources */,
 				F663D94D19D9A795002943D7 /* _purple_left_cell.png in Resources */,
@@ -2129,10 +2143,12 @@
 				F628E37319ED02A700F4C959 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				F63E9CB119DE7A4300548AA9 /* RELengthValidator.m in Sources */,
 				F63E9C8A19DE79E700548AA9 /* RERadioItem.m in Sources */,
+				F6659F821A14E4E800232318 /* IPDisabledViewController.m in Sources */,
 				F6981A9719F4E9C6008A403F /* TOActivityChrome.m in Sources */,
 				F63E9C7D19DE79E700548AA9 /* RETableViewPickerCell.m in Sources */,
 				F63E9CAD19DE7A4300548AA9 /* NSError+REValidation.m in Sources */,
 				F6DAA42219E5221900ADA84A /* UIImageView+AFNetworking.m in Sources */,
+				F6659F7E1A14DF8400232318 /* IPInfo.m in Sources */,
 				F698A1A419F0BA3B00EF30BA /* ScrollContentInfo.m in Sources */,
 				F6DAA41D19E5221900ADA84A /* AFSecurityPolicy.m in Sources */,
 				F63E9C7619DE79E700548AA9 /* RETableViewDateTimeCell.m in Sources */,
@@ -2332,7 +2348,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8fb7be03-aac2-44ac-a2fc-db4a575e7169";
+				PROVISIONING_PROFILE = "e6189862-906d-4642-9616-c9f2ee161bfe";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

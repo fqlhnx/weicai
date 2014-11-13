@@ -91,7 +91,7 @@
 	NSString *currentString = [tickerStrings objectAtIndex:currentIndex];
 	
 	// Calculate the size of the text and update the frame size of the ticker label
-	CGSize textSize = [currentString sizeWithFont:tickerFont constrainedToSize:CGSizeMake(9999, self.frame.size.height) lineBreakMode:UILineBreakModeWordWrap];
+	CGSize textSize = [currentString sizeWithFont:tickerFont constrainedToSize:CGSizeMake(9999, self.frame.size.height) lineBreakMode:NSLineBreakByWordWrapping];
 
     // Setup some starting and end points
 	float startingX = 0.0f;

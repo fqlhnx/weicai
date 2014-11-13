@@ -41,6 +41,7 @@
 #import "SVPullToRefresh.h"
 #import "GVUserDefaults+Setting.h"
 #import "JHTickerView.h"
+#import "SVProgressHUD.h"
 
 #define cellDefaultHeight 50.f
 
@@ -134,6 +135,9 @@ GuoMobWallDelegate>
     self.guoMengWallVC.delegate = self;
     self.guoMengWallVC.OtherID = userID;
     
+    //初始化积分墙列表
+    [self setupListView];
+    [self.listView triggerPullToRefresh];
 }
 
 
@@ -248,13 +252,13 @@ GuoMobWallDelegate>
 {
     [super viewDidLoad];
     
+    [SVProgressHUD showWithStatus:@"加载中"];
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didGetIP:)
                                                 name:DidGetCurrentIPAddress
                                               object:nil];
     
     [self setupScrollLabel];
-    [self setupListView];
-    
     
     // Do any additional setup after loading the view from its nib.
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -338,6 +342,8 @@ GuoMobWallDelegate>
 
 - (void)didGetIP:(NSNotification*)notification
 {
+    [SVProgressHUD dismiss];
+    
     if ([GVUserDefaults standardUserDefaults].userID) {
         
         NSString *uid = [GVUserDefaults standardUserDefaults].userID;

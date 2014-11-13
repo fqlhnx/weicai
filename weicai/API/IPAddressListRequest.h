@@ -11,6 +11,7 @@
 @interface IPAddressListRequest : BaseRequest
 
 //获取限制的IP地址
-//- (void)getIPAddressOfTheLimit:()
+- (void)getIPAddressOfTheLimitSuccess:(void(^)(NSArray *ipList))success
+                               Failed:(void(^)(NSError *error))failed;
 
 @end
